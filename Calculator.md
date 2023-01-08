@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <button onclick="calculator()">calculator</button>
-=======
-<button onclick="calculator()">Calculate Now!</button>
->>>>>>> b0a4c62 (show)
 
 <p>The result is:</p>
 <p id="answer"></p>
