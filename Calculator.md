@@ -1,4 +1,4 @@
-<button onclick="calculator()">Calculator</button>
+<button onclick="calculator()">calculator</button>
 
 <p>Answer:</p>
 <p id="answer"></p>
