@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <button onclick="calculator()">calculator</button>
+=======
+<button onclick="calculator()">Calculate Now!</button>
+>>>>>>> b0a4c62 (show)
 
-<p>Answer:</p>
+<p>The result is:</p>
 <p id="answer"></p>
 
 
@@ -9,7 +13,7 @@
 <script>
   
   function calculator() {
-    let expression = prompt("Equation?");
+    let expression = prompt("What problem would you like to solve?");
 
     const urlStart = "https://hetvitrivedi.tk/api/calculator/";
     const url = urlStart + expression;
@@ -30,16 +34,16 @@
 
 <style> 
 button {
-	width: 100px;
-	height: 35px;
-	font-size: 16px;
-	background-color: #333;
+	width: 120px;
+	height: 45px;
+	font-size: 25px;
+	background-color: #ACA1E6;
 	color: #fff;
 	border: none;
 	cursor: pointer;
 }
 
 p {
-  font-size: 18px;
+  font-size: 25px;
 }
 </style>
