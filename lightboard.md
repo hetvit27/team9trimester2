@@ -18,36 +18,29 @@ function generate() {
         console.log(data);
         //clear previous results
         document.getElementById("result").innerHTML = "";
+        var board = data;
 
-        var board = data[0];
-        console.log(board);
+        var table = document.createElement("table");
+        table.setAttribute("border", "1");
+        table.setAttribute("style", "border-collapse: collapse;");
+        var tableBody = document.createElement("tbody");
 
-        // print generation number
-        // var text = document.createTextNode("Generation " + (parseInt(b)));
-        // document.getElementById("result").appendChild(text);
-
-        // var table = document.createElement("table");
-        // table.setAttribute("border", "1");
-        // table.setAttribute("style", "border-collapse: collapse;");
-        // var tableBody = document.createElement("tbody");
-
-        // for (var i = 0; i < board.lights.length; i++) {
-        //     var row = document.createElement("tr");
-        //     for (var j = 0; j < board.lights[i].length; j++) {
-        //     var cell = document.createElement("td");
-        //     var cellText = document.createTextNode(board.lights[i][j].on);
-        //     // set color of cell based on rgb hex code if light is on
-        //     if (board.lights[i][j].on) {
-        //         cell.setAttribute("style", "background-color: " + board.lights[i][j].rgb);
-        //     }
-        //     cell.appendChild(cellText);
-        //     row.appendChild(cell);
-        //     }
-        //     tableBody.appendChild(row);
-        // }
-        // table.appendChild(tableBody);
-        // document.getElementById("result").appendChild(table);
-        // }
+        for (var i = 0; i < board.lights.length; i++) {
+            var row = document.createElement("tr");
+            for (var j = 0; j < board.lights[i].length; j++) {
+            var cell = document.createElement("td");
+            var cellText = document.createTextNode(board.lights[i][j].on);
+            // set color of cell based on rgb hex code if light is on
+            if (board.lights[i][j].on) {
+                cell.setAttribute("style", "background-color: " + board.lights[i][j].rgb);
+            }
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            }
+            tableBody.appendChild(row);
+        }
+        table.appendChild(tableBody);
+        document.getElementById("result").appendChild(table);
         })
         // catch fetch errors
         .catch(err => {
