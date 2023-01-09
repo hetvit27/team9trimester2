@@ -82,7 +82,7 @@ function calculate(){
 <label for="expression">Enter Expression: </label>
 <input type="text" id="expression" name="expression" >
 <br>
-<button onclick="calculate()">Calculate!</button> 
+<button onclick="calculate()">Calculate Now!</button> 
 <br>
 <h3 id="calculated_result">Result: </h3>
 <br>
