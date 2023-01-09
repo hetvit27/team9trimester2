@@ -4,7 +4,7 @@
 
 <button onclick="calculator()">Enter data</button>
 
-Person: <p id="answer"> </p>
+<p> Person: <p id="answer"> </p>
 
 
 
