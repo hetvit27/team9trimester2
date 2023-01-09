@@ -53,7 +53,7 @@ function generate() {
         .catch(err => {
             error(err + " " );
         });
-    }
+    })
 }
 
 </script>
