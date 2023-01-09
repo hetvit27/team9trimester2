@@ -4,10 +4,10 @@
 
 <button onclick="Person()">Enter data</button>
 
-<p> Person: <p id="answer"> </p>
+<!-- <p> Person: <p id="answer"> </p> -->
 
-
-
+<div id="result">
+</div>
 
 <script>
   
@@ -20,9 +20,22 @@
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        
-        document.getElementById("answer").innerHTML = data.result; 
-      
+        console.log(typeof data);
+        console.log(JSON.stringify(data))
+
+        document.getElementById("result").innerHTML = JSON.stringify(data);
+
+        // var result = document.getElementById("result");
+        // // for (var i = 0; i < data.length; i++) {
+        // //   result.appendChild(document.createTextNode(data));
+        // // }
+        // // document.getElementById("answer").innerHTML = data.name;
+
+        // for (var prop in data) {
+        //   if (Object.prototype.hasOwnProperty.call(data, prop)) {
+        //     result.appendChild(document.createTextNode(data.prop));
+        //   }
+        // }
       })
       
 }
@@ -41,6 +54,6 @@ button {
 
 p {
   font-size: 20px;
-  color: #010000;
+  color: #FFFFFF;
 }
 </style>
