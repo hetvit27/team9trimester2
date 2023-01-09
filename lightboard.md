@@ -30,11 +30,13 @@ function generate() {
             for (var j = 0; j < board.lights[i].length; j++) {
             var cell = document.createElement("td");
             var cellText = document.createTextNode(board.lights[i][j].effectTitle);
+            var cellText2 = document.createTextNode(board.lights[i][j].rgb);
             // set color of cell based on rgb hex code if light is on
             if (board.lights[i][j].on) {
                 cell.setAttribute("style", "background-color: " + board.lights[i][j].rgb);
             }
             cell.appendChild(cellText);
+            cell.appendChild(cellText2);
             row.appendChild(cell);
             }
             tableBody.appendChild(row);
