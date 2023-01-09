@@ -4,7 +4,7 @@
 
 <button onclick="calculator()">Calculate Now!</button>
 
-<p> The answer to your equation is: <p id="answer"> </p>
+<p> The answer to your equation is id="answer"> </p>
 
 
 
