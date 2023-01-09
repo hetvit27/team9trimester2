@@ -24,7 +24,7 @@ function isLeapYear(yearparam) {
     })
 }
 
-function getDay(){
+function getYear2(){
     let inputYear1 = document.getElementById("inputYear1").value;
     return inputYear1;
 }
@@ -54,5 +54,5 @@ function firstDayOfYear(year1param) {
 
 ### Check what the first day of the year is
 <input id="inputYear1" placeholder="Input a Year">
-<button onclick="firstDayOfYear(getDay())">Submit</button>
+<button onclick="firstDayOfYear(getYear2())">Submit</button>
 <p id="firstDayOfYearResult"></p>
