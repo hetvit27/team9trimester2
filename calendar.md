@@ -34,7 +34,7 @@ function firstDayOfYear(year1param) {
     result = document.getElementById("firstDayOfYerResult");
 
     // Fetch data from API
-    fetch('https://akhilcodingsociety.tk/api/calendar/firstDayOfYear/' + year1param)
+    fetch('https://hetvitrivedi.tk/api/calendar/firstDayOfYear/' + year1param)
     .then(response => response.json())
     .then(data => {
 
