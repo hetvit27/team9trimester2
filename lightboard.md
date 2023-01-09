@@ -111,7 +111,7 @@ function generateSize() {
 <div id="result">
 
 <br>
-<h3> Enter length and width for desired lightboard below </h3>
+<h3> Or, enter length and width for desired lightboard below </h3>
 
 <input id="inputWidth" placeholder="Enter a width">
 <input id="inputLength" placeholder="Enter a length">
