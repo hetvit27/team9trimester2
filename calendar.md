@@ -3,7 +3,7 @@
 <button onclick="isLeapYear()">Leap Year</button>
 <button onclick="firstDayOfYear()">First Day of Year</button>
 
-<p>Is Leap Year?</p>
+<p>Is Leap Year??</p>
 <p id="answer"></p>
 
 <p>First Day of the Year?</p>
