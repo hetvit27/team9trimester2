@@ -57,3 +57,10 @@ function generate() {
 
 <button onclick="generate()">Generate</button>
 <div id="result">
+
+### Enter length and width for desired lightboard below
+
+<input id="inputWidth" placeholder="Enter a width">
+<input id="inputLength" placeholder="Enter a length">
+<button onclick="generateSize()">Generate with size</button>
+<div id="result2">
