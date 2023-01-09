@@ -26,7 +26,7 @@ function isLeapYear(yearparam) {
 
 </script>
 
-### Check if a Year is a Leap Year
+### Is this year a leap year? Check now!
 <input id="inputYear" placeholder="Input a Year">
 <button onclick="isLeapYear(getYear())">Submit</button>
 <p id="isLeapYearResult"></p>

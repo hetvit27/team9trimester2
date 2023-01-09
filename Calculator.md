@@ -1,6 +1,6 @@
-<button onclick="calculator()">calculator</button>
+<button onclick="calculator()">Calculate Now!</button>
 
-<p>The result is:</p>
+<p> Your result is:</p>
 <p id="answer"></p>
 
 
@@ -10,7 +10,6 @@
   
   function calculator() {
     let expression = prompt("What problem would you like to solve?");
-
     const urlStart = "https://hetvitrivedi.tk/api/calculator/";
     const url = urlStart + expression;
 
@@ -26,7 +25,34 @@
       })
       
   }
+function getNumbers(){
+    let inputNumbers = document.getElementById("inputNumbers").value;
+    return inputNumbers;
+}
+
+function Calculator(solve) {
+    
+    result = document.getElementById("CalculatorResult");
+
+    // Fetch data from API
+    fetch('https://hetvitrivedi.tk/api/calculator/' + solve)
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+        result.innerHTML = "The answer to " + solve + " is " + data.Calculator;
+
+    })
+}
+
+
 </script>
+
+### Equation Solver
+<input id="inputNumbers" placeholder="Input your equation">
+<button onclick="Calculator(getNumbers())">Submit</button>
+<p id="CalculatorResult"></p>
 
 <style> 
 button {
