@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 ## Team 9 Reunion Project
 JEHB parody...KEBHI!
 
