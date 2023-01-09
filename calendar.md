@@ -3,6 +3,10 @@
 
 <script>
 
+function getYear(){
+    let inputYear = document.getElementById("inputYear").value;
+    return inputYear;
+}
 
 function isLeapYear(yearparam) {
     
