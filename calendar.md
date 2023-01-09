@@ -40,7 +40,7 @@ function firstDayOfYear(year1param) {
 
         console.log(data);
 
-        result.innerHTML = "First day of " + year1param + ":" + data.firstDayOfYear;
+        result.innerHTML = "First day of " + year1param + ": " + data.firstDayOfYear;
 
     })
 }
