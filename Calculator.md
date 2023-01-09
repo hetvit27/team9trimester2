@@ -4,7 +4,7 @@
 
 <button onclick="calculator()">Calculate Now!</button>
 
-<p> Your result is:</p>
+<p> The answer to your equation is:</p>
 <p id="answer"></p>
 
 
@@ -33,9 +33,9 @@
 
 <style> 
 button {
-	width: 150pc;
-	height: 50px;
-	font-size: 20px;
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
 	background-color: #43B4E5;
 	color: #fff;
 	border: none;
