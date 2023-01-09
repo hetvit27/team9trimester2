@@ -1,11 +1,10 @@
-# This is the frontend for FRQ 3. In FRQ 3, we used Array/ArrayList to compute mathematical expressions. If you click the button below, we will be able to solve your equation. We can perform addition, multiplication, division, powers, and square root functions. Try it out!
+#### This is the frontend for FRQ 3. In FRQ 3, we used Array/ArrayList to compute mathematical expressions. If you click the button below, we will be able to solve your equation. We can perform addition, multiplication, division, powers, and square root functions. Try it out!
 
 
 
 <button onclick="calculator()">Calculate Now!</button>
 
-<p> The answer to your equation is:</p>
-<p id="answer"></p>
+<p> The answer to your equation is: <p id="answer"> </p>
 
 
 
