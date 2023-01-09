@@ -2,7 +2,7 @@
 
 
 
-<button onclick="calculator()">Enter data</button>
+<button onclick="addPerson()">Enter data</button>
 
 <p> Person: <p id="answer"> </p>
 
@@ -11,7 +11,7 @@
 
 <script>
   
-  function calculator() {
+  function addPerson() {
     let personId = prompt("Enter a person id");
     const urlStart = "https://hetvitrivedi.tk/api/person/";
     const url = urlStart + personId;
