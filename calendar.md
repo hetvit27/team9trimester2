@@ -16,7 +16,7 @@
     let year = prompt("Year?");
 
     const urlStart = "https://hetvitrivedi.tk/api/calendar/";
-    const url = urlStart + /isLeapYear/ + year;
+    const url = urlStart + isLeapYear/ + year;
 
     console.log(url); 
 
@@ -35,7 +35,7 @@
     let year = prompt("Year?");
 
     const urlStart = "https://hetvitrivedi.tk/api/calendar/";
-    const url = urlStart + /firstDayOfYear/ + year;
+    const url = urlStart + firstDayOfYear/ + year;
 
     console.log(url); 
 
