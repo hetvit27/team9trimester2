@@ -24,18 +24,23 @@ function isLeapYear(yearparam) {
     })
 }
 
-function firstDayOfYear(yearparam) {
+function getDay(){
+    let inputYear1 = document.getElementById("inputYear1").value;
+    return inputYear1;
+}
+
+function firstDayOfYear(year1param) {
     
-    result1 = document.getElementById("firstDayOfYerResult");
+    result = document.getElementById("firstDayOfYerResult");
 
     // Fetch data from API
-    fetch('https://akhilcodingsociety.tk/api/calendar/firstDayOfYear/' + yearparam)
+    fetch('https://akhilcodingsociety.tk/api/calendar/firstDayOfYear/' + year1param)
     .then(response => response.json())
     .then(data => {
 
         console.log(data);
 
-        result1.innerHTML = "First day of " + yearparam + ":" + data.firstDayOfYear;
+        result.innerHTML = "First day of " + year1param + ":" + data.firstDayOfYear;
 
     })
 }
@@ -45,6 +50,10 @@ function firstDayOfYear(yearparam) {
 ### Is this year a leap year? Check now!
 <input id="inputYear" placeholder="Input a Year">
 <button onclick="isLeapYear(getYear())">Submit</button>
-<button onclick="firstDayOfYear(getYear())">Submit</button>
 <p id="isLeapYearResult"></p>
+
+
+### What is the first day of the year? Check now!
+<input id="inputYear1" placeholder="Input a Year">
+<button onclick="firstDayOfYear(getDay())">Submit</button>
 <p id="firstDayOfYearResult"></p>
