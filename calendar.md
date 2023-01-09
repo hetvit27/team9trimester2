@@ -1,4 +1,5 @@
 <button onclick="isLeapYear()">Leap Year</button>
+<button onclick="firstDayOfYear()">First Day of the Year</button>
 
 <p>The result is:</p>
 <p id="answer1"></p>
