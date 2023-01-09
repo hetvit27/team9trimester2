@@ -53,7 +53,7 @@ function generate() {
 
 function generateSize() {
     let width = document.getElementById("inputWidth").value;
-    let length = document.getElementById("inputLength").length;
+    let length = document.getElementById("inputLength").value;
 
     console.log("button2 clicked");
     fetch("https://hetvitrivedi.tk/api/create/" + width + "/" + length, {"method": "GET"})
