@@ -24,35 +24,34 @@
       
       })
       
-  }
-function getNumbers(){
-    let inputNumbers = document.getElementById("inputNumbers").value;
-    return inputNumbers;
+}
+function getEquation(){
+    let inputEquation = document.getElementById("inputEquation").value;
+    return inputEquation;
 }
 
-function Calculator(solve) {
+function Calculator1(equationparam) {
     
-    result = document.getElementById("CalculatorResult");
+    result = document.getElementById("EquationResult");
 
     // Fetch data from API
-    fetch('https://hetvitrivedi.tk/api/calculator/' + solve)
+    fetch('https://hetvitrivedi.tk/api/calculator/' + equationparam)
     .then(response => response.json())
     .then(data => {
 
         console.log(data);
 
-        result.innerHTML = "The answer to " + solve + " is " + data.Calculator;
+        result.innerHTML = "The answer to " + equationparam + " is: " + dataCalculator1;
 
     })
 }
 
-
 </script>
 
-### Equation Solver
-<input id="inputNumbers" placeholder="Input your equation">
-<button onclick="Calculator(getNumbers())">Submit</button>
-<p id="CalculatorResult"></p>
+### Enter your Equation!
+<input id="inputEquation" placeholder="Input an Equation!">
+<button onclick="Calculator1(getEquation())">Submit</button>
+<p id="EquationResult"></p>
 
 <style> 
 button {
