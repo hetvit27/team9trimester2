@@ -1,4 +1,4 @@
-## This is the frontend for FRQ 3. In FRQ 3, we used Array/ArrayList to compute mathematical expressions. If you click the button below, we will be able to solve your equation. We can perform addition, multiplication, division, powers, and square root functions. Try it out!
+# This is the frontend for FRQ 3. In FRQ 3, we used Array/ArrayList to compute mathematical expressions. If you click the button below, we will be able to solve your equation. We can perform addition, multiplication, division, powers, and square root functions. Try it out!
 
 
 
@@ -33,7 +33,7 @@
 
 <style> 
 button {
-	width: 100px;
+	width: 120px;
 	height: 40px;
 	font-size: 15px;
 	background-color: #43B4E5;
@@ -44,5 +44,6 @@ button {
 
 p {
   font-size: 20px;
+  color: #010000;
 }
 </style>
