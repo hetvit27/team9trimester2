@@ -29,7 +29,7 @@ function generate() {
             var row = document.createElement("tr");
             for (var j = 0; j < board.lights[i].length; j++) {
             var cell = document.createElement("td");
-            var cellText = document.createTextNode(board.lights[i][j].on);
+            var cellText = document.createTextNode(board.lights[i][j].effectTitle);
             // set color of cell based on rgb hex code if light is on
             if (board.lights[i][j].on) {
                 cell.setAttribute("style", "background-color: " + board.lights[i][j].rgb);
@@ -51,7 +51,7 @@ function generate() {
 
 </script>
 
-### Click to generate lightboard
+### Click to generate new lightboard!
 
 <button onclick="generate()">Generate</button>
 <div id="result">
