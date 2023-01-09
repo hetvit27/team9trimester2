@@ -65,4 +65,4 @@ function simulate(generation){
 </script>
 
 <button onclick="">Generate lightboard</button>
-<div id="result"></p>
+<div id="result">
