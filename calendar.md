@@ -31,7 +31,7 @@ function getDay(){
 
 function firstDayOfYear(year1param) {
     
-    result = document.getElementById("firstDayOfYerResult");
+    result = document.getElementById("firstDayOfYearResult");
 
     // Fetch data from API
     fetch('https://hetvitrivedi.tk/api/calendar/firstDayOfYear/' + year1param)
