@@ -53,7 +53,7 @@ function generate() {
 
 function generateSize() {
     let width = document.getElementById("inputWidth").value;
-    let length = document.getElementById("inputWidth").length;
+    let length = document.getElementById("inputLength").length;
 
     console.log("button2 clicked");
     fetch("https://hetvitrivedi.tk/api/create/" + width + "/" + length, {"method": "GET"})
@@ -110,7 +110,8 @@ function generateSize() {
 <button onclick="generate()">Generate</button>
 <div id="result">
 
-### Enter length and width for desired lightboard below
+<br>
+<h3> Enter length and width for desired lightboard below </h3>
 
 <input id="inputWidth" placeholder="Enter a width">
 <input id="inputLength" placeholder="Enter a length">
