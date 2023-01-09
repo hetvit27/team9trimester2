@@ -25,46 +25,20 @@
       })
       
 }
-function getEquation(){
-    let inputEquation = document.getElementById("inputEquation").value;
-    return inputEquation;
-}
-
-function Calculator1(equationparam) {
-    
-    result = document.getElementById("EquationResult");
-
-    // Fetch data from API
-    fetch('https://hetvitrivedi.tk/api/calculator/' + equationparam)
-    .then(response => response.json())
-    .then(data => {
-
-        console.log(data);
-
-        result.innerHTML = "The answer to " + equationparam + " is: " + dataCalculator1;
-
-    })
-}
-
 </script>
-
-### Enter your Equation!
-<input id="inputEquation" placeholder="Input an Equation!">
-<button onclick="Calculator1(getEquation())">Submit</button>
-<p id="EquationResult"></p>
 
 <style> 
 button {
-	width: 120px;
-	height: 45px;
-	font-size: 25px;
-	background-color: #ACA1E6;
+	width: 150pc;
+	height: 50px;
+	font-size: 20px;
+	background-color: #43B4E5;
 	color: #fff;
 	border: none;
 	cursor: pointer;
 }
 
 p {
-  font-size: 25px;
+  font-size: 20px;
 }
 </style>
