@@ -1,4 +1,4 @@
-<button onclick="calculator()">calculator</button>
+<button onclick="isLeapYear()">Leap Year</button>
 
 <p>The result is:</p>
 <p id="answer"></p>
@@ -8,11 +8,11 @@
 
 <script>
   
-  function calculator() {
-    let expression = prompt("What problem would you like to solve?");
+  function isLeapYear() {
+    let year = prompt("Year?");
 
-    const urlStart = "https://hetvitrivedi.tk/api/calculator/";
-    const url = urlStart + expression;
+    const urlStart = "https://hetvitrivedi.tk/api/calendar/";
+    const url = urlStart + year;
 
     console.log(url); 
 
