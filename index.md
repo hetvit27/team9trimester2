@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% include nav.html %}
+
 ## Team 9 Reunion Project
 JEHB parody...KEBHI!
 
