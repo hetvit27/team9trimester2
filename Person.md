@@ -52,8 +52,4 @@ button {
 	cursor: pointer;
 }
 
-p {
-  font-size: 20px;
-  color: #FFFFFF;
-}
 </style>

@@ -15,10 +15,6 @@ button {
 	cursor: pointer;
 }
 
-p {
-  font-size: 20px;
-  color: #FCFCFC;
-}
 </style>
 
 <script>
