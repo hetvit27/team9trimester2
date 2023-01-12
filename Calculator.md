@@ -13,6 +13,11 @@ button {
 	color: #fff;
 	border: none;
 	cursor: pointer;
+
+  expression {
+    font-size: 20px
+  }
+
 }
 
 </style>
