@@ -24,8 +24,8 @@
  <div class="button-section">
      <input type="submit" name="Sign Up" />
      <span class="privacy-policy">
-     <input type="checkbox" name="field7">You agree to our Terms and Policy. 
-     </span>
+     <input type="checkbox" name="terms"> 
+     </span> 
     </div>
 </form>
 </div>
