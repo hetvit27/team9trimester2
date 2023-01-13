@@ -52,7 +52,7 @@
 	margin-bottom: 15px;
 }
 .form-style-10 h1{
-	background: #2A88AD;
+	background: #257cb9;
 	padding: 20px 30px 15px 30px;
 	margin: -30px -30px 30px -30px;
 	border-radius: 10px 10px 0 0;
@@ -105,11 +105,11 @@
 
 .form-style-10 .section{
 	font: normal 20px 'Bitter', serif;
-	color: #2A88AD;
+	color: #257cb9;
 	margin-bottom: 5px;
 }
 .form-style-10 .section span {
-	background: #2A88AD;
+	background: #257cb9;
 	padding: 5px 10px 5px 10px;
 	position: absolute;
 	border-radius: 50%;
@@ -123,7 +123,7 @@
 }
 .form-style-10 input[type="button"], 
 .form-style-10 input[type="submit"]{
-	background: #2A88AD;
+	background: #257cb9;
 	padding: 8px 20px 8px 20px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -139,7 +139,7 @@
 }
 .form-style-10 input[type="button"]:hover, 
 .form-style-10 input[type="submit"]:hover{
-	background: #2A6881;
+	background: #257cb9;
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
