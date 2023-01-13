@@ -12,7 +12,7 @@
  <div class="section"><span>2</span>Email & Phone</div>
 <div class="inner-wrap">
         <label>Email Address <input type="email" name="email" id="email" /></label>
-        <label>Phone Number <div> <input type="tel" name="phone" id="phone"
+        <label>Phone Number <input type="tel" name="phone" id="phone"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="999-999-9999" /></label>
     </div>
