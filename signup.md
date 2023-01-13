@@ -18,8 +18,8 @@
 
 <div class="section"><span>3</span>Passwords</div>
         <div class="inner-wrap">
-        <label>Password <input type="password" name="password" id="password" required> /></label>
-        <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> /></label>
+        <label>Password <input type="password" name="password" id="password" required> </label>
+        <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
     </div>
  <div class="button-section">
      <input type="submit" name="Sign Up" />
