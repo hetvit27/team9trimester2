@@ -3,7 +3,7 @@
 <div class="sign_up">
 <h1>Sign Up Form<span>Sign up with the form below</span></h1>
 <form>
-    <div class="section"><span>1</span>First Name & User ID</div>
+    <div class="section"><span>1</span>First Name, User ID, & DOB</div>
     <div class="inner-wrap">
         <label>Full Name <input type="text" name="fullname" id="fullname" /></label>
         <label>User ID <input type="text" name="userid" id="userid" /></label>  
@@ -16,7 +16,7 @@
         <label>Phone Number <input type="text" name="phone" id="phone"/></label>
     </div>
 
-<div class="section"><span>3</span>Passwords</div>
+<div class="section"><span>3</span>Password</div>
         <div class="inner-wrap">
         <label>Password <input type="password" name="password" id="password" required> </label>
         <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
