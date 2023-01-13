@@ -1,6 +1,6 @@
 
 
-<div class="form-style-10">
+<div class="sign_up">
 <h1>Sign Up Form<span>Sign up with the form below</span></h1>
 <form>
     <div class="section"><span>1</span>First Name & User ID</div>
@@ -34,7 +34,7 @@
 <style> 
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 <style type="text/css">
-.form-style-10{
+.sign_up{
 	width:450px;
 	padding:30px;
 	margin:40px auto;
@@ -46,13 +46,13 @@
 	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
-.form-style-10 .inner-wrap{
+.sign_up .inner-wrap{
 	padding: 30px;
 	background: #F8F8F8;
 	border-radius: 6px;
 	margin-bottom: 15px;
 }
-.form-style-10 h1{
+.sign_up h1{
 	background: #257cb9;
 	padding: 20px 30px 15px 30px;
 	margin: -30px -30px 30px -30px;
@@ -67,28 +67,28 @@
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
 	border: 1px solid #257C9E;
 }
-.form-style-10 h1 > span{
+.sign_up h1 > span{
 	display: block;
 	margin-top: 2px;
 	font: 13px Arial, Helvetica, sans-serif;
 }
-.form-style-10 label{
+.sign_up label{
 	display: block;
 	font: 13px Arial, Helvetica, sans-serif;
 	color: #888;
 	margin-bottom: 15px;
 }
-.form-style-10 input[type="text"],
-.form-style-10 input[type="date"],
-.form-style-10 input[type="datetime"],
-.form-style-10 input[type="email"],
-.form-style-10 input[type="number"],
-.form-style-10 input[type="search"],
-.form-style-10 input[type="time"],
-.form-style-10 input[type="url"],
-.form-style-10 input[type="password"],
-.form-style-10 textarea,
-.form-style-10 select {
+.sign_up input[type="text"],
+.sign_up input[type="date"],
+.sign_up input[type="datetime"],
+.sign_up input[type="email"],
+.sign_up input[type="number"],
+.sign_up input[type="search"],
+.sign_up input[type="time"],
+.sign_up input[type="url"],
+.sign_up input[type="password"],
+.sign_up textarea,
+.sign_up select {
 	display: block;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -104,12 +104,12 @@
 	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-.form-style-10 .section{
+.sign_up .section{
 	font: normal 20px 'Bitter', serif;
 	color: #257cb9;
 	margin-bottom: 5px;
 }
-.form-style-10 .section span {
+.sign_up .section span {
 	background: #257cb9;
 	padding: 5px 10px 5px 10px;
 	position: absolute;
@@ -122,8 +122,8 @@
 	color: #fff;
 	margin-top: -3px;
 }
-.form-style-10 input[type="button"], 
-.form-style-10 input[type="submit"]{
+.sign_up input[type="button"], 
+.sign_up input[type="submit"]{
 	background: #257cb9;
 	padding: 8px 20px 8px 20px;
 	border-radius: 5px;
@@ -138,14 +138,14 @@
 	border: 1px solid #257C9E;
 	font-size: 15px;
 }
-.form-style-10 input[type="button"]:hover, 
-.form-style-10 input[type="submit"]:hover{
+.sign_up input[type="button"]:hover, 
+.sign_up input[type="submit"]:hover{
 	background: #257cb9;
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
-.form-style-10 .privacy-policy{
+.sign_up .privacy-policy{
 	float: right;
 	width: 250px;
 	font: 12px Arial, Helvetica, sans-serif;
