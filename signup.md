@@ -6,7 +6,8 @@
     <div class="section"><span>1</span>First Name & User ID</div>
     <div class="inner-wrap">
         <label>Full Name <input type="text" name="fullname" id="fullname" /></label>
-        <label>User ID <input type="text" name="userid" id="userid" /></label>
+        <label>User ID <input type="text" name="userid" id="userid" /></label>  
+		<label>Birthday <input type="date" name="dob" id="dob" /></label>    
     </div>
 
  <div class="section"><span>2</span>Email & Phone</div>
