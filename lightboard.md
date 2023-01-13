@@ -1,4 +1,4 @@
-## This is the frontened for FRQ4
+## This is the frontend for FRQ4
 
 <script>
 
