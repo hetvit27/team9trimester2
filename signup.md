@@ -3,7 +3,7 @@
 <div class="form-style-10">
 <h1>Sign Up Form<span>Sign up with the form below</span></h1>
 <form>
-    <div class="section"><span>1</span>First Name & Address</div>
+    <div class="section"><span>1</span>First Name & User ID</div>
     <div class="inner-wrap">
         <label>Full Name <input type="text" name="fullname" id="fullname" /></label>
         <label>User ID <input type="text" name="userid" id="userid" /></label>
@@ -12,9 +12,9 @@
  <div class="section"><span>2</span>Email & Phone</div>
 <div class="inner-wrap">
         <label>Email Address <input type="email" name="email" id="email" /></label>
-        <label>Phone Number <input type="tel" name="phone" id="phone"
+        <label>Phone Number <div> <input type="tel" name="phone" id="phone"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            placeholder="999-999-9999"></label>
+            placeholder="999-999-9999" /></label>
     </div>
 
 <div class="section"><span>3</span>Passwords</div>
