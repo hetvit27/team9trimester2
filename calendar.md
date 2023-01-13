@@ -1,4 +1,4 @@
-## FRQ 1
+## Frontend for FRQ 1
 <p id="test"></p>
 
 <script>
