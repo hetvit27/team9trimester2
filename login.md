@@ -1,7 +1,7 @@
 
 
 <div class="login">
-<h1>Login<span>Don't have an account? Click here to sign up.</span></h1>
+<h1>Login<span>Don't have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/signup">signup.</a>.</span></h1>
 <form>
     <div class="section"><span>1</span>Email and Password</div>
     <div class="inner-wrap">
