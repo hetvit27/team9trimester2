@@ -1,28 +1,17 @@
 
 
-<div class="sign_up">
-<h1>Sign Up Form<span>Already have an account? Click here to <a href="https://www.w3schools.com/">login</a>.</span></h1>
+<div class="login">
+<h1>Login<span>Don't have an account? Click here to sign up.</span></h1>
 <form>
-    <div class="section"><span>1</span>First Name, User ID, & DOB</div>
+    <div class="section"><span>1</span>Email and Password</div>
     <div class="inner-wrap">
-        <label>Full Name <input type="text" name="fullname" id="fullname" /></label>
-        <label>User ID <input type="text" name="userid" id="userid" /></label>  
-		<label>Birthday <input type="date" name="dob" id="dob" /></label>    
+        <label>Email <input type="email" name="email" id="email" /></label>
+        <label>Password <input type="password" name="password" id="password" required> /></label>     
     </div>
 
- <div class="section"><span>2</span>Email & Phone</div>
-<div class="inner-wrap">
-        <label>Email Address <input type="email" name="email" id="email" /></label>
-        <label>Phone Number <input type="text" name="phone" id="phone"/></label>
-    </div>
-
-<div class="section"><span>3</span>Password</div>
-        <div class="inner-wrap">
-        <label>Password <input type="password" name="password" id="password" required> </label>
-        <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
     </div>
  <div class="button-section">
-     <input type="submit" name="Sign Up" />
+     <input type="submit" name="Login" />
      <span class="privacy-policy">
      </span> 
     </div>
@@ -33,7 +22,7 @@
 <style> 
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 <style type="text/css">
-.sign_up{
+.login {
 	width:450px;
 	padding:30px;
 	margin:40px auto;
@@ -45,13 +34,13 @@
 	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 }
-.sign_up .inner-wrap{
+.login .inner-wrap{
 	padding: 30px;
 	background: #F8F8F8;
 	border-radius: 6px;
 	margin-bottom: 15px;
 }
-.sign_up h1{
+.login h1{
 	background: #257cb9;
 	padding: 20px 30px 15px 30px;
 	margin: -30px -30px 30px -30px;
@@ -66,28 +55,28 @@
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
 	border: 1px solid #257C9E;
 }
-.sign_up h1 > span{
+.login h1 > span{
 	display: block;
 	margin-top: 2px;
 	font: 13px Arial, Helvetica, sans-serif;
 }
-.sign_up label{
+.login label{
 	display: block;
 	font: 13px Arial, Helvetica, sans-serif;
 	color: #888;
 	margin-bottom: 15px;
 }
-.sign_up input[type="text"],
-.sign_up input[type="date"],
-.sign_up input[type="datetime"],
-.sign_up input[type="email"],
-.sign_up input[type="number"],
-.sign_up input[type="search"],
-.sign_up input[type="time"],
-.sign_up input[type="url"],
-.sign_up input[type="password"],
-.sign_up textarea,
-.sign_up select {
+.login input[type="text"],
+.login input[type="date"],
+.login input[type="datetime"],
+.login input[type="email"],
+.login input[type="number"],
+.login input[type="search"],
+.login input[type="time"],
+.login input[type="url"],
+.login input[type="password"],
+.login textarea,
+.login select {
 	display: block;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -103,12 +92,12 @@
 	-webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
-.sign_up .section{
+.login .section{
 	font: normal 20px 'Bitter', serif;
 	color: #257cb9;
 	margin-bottom: 5px;
 }
-.sign_up .section span {
+.login .section span {
 	background: #257cb9;
 	padding: 5px 10px 5px 10px;
 	position: absolute;
@@ -121,8 +110,8 @@
 	color: #fff;
 	margin-top: -3px;
 }
-.sign_up input[type="button"], 
-.sign_up input[type="submit"]{
+.login input[type="button"], 
+.login input[type="submit"]{
 	background: #257cb9;
 	padding: 8px 20px 8px 20px;
 	border-radius: 5px;
@@ -137,14 +126,14 @@
 	border: 1px solid #257C9E;
 	font-size: 15px;
 }
-.sign_up input[type="button"]:hover, 
-.sign_up input[type="submit"]:hover{
+.login input[type="button"]:hover, 
+.login input[type="submit"]:hover{
 	background: #257cb9;
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
 }
-.sign_up .privacy-policy{
+.login .privacy-policy{
 	float: right;
 	width: 250px;
 	font: 12px Arial, Helvetica, sans-serif;
