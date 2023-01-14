@@ -1,7 +1,7 @@
 
 
 <div class="sign_up">
-<h1>Sign Up Form<span>Sign up with the form below</span></h1>
+<h1>Sign Up Form<span>Already have an account? Click here to login.</span></h1>
 <form>
     <div class="section"><span>1</span>First Name, User ID, & DOB</div>
     <div class="inner-wrap">
