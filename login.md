@@ -6,10 +6,9 @@
     <div class="section"><span>1</span>Email and Password</div>
     <div class="inner-wrap">
         <label>Email <input type="email" name="email" id="email" /></label>
-        <label>Password <input type="password" name="password" id="password" required> /></label>     
+        <label>Password <input type="password" name="password" id="password" required> </label>     
     </div>
 
-    </div>
  <div class="button-section">
      <input type="submit" name="Login" />
      <span class="privacy-policy">
@@ -141,4 +140,17 @@
 	margin-top: 10px;
 	text-align: right;
 }
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+a:active {
+  color: black;
+}
+
 </style>
