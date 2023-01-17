@@ -1,5 +1,5 @@
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
 ## Equations
@@ -223,8 +223,8 @@ Features:
 	function search() {
 		console.log("searching");
 		var $rows = $('#equations tr');
-		console.log($rows);
 		$search = $('#search').val().toLowerCase();
+		console.log($search);
 		$rows.hide();
 		$rows.filter(function() {
 			return $(this).text().toLowerCase().indexOf($search) !== -1;
