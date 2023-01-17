@@ -1,3 +1,7 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>>
+</head>
+
 ## Equations
 
 <h3>Your saved physics equations</h3>
@@ -13,6 +17,7 @@ Features:
 <!-- Create inputs for search and filter -->
 
 <input id="search" placeholder="Search">
+<button onclick="search()">Search</button>
 <select id="filter">
 	<option>Filter by...</option>
 	<option>Test tag</option>
@@ -54,3 +59,175 @@ Features:
 <input id="updatecbtopic" placeholder="CB Topic">
 <input id="updatetags" placeholder="Tags">
 <button onclick="">Update</button>
+
+<!-- Create script to handle CRUD -->
+
+<script>
+	// Create
+	function create() {
+		// Get inputs
+		var equation = document.getElementById("equation").value;
+		var cbunit = document.getElementById("cbunit").value;
+		var cbtopic = document.getElementById("cbtopic").value;
+		var tags = document.getElementById("tags").value;
+		// Create JSON object
+		var data = {
+			"equation": equation,
+			"cbunit": cbunit,
+			"cbtopic": cbtopic,
+			"tags": tags
+		};
+		// Send POST request
+		fetch("/equations", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(data)
+		})
+		// Check for response errors
+		.then(response => {
+			if (response.status !== 200) {
+				error("POST API response failure: " + response.status);
+				return;  // api failure
+			}
+			// Valid response will have JSON data
+			response.json().then(data => {
+				console.log(data);
+				// Clear previous results
+				document.getElementById("result").innerHTML = "";
+				// Display results
+				var result = document.createElement("p");
+				result.innerHTML = "Equation created: " + data.equation;
+				document.getElementById("result").appendChild(result);
+			})
+			// Catch fetch errors
+			.catch(err => {
+				error(err + " " );
+			});
+		});
+	}
+	// Read
+	function read() {
+		// Send GET request
+		fetch("/equations")
+		// Check for response errors
+		.then(response => {
+			if (response.status !== 200) {
+				error("GET API response failure: " + response.status);
+				return;  // api failure
+			}
+			// Valid response will have JSON data
+			response.json().then(data => {
+				console.log(data);
+				// Clear previous results
+				document.getElementById("result").innerHTML = "";
+				// Display results
+				var result = document.createElement("p");
+				result.innerHTML = "Equations: " + data.equations;
+				document.getElementById("result").appendChild(result);
+			})
+			// Catch fetch errors
+			.catch(err => {
+				error(err + " " );
+			});
+		});
+	}
+	// Update
+	function update() {
+		// Get inputs
+		var id = document.getElementById("updateid").value;
+		var equation = document.getElementById("updateequation").value;
+		var cbunit = document.getElementById("updatecbunit").value;
+		var cbtopic = document.getElementById("updatecbtopic").value;
+		var tags = document.getElementById("updatetags").value;
+		// Create JSON object
+		var data = {
+			"equation": equation,
+			"cbunit": cbunit,
+			"cbtopic": cbtopic,
+			"tags": tags
+		};
+		// Send PUT request
+		fetch("/equations/" + id, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(data)
+		})
+		// Check for response errors
+		.then(response => {
+			if (response.status !== 200) {
+				error("PUT API response failure: " + response.status);
+				return;  // api failure
+			}
+			// Valid response will have JSON data
+			response.json().then(data => {
+				console.log(data);
+				// Clear previous results
+				document.getElementById("result").innerHTML = "";
+				// Display results
+				var result = document.createElement("p");
+				result.innerHTML = "Equation updated: " + data.equation;
+				document.getElementById("result").appendChild(result);
+			})
+			// Catch fetch errors
+			.catch(err => {
+				error(err + " " );
+			});
+		});
+	}
+	// Delete
+	function delete() {
+		// Get inputs
+		var id = document.getElementById("deleteid").value;
+		// Send DELETE request
+		fetch("/equations/" + id, {
+			method: "DELETE"
+		})
+		// Check for response errors
+		.then(response => {
+			if (response.status !== 200) {
+				error("DELETE API response failure: " + response.status);
+				return;  // api failure
+			}
+			// Valid response will have JSON data
+			response.json().then(data => {
+				console.log(data);
+				// Clear previous results
+				document.getElementById("result").innerHTML = "";
+				// Display results
+				var result = document.createElement("p");
+				result.innerHTML = "Equation deleted: " + data.equation;
+				document.getElementById("result").appendChild(result);
+			})
+			// Catch fetch errors
+			.catch(err => {
+				error(err + " " );
+			});
+		});
+	}
+	// Error
+	function error(message) {
+		console.log(message);
+		// Clear previous results
+		document.getElementById("result").innerHTML = "";
+		// Display results
+		var result = document.createElement("p");
+		result.innerHTML = "Error: " + message;
+		document.getElementById("result").appendChild(result);
+	}
+
+	// Search button
+	function search() {
+		console.log("searching");
+		var $rows = $('#equations tr');
+		console.log($rows);
+		$search = $('#search').val().toLowerCase();
+		$rows.hide();
+		$rows.filter(function() {
+			return $(this).text().toLowerCase().indexOf($search) !== -1;
+		}).show();
+	}
+</script>
