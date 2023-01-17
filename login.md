@@ -1,7 +1,7 @@
 
 
 <div class="login">
-<h1>Login<span>Don't have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/signup">signup.</a>.</span></h1>
+<h1>Login<span>Don't have an account? Click here to <a href="#" class="tlink"="https://hetvit27.github.io/team9trimester2/signup">signup.</a>.</span></h1>
 <form>
     <div class="section"><span>1</span>Email and Password</div>
     <div class="inner-wrap">
@@ -140,17 +140,8 @@
 	margin-top: 10px;
 	text-align: right;
 }
-a:link {
-  color: black;
-}
-a:visited {
-  color: black;
-}
-a:hover {
-  color: black;
-}
-a:active {
-  color: black;
-}
 
+.tlink {
+	color: black;
+}
 </style>
