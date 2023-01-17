@@ -1,7 +1,7 @@
 
 
 <div class="sign_up">
-<h1>Sign Up Form<span>Already have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login">login</a>.</span></h1>
+<h1>Sign Up Form<span>Already have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login" class="blacktext">login</a>.</span></h1>
 <form>
     <div class="section"><span>1</span>First Name, User ID, & DOB</div>
     <div class="inner-wrap">
