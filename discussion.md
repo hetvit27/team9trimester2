@@ -21,6 +21,8 @@ Features:
 
 <input id="question" placeholder="Question">
 <button onclick="post()">Post</button>
+<input type = "checkbox"> anonymous post
+
 
 <!-- Create table to display question posts -->
 
