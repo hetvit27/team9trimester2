@@ -2,7 +2,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Discussion Qs
+## Find a Tutor
 
 <h3> Search for a tutor</h3>
 
