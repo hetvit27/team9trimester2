@@ -44,4 +44,11 @@ Features:
 				<td>1.1 Newton's Laws</td>
 				<td>physics, newton's laws, force, mass, acceleration</td>
 		</tr>
+        <tr>
+				<td>1</td>
+				<td>Copenhagen is located 780 km North and 810 km East of Paris. A flight from Paris to Copenhagen takes two hours. Typically the wind blows from East to West over Europe, but the speed varies. For one particular flight, the wind speed was 165 km/h. What is the magnitude of vpa, the plane's velocity with respect to the air?</td>
+				<td>1</td>
+				<td>1.1 Newton's Laws</td>
+				<td>physics, newton's laws, force, mass, acceleration</td>
+		</tr>
 </table>
