@@ -9,6 +9,7 @@
 Features:
 - Create, edit, and delete questions
 - Save questions to a database
+- Filter questions by unit
 - Different users may respond to questions
 - Users can post anonymously
 - View all questions in a table
