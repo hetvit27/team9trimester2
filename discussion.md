@@ -2,7 +2,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Discussion Qs
+## Question Discussion Board
 
 <h3>Post your questions here and have fellow students answer them</h3>
 
@@ -18,8 +18,13 @@ Features:
 
 <input id="search" placeholder="Search">
 <button onclick="search()">Search</button>
+<select id="filter">
+	<option>Filter by...</option>
+	<option>unit</option>
+</select>
 
 <input id="question" placeholder="Question">
+<input id="unit" placeholder="Unit">
 <button onclick="post()">Post</button>
 <input type = "checkbox"> anonymous post
 
@@ -29,11 +34,13 @@ Features:
 <table id="equationsTable" border="1" style="border-collapse: collapse;">
 		<tr>
 				<th>User</th>
+                <th>Unit</th>
 				<th>Question</th>
 				<th>Reply</th>
 		</tr>
 		<tr>
 				<td>physics student</td>
+                <td>rube goldberg</td>
 				<td>How do I convert Potential Energy to Kinetic Energy in my Rube Goldberg Machine?</td>
 				<td>
                 <input id="answer" placeholder="Answer">
