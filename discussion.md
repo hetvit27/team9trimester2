@@ -2,17 +2,17 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Equations
+## Discussion Qs
 
-<h3>Your saved physics equations</h3>
+<h3>Post your questions here and have fellow students answer them</h3>
 
 Features:
-- Create, edit, and delete equations
-- Save equations to a database
-- View equations in a table
-- Add tags for CB unit and topic
-- Search equations
-- Filter by tags
+- Create, edit, and delete questions
+- Save questions to a database
+- Different users may respond to questions
+- Users can post anonymously
+- View all questions in a table
+- Search questions
 
 <!-- Create inputs for search and question -->
 
