@@ -24,11 +24,12 @@ Features:
 
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
+<button onclick="save()">Save</button>
 
 
 <!-- Create table to display question posts -->
 
-<table id="equationsTable" border="1" style="border-collapse: collapse;">
+<table id="practiceTable" border="1" style="border-collapse: collapse;">
 		<tr>
 				<th>Id</th>
 				<th>Problem</th>
