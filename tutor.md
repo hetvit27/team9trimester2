@@ -32,6 +32,7 @@ Features:
                 <th>Past Reviews</th>
                 <th>Meeting Preference</th>
                 <th> Submit a Review</th>
+                <th> Request this Tutor </th>
 		</tr>
 		<tr>
 				<td>Hetvi Trivedi</td>
@@ -42,6 +43,9 @@ Features:
 				<td>
                 <input id="review" placeholder="Review">
                 <button onclick="reply()">Submit</button>
+                </td>
+                <td>
+                <button onclick="request()">Request</button>
                 </td>
 		</tr>
 </table>
