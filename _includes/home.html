@@ -59,7 +59,7 @@
 
 
 <style>
-    ul {
+ul {
  margin: 0;
  padding: 0;
  list-style: none;
@@ -87,16 +87,38 @@ ul {
  padding: 0;
  list-style: none;
  width: 150px;
- border-bottom: 0px solid #ccc;
+ border-bottom: 1px solid #ccc;
  }
 
 ul li a {
  display: block;
  text-decoration: none;
  color: #777;
- background: #121212;
+ background: black;
  padding: 5px;
- border-right: 1px solid white;
+ border: 1px solid #ccc;
  border-bottom: 0;
  }
 </style>
+
+
+<script>
+    startList = function() {
+if (document.all&&document;.getElementById) {
+navRoot = document.getElementById("nav");
+for (i=0; i<navroot.childnodes.length; i++)="" {="" node="navRoot.childNodes<i">;
+if (node.nodeName=="LI") {
+node.onmouseover=function() {
+this.className+=" over";
+  }
+  node.onmouseout=function() {
+  this.className=this.className.replace»
+ (" over", "");
+   }
+   }
+  }
+ }
+}
+window.onload=startList;
+</navroot.childnodes.length;>
+</script>
