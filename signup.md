@@ -13,13 +13,13 @@
  <div class="section"><span>2</span>Email & Phone</div>
 <div class="inner-wrap">
         <label>Email Address <input type="email" name="email" id="email" /></label>
-        <label>Phone Number <input type="text" name="phone" id="phone"/></label>
+        <label>Password <input type="password" name="password" id="password" required> </label>
+        <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
     </div>
 
 <div class="section"><span>3</span>Password</div>
         <div class="inner-wrap">
-        <label>Password <input type="password" name="password" id="password" required> </label>
-        <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
+        <label>School/Affiliation <input type="text" name="school" id="school"> </label>
     </div>
  <div class="button-section">
      <input type="submit" name="Sign Up" />
