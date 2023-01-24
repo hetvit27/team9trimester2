@@ -94,7 +94,7 @@ layout: default
  
         .secondhalf img {
             width: 70%;
-            border: 4px solid #86c3f1;
+            border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
             margin: auto;
