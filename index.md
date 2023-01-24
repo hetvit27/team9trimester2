@@ -49,11 +49,11 @@ layout: default
  
         .nav-list li a {
             text-decoration: none;
-            color: rgb(255, 255, 255);
+            color: #e2f2d1;
         }
  
         .nav-list li a:hover {
-            color: rgb(255, 253, 253);
+            color: #e2f2d1;
         }
  
         .rightnav {
@@ -62,12 +62,12 @@ layout: default
         }
  
         .firstsection {
-            background-color: #86c3f1;  
+            background-color:  #e2f2d1;  
             height: 400px;
         }
  
         .secondsection {
-            background-color: #86c3f1; 
+            background-color:  #e2f2d1; 
             height: 400px;
         }
  
