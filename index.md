@@ -20,7 +20,7 @@ layout: default
         }
  
         .background {
-            background: #86c3f1;
+            background: #e2f2d1;
             background-blend-mode: darken;
             background-size: cover;
         }
