@@ -113,7 +113,7 @@ layout: default
         .btn {
             padding: 8px 20px;
             margin: 7px 0;
-            border: 2px solid white;
+            border: 2px #257cb9;
             border-radius: 8px;
             background: none;
             color: white;
@@ -144,7 +144,7 @@ layout: default
  
         .thumbnail img {
             width: 250px;
-            border: 2px solid white;
+            border: 2px #257cb9;
             border-radius: 26px;
             margin-top: 19px;
         }
@@ -159,7 +159,7 @@ layout: default
             font-family: 'Ubuntu', sans-serif;
             display: flex;
             justify-content: center;
-            color: white;
+            color: #257cb9;
         }
     </style>
 </head>
