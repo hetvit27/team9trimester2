@@ -19,7 +19,7 @@
 <div class="section"><span>3</span>Account Info</div>
         <div class="inner-wrap">
         <label>School/Affiliation <input type="text" name="school" id="school"> </label>
-	<label for="role-choice">Select your role:</label>
+	<label for="role-choice">Desired Account</label>
 		<select id="role-choice" name="role-choice">
   			<option value="admin">Student</option>
   			<option value="user">Tutor</option>
