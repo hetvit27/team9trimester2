@@ -19,13 +19,12 @@
 <div class="section"><span>3</span>Account Info</div>
         <div class="inner-wrap">
         <label>School/Affiliation <input type="text" name="school" id="school"> </label>
-    </div>
 	<label for="role-choice">Select your role:</label>
-<select id="role-choice" name="role-choice">
-  <option value="admin">Admin</option>
-  <option value="user">User</option>
-  <option value="guest">Guest</option>
+		<select id="role-choice" name="role-choice">
+  			<option value="admin">Student</option>
+  			<option value="user">Tutor</option>
 </select>
+    </div>
  <div class="button-section">
      <input type="submit" name="Sign Up" />
      <span class="privacy-policy">
