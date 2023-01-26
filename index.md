@@ -163,7 +163,9 @@ layout: default
         }
     </style>
 </head>
- 
+
+<img title="Homepage" alt="Alt text" src="website.png">
+
 <body>
     <section class="firstsection">
         <div class="box-main">
