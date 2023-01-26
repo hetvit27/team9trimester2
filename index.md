@@ -165,7 +165,8 @@ layout: default
         }
         .title {
         text-align: center;
-        justify-content: center;
+        justify-content: center
+        margin-left: 100px;
 
 }
     </style>
