@@ -104,7 +104,8 @@ layout: default
             font-family: 'Piazzolla', serif;
             font-weight: bold;
             font-size: 35px;
-            margin-left: auto 
+            margin-left: auto;
+            text-align: center;
         }
  
         .text-small {
