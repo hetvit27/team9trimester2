@@ -61,6 +61,12 @@ th {
 
 
 .wrapper {
-  width:1200px;
+  width:1200px;   // Original width: 860
   margin:0 auto;
+}
+
+section {
+  width:1000px; // Original width: 500
+  float:right;
+  padding-bottom:50px;
 }
