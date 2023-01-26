@@ -111,7 +111,7 @@ layout: default
         }
  
         .btn {
-            background-color: #04AA6D; 
+            background-color: #650f84; 
             border: 1px solid green; 
             color: white; 
             padding: 10px 24px; 
@@ -122,7 +122,7 @@ layout: default
  
         .btn-sm {
             padding: 6px 10px;
-            vertical-align: middle;
+            vertical-align: left;
         }
  
         .section {
@@ -131,7 +131,7 @@ layout: default
             align-items: center;
             justify-content: center;
             max-width: 90%;
-            margin-left: auto;
+            margin-left: -50px;
         }
  
         .section-Left {
