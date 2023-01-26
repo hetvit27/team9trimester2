@@ -111,13 +111,13 @@ layout: default
         }
  
         .btn {
-            padding: 8px 20px;
-            margin-left: 7px 0;
-            border: 2px solid white;
-            border-radius: 8px;
-            background: #257cb9;
-            color: white;
-            cursor: pointer;
+            background-color: #04AA6D; 
+            border: 1px solid green; 
+            color: white; 
+            padding: 10px 24px; 
+            cursor: pointer; 
+            width: 50%; 
+            display: block; 
         }
  
         .btn-sm {
