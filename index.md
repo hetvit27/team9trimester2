@@ -77,7 +77,7 @@ layout: default
             align-items: center;
             color: black;
             max-width: 80%;
-            margin-left: -90px;
+            margin-left: auto;
             height: 80%;
         }
  
@@ -97,7 +97,7 @@ layout: default
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin-left: -90px;
+            margin-left: auto;
         }
  
         .text-big {
