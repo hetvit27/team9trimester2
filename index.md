@@ -58,7 +58,7 @@ layout: default
  
         .rightnav {
             width: 30%;
-            text-align: right;
+            text-align: left;
         }
  
         .firstsection {
@@ -77,7 +77,7 @@ layout: default
             align-items: center;
             color: black;
             max-width: 80%;
-            margin: auto;
+            margin-left: -90px;
             height: 80%;
         }
  
@@ -97,7 +97,7 @@ layout: default
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin: auto;
+            margin-left: -90px;
         }
  
         .text-big {
