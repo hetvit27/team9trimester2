@@ -165,10 +165,11 @@ layout: default
         }
         .title {
         text-align: center;
+        justify-content: center;
+
 }
     </style>
 </head>
-
 
 <body>
     <section class="firstsection">
