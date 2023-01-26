@@ -164,9 +164,9 @@ layout: default
             color: white;
         }
         .title {
-        text-align: center;
         justify-content: center
         margin-left: 100px;
+
 
 }
     </style>
@@ -176,7 +176,7 @@ layout: default
     <section class="firstsection">
         <div class="box-main">
             <div class="firstHalf">
-                <h1 class="title">Let's learn about centering text</h1>
+                <h1 class="title">Let's learn about centering text</h1> 
                 <h1 class="text-big" id="web"> AP Physics C Units </h1>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
