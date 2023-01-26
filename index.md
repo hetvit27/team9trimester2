@@ -164,7 +164,7 @@ layout: default
     </style>
 </head>
 
-<img title="Homepage" alt="Alt text" src="website.png">
+<img title="Homepage Image" alt="Alt text" src="website.png" width="100">
 
 <body>
     <section class="firstsection">
