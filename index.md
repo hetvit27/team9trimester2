@@ -112,7 +112,7 @@ layout: default
  
         .btn {
             padding: 8px 20px;
-            margin: 7px 0;
+            margin-left: 7px 0;
             border: 2px solid white;
             border-radius: 8px;
             background: #257cb9;
@@ -131,7 +131,7 @@ layout: default
             align-items: center;
             justify-content: center;
             max-width: 90%;
-            margin: auto;
+            margin-left: auto;
         }
  
         .section-Left {
@@ -164,7 +164,7 @@ layout: default
     </style>
 </head>
 
-<img title="Homepage Image" alt="Alt text" src="website.png" width="100">
+
 
 <body>
     <section class="firstsection">
@@ -180,4 +180,14 @@ layout: default
         </div>
     </section>
 </body>
+
+<img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 </html>
