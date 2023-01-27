@@ -78,11 +78,12 @@ layout: default
             color: black;
             width: 100%;
             margin-left: -90px;
-            height: 80%;
+            height: 120%;
         }
  
         .firsthalf {
             width: 50%;
+            height: 50%
             flex-direction: column;
             justify-content: center;
         }
@@ -123,7 +124,7 @@ layout: default
             padding: 10px 24px; 
             cursor: pointer; 
             width: 70%; 
-            height: 70%
+            height: 100%
             display: block; 
             margin-left: auto;
             text-align: center;
