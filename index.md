@@ -97,11 +97,15 @@ layout: default
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin-left: -90px;
+            margin-left: 100px;
+            position: relative;
+            top: -180px;
+
         }
  
         .text-big {
             font-family: 'Piazzolla', serif;
+            white-space: nowrap;
             font-weight: bold;
             font-size: 35px;
             margin-left: auto;
@@ -190,7 +194,7 @@ layout: default
     <section class="firstsection">
         <div class="box-main center">
             <div class="firsthalf"> 
-                <h1 class="text-big" id="web"> AP Physics C Units </h1>
+                <h1 class="text-big" id="web"> AP Physics C Units</h1>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
