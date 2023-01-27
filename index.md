@@ -97,7 +97,7 @@ layout: default
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin-left: 210px;
+            margin-left: 250px;
             position: relative;
             top: -180px;
 
