@@ -120,11 +120,15 @@ layout: default
             cursor: pointer; 
             width: 50%; 
             display: block; 
+            margin-left: auto;
+            text-align: center;
         }
  
         .btn-sm {
             padding: 6px 10px;
             vertical-align: left;
+            margin-left: auto;
+            text-align: center;
         }
  
         .section {
@@ -187,7 +191,7 @@ layout: default
         <div class="box-main center">
             <div class="firsthalf"> 
                 <h1 class="text-big" id="web"> AP Physics C Units </h1>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm text-big"> Kinematics</button> </a>
+                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Electric Forces</button> </a>
