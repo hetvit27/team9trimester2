@@ -76,28 +76,28 @@ layout: default
             justify-content: center;
             align-items: center;
             color: black;
-            max-width: 80%;
+            width: 100%;
             margin-left: -90px;
             height: 80%;
         }
  
         .firsthalf {
-            width: 100%;
-            display: flex;
+            width: 50%;
             flex-direction: column;
             justify-content: center;
         }
  
-        .secondhalf {
-            width: 30%;
+
+        .left {
+            width:
         }
  
         .secondhalf img {
-            width: 70%;
+            width: 50%;
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin-left: -90x;
+            margin-left: -90px;
         }
  
         .text-big {
@@ -172,16 +172,20 @@ layout: default
         justify-content: center
         margin-left: 100px;
 
+        #container {height: 100%; width:100%; font-size: 0;}
 
+        #left, #middle, #right {display: inline-block; *display: inline; zoom: 1; vertical-align: top; font-size: 12px;}
+        #left {width: 50%; background: blue;}
+        #middle {width: 50%; background: green;}
+        #right {width: 50%; background: yellow;}
 }
     </style>
 </head>
 
 <body>
     <section class="firstsection">
-        <div class="box-main center">
-            <div class="firstHalf">
-                <h1 class="title">Let's learn about centering text</h1> 
+        <div class="box-main center" id="container">
+            <div class="firsthalf" id="left"> 
                 <h1 class="text-big" id="web"> AP Physics C Units </h1>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
@@ -189,10 +193,10 @@ layout: default
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Electric Forces</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/physicsflashcards/"><button class="btn btn-sm"> Study Flashcards </button> </a>
             </div>
+            </div class="secondhalf" id="right">
+                <img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
+            </div>
         </div>
     </section>
 </body>
-
-<img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
-
 </html>
