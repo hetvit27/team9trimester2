@@ -99,7 +99,7 @@ layout: default
             display: block;
             margin-left: 250px;
             position: relative;
-            top: -180px;
+            top: -160px;
 
         }
  
@@ -108,7 +108,7 @@ layout: default
             white-space: nowrap;
             font-weight: bold;
             font-size: 35px;
-            margin-left: auto;
+            margin-left: 250px;
             text-align: center;
         }
  
