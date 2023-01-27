@@ -107,22 +107,23 @@ layout: default
             font-family: 'Piazzolla', serif;
             white-space: nowrap;
             font-weight: bold;
-            font-size: 50px;
+            font-size: 35px;
             margin-left: 250px;
             text-align: center;
         }
  
         .text-small {
-            font-size: 25px;
+            font-size: 30px;
         }
  
         .btn {
             background-color: #650f84; 
-            border: 1px solid green; 
+            border: 2px solid green; 
             color: white; 
             padding: 10px 24px; 
             cursor: pointer; 
             width: 70%; 
+            height: 70%
             display: block; 
             margin-left: auto;
             text-align: center;
