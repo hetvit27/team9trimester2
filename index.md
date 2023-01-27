@@ -107,13 +107,13 @@ layout: default
             font-family: 'Piazzolla', serif;
             white-space: nowrap;
             font-weight: bold;
-            font-size: 35px;
+            font-size: 50px;
             margin-left: 250px;
             text-align: center;
         }
  
         .text-small {
-            font-size: 18px;
+            font-size: 25px;
         }
  
         .btn {
@@ -122,7 +122,7 @@ layout: default
             color: white; 
             padding: 10px 24px; 
             cursor: pointer; 
-            width: 50%; 
+            width: 70%; 
             display: block; 
             margin-left: auto;
             text-align: center;
