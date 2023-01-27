@@ -151,8 +151,13 @@ layout: default
             margin-top: 19px;
         }
  
+        
         .center {
             text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
         }
  
         .text-footer {
@@ -174,8 +179,8 @@ layout: default
 
 <body>
     <section class="firstsection">
-        <div class="box-main">
-            <div class="firstHalf center">
+        <div class="box-main center">
+            <div class="firstHalf">
                 <h1 class="title">Let's learn about centering text</h1> 
                 <h1 class="text-big" id="web"> AP Physics C Units </h1>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
@@ -189,12 +194,5 @@ layout: default
 </body>
 
 <img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
 
 </html>
