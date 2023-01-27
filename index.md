@@ -175,7 +175,7 @@ layout: default
 <body>
     <section class="firstsection">
         <div class="box-main">
-            <div class="firstHalf">
+            <div class="firstHalf center">
                 <h1 class="title">Let's learn about centering text</h1> 
                 <h1 class="text-big" id="web"> AP Physics C Units </h1>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
