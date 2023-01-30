@@ -40,7 +40,7 @@ Features:
 </table>
 
 <script>
-  
+  problems();
   function problems() {
     const url = "https://hetvitrivedi.tk/api/problems/";
 
