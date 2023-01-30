@@ -1,6 +1,7 @@
 # Newton's Laws
 
 ### Key Vocabulary 
+
 | Vocabulary | Definition | 
 | --- | --- | 
 | First Law | An object will remain at rest or in uniform motion in a straight line unless compelled to change its state by the action of an external force. | 
