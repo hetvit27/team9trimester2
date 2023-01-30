@@ -109,7 +109,7 @@ layout: default
             display: block;
             margin-left: 250px;
             position: relative;
-            top: -190px;
+            top: -170px;
 
         }
         .thirdhalf {
@@ -225,13 +225,13 @@ layout: default
         </div>
         <div class="box-main2 right">
             <div class="thirdhalf">
-            <div class="thirdhalf"> 
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Electric Forces</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/physicsflashcards/"><button class="btn btn-sm"> Study Flashcards </button> </a>
             </div>
+        </div>
     </section>
 </body>
 </html>
