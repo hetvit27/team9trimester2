@@ -224,7 +224,7 @@ layout: default
         </div>
         <div class="box-main2 right">
             <div class="thirdhalf">
-                <a href="https://hetvit27.github.io/team9trimester2/electricforces"><button class="btn btn-sm"> Electric Forces</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/electricforces"><button class="btn btn-sm"> Electric Force</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Gauss's Law</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Capacitance</button> </a>
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Magentic Fields</button> </a>
