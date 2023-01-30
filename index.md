@@ -85,7 +85,7 @@ layout: default
             justify-content: center;
             align-items: center;
             color: black;
-            width: 100%;
+            width: 50%;
             margin-left: 550px;
             margin-top: -425px;
         }
