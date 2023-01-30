@@ -3,23 +3,27 @@
 <div class="sign_up">
 <h1>Sign Up Form<span>Already have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login" class="blacktext">login</a>.</span></h1>
 <form>
-    <div class="section"><span>1</span>First Name, User ID, & DOB</div>
+    <div class="section"><span>1</span>First Name & DOB</div>
     <div class="inner-wrap">
         <label>Full Name <input type="text" name="fullname" id="fullname" /></label>
-        <label>User ID <input type="text" name="userid" id="userid" /></label>  
 		<label>Birthday <input type="date" name="dob" id="dob" /></label>    
     </div>
 
- <div class="section"><span>2</span>Email & Phone</div>
+ <div class="section"><span>2</span>Email & Password</div>
 <div class="inner-wrap">
         <label>Email Address <input type="email" name="email" id="email" /></label>
-        <label>Phone Number <input type="text" name="phone" id="phone"/></label>
-    </div>
-
-<div class="section"><span>3</span>Password</div>
-        <div class="inner-wrap">
         <label>Password <input type="password" name="password" id="password" required> </label>
         <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
+    </div>
+
+<div class="section"><span>3</span>Account Info</div>
+        <div class="inner-wrap">
+        <label>School/Affiliation <input type="text" name="school" id="school"> </label>
+	<label for="role-choice">Desired Account</label>
+		<select id="role-choice" name="role-choice">
+  			<option value="admin">Student</option>
+  			<option value="user">Tutor</option>
+</select>
     </div>
  <div class="button-section">
      <input type="submit" name="Sign Up" />

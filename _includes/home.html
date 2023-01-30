@@ -3,7 +3,7 @@
         border-collapse: collapse;
     }
     td {
-        border-right: solid 1px white;
+        border-right: solid 2px white;
         border-bottom: solid 0px;
     }
 
@@ -15,18 +15,6 @@
     </tr>
     <tr>
         <td><a href="{{ site.baseurl }}">Home</a></td>
-    </tr>
-    <tr>
-        <td>
-            <ul> 
-                <li><a href="#">FRQs</a> 
-                    <ul> 
-                    <li><a href="{{ site.baseurl }}/Person">Person</a></li> 
-                    <li><a href="{{ site.baseurl }}/Calculator">Calculator</a</li> 
-                    <li><a href="{{ site.baseurl }}/lightboard">Lightboard</a></li>
-                      <li><a href="{{ site.baseurl }}/calendar">Calendar</a></li>
-                </ul>
-        </td>
     </tr>
     <tr>
         <td><a href="{{ site.baseurl }}/equations">Equations</a></td>
@@ -42,6 +30,15 @@
     </tr>
     <tr>
         <td><a href="{{ site.baseurl }}/ideation">Ideation</a></td>
+    </tr>
+    <tr>
+        <td>
+            <ul> 
+                <li><a href="#">Databases</a> 
+                    <ul> 
+                    <li><a href="{{ site.baseurl }}/accounts">Accounts</a></li> 
+                </ul>
+        </td>
     </tr>
 </table>
 
@@ -59,8 +56,8 @@ ul li {
  }
 
 li ul {
- position: absolute;
- left: 149px;
+ position: relative;
+ left: 110px;
  top: 0;
  display: none;
  }
@@ -71,6 +68,7 @@ li:hover ul, li.over ul {
  display: block; }
 
 ul {
+background-color: #e2f2d1;
  margin: 0;
  padding: 0;
  list-style: none;
