@@ -11,8 +11,6 @@
 
 ### Key Equations
 
-![Gravitation](gravitation.png)
-
 
 ## [Calculators](https://bgt072105.github.io/CSA-tri1-teamrepo/gravitationcalculator/) 
 
