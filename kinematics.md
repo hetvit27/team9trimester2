@@ -12,10 +12,6 @@
 | Scalars | Only magnitude (no direction) | 
 | Gravitational Constant | 9.8 m/s^2 | 
 
-## Key Equations
-
-
-
 ## Lab Resources
 
 - [Motion in 1D Lab](https://docs.google.com/document/d/1G5cvOHB_3eZGqAZmQ4kzfF_Z_tU9lckY6D8DC3RU3SM/edit?usp=sharing)

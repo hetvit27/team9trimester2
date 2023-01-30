@@ -13,10 +13,6 @@
 | Insulator | Impede the free flow of electrons from atom to atom and molecule to molecule. | 
 
 
-### Key Equations 
-
-
-
 ### Atom Animation
 - [Click here](https://bgt072105.github.io/CSA-tri1-teamrepo/atom/)
 
