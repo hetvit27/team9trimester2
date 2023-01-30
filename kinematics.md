@@ -14,7 +14,7 @@
 
 ## Key Equations
 
-![Equations](kinematics.png)
+
 
 ## Lab Resources
 
