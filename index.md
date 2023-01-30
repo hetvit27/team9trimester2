@@ -109,7 +109,7 @@ layout: default
             display: block;
             margin-left: 250px;
             position: relative;
-            top: -170px;
+            top: -140px;
 
         }
         .thirdhalf {
