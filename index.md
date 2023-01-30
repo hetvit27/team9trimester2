@@ -86,7 +86,7 @@ layout: default
             align-items: center;
             color: black;
             width: 50%;
-            margin-left: 550px;
+            margin-left: 590px;
             margin-top: -425px;
         }
  
