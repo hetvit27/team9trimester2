@@ -87,7 +87,7 @@ layout: default
             color: black;
             width: 100%;
             margin-left: 550px;
-            height: 120%;
+            margin-top: -425px;
         }
  
         .firsthalf {
@@ -103,18 +103,18 @@ layout: default
         }
  
         .secondhalf img {
-            width: 50%;
+            width: 60%;
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
             margin-left: 250px;
             position: relative;
-            top: -160px;
+            top: -190px;
 
         }
         .thirdhalf {
             width: 50%;
-            height: 50%
+            height: 50%;
             flex-direction: column;
             justify-content: center;
         }
