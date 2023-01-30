@@ -1,0 +1,59 @@
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.7/ext/commonmarker
+/Users/ht/.rubies/ruby-2.7.7/bin/ruby -I /Users/ht/.rubies/ruby-2.7.7/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.7/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20230130-95994-1ay3uaa sitelibdir\=./.gem.20230130-95994-1ay3uaa clean
+
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.23.7/ext/commonmarker
+make DESTDIR\= sitearchdir\=./.gem.20230130-95994-1ay3uaa sitelibdir\=./.gem.20230130-95994-1ay3uaa
+compiling arena.c
+compiling autolink.c
+compiling blocks.c
+compiling buffer.c
+compiling cmark.c
+compiling cmark_ctype.c
+compiling commonmark.c
+compiling commonmarker.c
+In file included from commonmarker.c:3:
+In file included from ./houdini.h:9:
+./config.h:8:9: warning: 'HAVE_STDBOOL_H' macro redefined [-Wmacro-redefined]
+#define HAVE_STDBOOL_H
+        ^
+/Users/ht/.rubies/ruby-2.7.7/include/ruby-2.7.0/arm64-darwin21/ruby/config.h:39:9: note: previous definition is here
+#define HAVE_STDBOOL_H 1
+        ^
+1 warning generated.
+compiling core-extensions.c
+compiling ext_scanners.c
+compiling footnotes.c
+compiling houdini_href_e.c
+compiling houdini_html_e.c
+compiling houdini_html_u.c
+compiling html.c
+compiling inlines.c
+compiling iterator.c
+compiling latex.c
+compiling linked_list.c
+compiling man.c
+compiling map.c
+compiling node.c
+compiling plaintext.c
+compiling plugin.c
+compiling references.c
+compiling registry.c
+compiling render.c
+compiling scanners.c
+compiling strikethrough.c
+compiling syntax_extension.c
+compiling table.c
+compiling tagfilter.c
+compiling tasklist.c
+compiling utf8.c
+compiling xml.c
+linking shared-object commonmarker/commonmarker.bundle
+ld: can't link with a main executable file '/Users/ht/.rubies/ruby-2.7.7/bin/ruby' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [commonmarker.bundle] Error 1
+
+make failed, exit code 2

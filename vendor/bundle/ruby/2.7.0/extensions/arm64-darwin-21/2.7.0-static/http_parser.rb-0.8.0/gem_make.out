@@ -1,0 +1,17 @@
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/Users/ht/.rubies/ruby-2.7.7/bin/ruby -I /Users/ht/.rubies/ruby-2.7.7/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230130-95994-1ou7ojf sitelibdir\=./.gem.20230130-95994-1ou7ojf clean
+
+current directory: /Users/ht/AP CSA/team9trimester2/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230130-95994-1ou7ojf sitelibdir\=./.gem.20230130-95994-1ou7ojf
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: can't link with a main executable file '/Users/ht/.rubies/ruby-2.7.7/bin/ruby' for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [ruby_http_parser.bundle] Error 1
+
+make failed, exit code 2
