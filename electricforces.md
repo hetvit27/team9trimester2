@@ -15,7 +15,6 @@
 
 ### Key Equations 
 
-![Columb](coulumb.jpeg)
 
 
 ### Atom Animation
