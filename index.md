@@ -215,7 +215,7 @@ layout: default
                 <h1 class="text-big" id="web"> AP Physics C Units</h1>
                 <a href="https://hetvit27.github.io/team9trimester2/kinematics"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://hetvit27.github.io/team9trimester2/newtonslaws"><button class="btn btn-sm"> Newton's Laws</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/gravitation"><button class="btn btn-sm"> Gravitation</button> </a>
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Energy</button> </a>
             </div>
             <div class="secondhalf">
@@ -224,7 +224,7 @@ layout: default
         </div>
         <div class="box-main2 right">
             <div class="thirdhalf">
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Electric Forces</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/electricforces"><button class="btn btn-sm"> Electric Forces</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Gauss's Law</button> </a>
                 <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Capacitance</button> </a>
                 <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Magentic Fields</button> </a>
