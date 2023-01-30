@@ -37,35 +37,40 @@ Features:
 				<th>CB Topic</th>
 				<th>Tags</th>
 		</tr>
-		<tr>
-				<td>0</td>
-				<td>Two students, S1 and S2, are rushing to class. They are waiting for green light at the same intersection. As soon as the light turns green, both students start walking with constant acceleration. The acceleration of student S1 is a1, and the acceleration of student S2 is a2, When student S1 has reached a velocity v1, she has walked a distance D1, while student S2 has walked a distance D2 = 1/3D1. In terms of v1 and D1, what is the correct expression for a2, the acceleration of student S2?</td>
-				<td>1</td>
-				<td>1.1 Newton's Laws</td>
-				<td>physics, newton's laws, force, mass, acceleration</td>
-		</tr>
-        <tr>
-				<td>1</td>
-				<td>Copenhagen is located 780 km North and 810 km East of Paris. A flight from Paris to Copenhagen takes two hours. Typically the wind blows from East to West over Europe, but the speed varies. For one particular flight, the wind speed was 165 km/h. What is the magnitude of vpa, the plane's velocity with respect to the air?</td>
-				<td>1</td>
-				<td>1.1 Newton's Laws</td>
-				<td>physics, newton's laws, force, mass, acceleration</td>
-		</tr>
 </table>
 
 <script>
   
   function problems() {
-    let problemId = prompt("Enter a problem id");
-    const urlStart = "https://hetvitrivedi.tk/api/problems/";
-    const url = urlStart + problemId;
+    const url = "https://hetvitrivedi.tk/api/problems/";
 
     fetch(url)
       .then(res => res.json())
       .then(data => {
         console.log(data);
         console.log(typeof data);
-        console.log(JSON.stringify(data))
+        console.log(JSON.stringify(data));
+
+		for (let i = 0; i < data.length; i++) {
+			let tableRow = document.createElement("tr");
+			let idCell = document.createElement("td");
+			idCell.innerText = i; // other fields are data[i].problem, etc.
+			tableRow.appendChild(idCell);
+			let problemCell = document.createElement("td");
+			problemCell.innerText = data[i].problem;
+			tableRow.appendChild(problemCell);
+			let unitCell = document.createElement("td");
+			unitCell.innerText = data[i].unit;
+			tableRow.appendChild(unitCell);
+			let topicCell = document.createElement("td");
+			topicCell.innerText = data[i].topic;
+			tableRow.appendChild(topicCell);
+			let tagsCell = document.createElement("td");
+			tagsCell.innerText = data[i].tags;
+			tableRow.appendChild(tagsCell);
+
+			document.getElementById("practiceTable").appendChild(tableRow);
+		}
 
         // document.getElementById("result").innerHTML = JSON.stringify(data);
 
