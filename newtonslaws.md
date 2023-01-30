@@ -4,6 +4,16 @@
 
 | Vocabulary | Definition | 
 | --- | --- | 
+| Velocity | The rate at which an object changes it's position | 
+| Acceleration | The rate at which an object's speed is changing | 
+| Displacement | Vector quantity that is an object's overall change in position | 
+| Distance | How far an object has moved; positive or negative | 
+| Vectors | Have both magnitude and direction| 
+| Scalars | Only magnitude (no direction) | 
+| Gravitational Constant | 9.8 m/s^2 | 
+
+| Vocabulary | Definition | 
+| --- | --- | 
 | First Law | An object will remain at rest or in uniform motion in a straight line unless compelled to change its state by the action of an external force. | 
 | Second Law | The acceleration of an object is dependent upon two variables - the net force acting upon the object and the mass of the object. | 
 | Third Law | For every action (force) in nature there is an equal and opposite reaction. | 
