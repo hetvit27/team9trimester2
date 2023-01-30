@@ -86,7 +86,7 @@ layout: default
             align-items: center;
             color: black;
             width: 50%;
-            margin-left: 590px;
+            margin-left: 650px;
             margin-top: -425px;
         }
  
@@ -103,11 +103,11 @@ layout: default
         }
  
         .secondhalf img {
-            width: 60%;
+            width: 50%;
             border: 4px solid #e2f2d1;
             border-radius: 150px;
             display: block;
-            margin-left: 250px;
+            margin-left: 230px;
             position: relative;
             top: -170px;
 
