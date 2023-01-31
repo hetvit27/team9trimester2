@@ -44,7 +44,6 @@ Features:
 				<td>physics student</td>
                 <td>rube goldberg</td>
 				<td>How do I convert Potential Energy to Kinetic Energy in my Rube Goldberg Machine?</td>
-				<td>
 				<td>project, kinetic energy, potential energy<td>
                 <input id="answer" placeholder="Answer">
                 <button onclick="reply()">Reply</button>
