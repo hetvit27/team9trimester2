@@ -7,12 +7,12 @@
 <h3> Search for a tutor</h3>
 
 Features:
-- Shows tutor information that is stored in a database from sign up
-- Submit reviews for tutors that accumulate
-- See tutors experience
-- Users can post reviews anonymously
-- View all tutors in a tale
-- Search by location
+    -  Shows tutor information that is stored in a database from sign up
+    - Submit reviews for tutors that accumulate
+    - See tutors experience
+    - Users can post reviews anonymously
+    - View all tutors in a tale
+    - Search by location
 
 <!-- Create inputs for search and question -->
 
@@ -24,7 +24,7 @@ Features:
 
 <!-- Create table to display question posts -->
 
-<table id="equationsTable" border="1" style="border-collapse: collapse;">
+<table id="equationsTable" border="3" style="border-collapse: collapse;">
 		<tr>
 				<th>Tutor Name</th>
 				<th>Location</th>
