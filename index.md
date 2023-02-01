@@ -87,7 +87,7 @@ layout: default
             color: black;
             width: 50%;
             margin-left: 650px;
-            margin-top: -425px;
+            margin-top: -360px;
         }
  
         .firsthalf {
