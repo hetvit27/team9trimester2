@@ -123,8 +123,8 @@ layout: default
         .text-big {
             font-family: 'Piazzolla', serif;
             white-space: nowrap;
-            font-size: 75px;
-            margin-left: 250px;
+            font-size: 71px;
+            margin-left: 190px;
             text-align: center;
         }
  
