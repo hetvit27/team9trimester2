@@ -6,15 +6,6 @@
 
 <h3>Post your questions here and have fellow students answer them</h3>
 
-Features:
-- Create, edit, and delete questions
-- Save questions to a database
-- Filter questions by unit
-- Different users may respond to questions
-- Users can post anonymously
-- View all questions in a table
-- Search questions
-
 <!-- Create inputs for search and question -->
 
 <input id="search" placeholder="Search">
