@@ -77,7 +77,7 @@ layout: default
             align-items: center;
             color: black;
             width: 100%;
-            margin-left: -90px;
+            margin-left: -80px;
             height: 120%;
         }
         .box-main2 {
@@ -91,10 +91,10 @@ layout: default
         }
  
         .firsthalf {
-            width: 50%;
-            height: 50%
+            width: 60%;
+            height: 60%
             flex-direction: column;
-            justify-content: center;
+            margin-left: -90px;
         }
  
 
@@ -123,8 +123,7 @@ layout: default
         .text-big {
             font-family: 'Piazzolla', serif;
             white-space: nowrap;
-            font-weight: bold;
-            font-size: 35px;
+            font-size: 75px;
             margin-left: 250px;
             text-align: center;
         }
