@@ -77,7 +77,7 @@ layout: default
             align-items: center;
             color: black;
             width: 100%;
-            margin-left: -90px;
+            margin-left: -80px;
             height: 120%;
         }
         .box-main2 {
@@ -87,14 +87,14 @@ layout: default
             color: black;
             width: 50%;
             margin-left: 650px;
-            margin-top: -425px;
+            margin-top: -360px;
         }
  
         .firsthalf {
-            width: 50%;
-            height: 50%
+            width: 60%;
+            height: 60%
             flex-direction: column;
-            justify-content: center;
+            margin-left: -90px;
         }
  
 
@@ -109,7 +109,7 @@ layout: default
             display: block;
             margin-left: 250px;
             position: relative;
-            top: -170px;
+            top: -140px;
 
         }
         .thirdhalf {
@@ -123,9 +123,8 @@ layout: default
         .text-big {
             font-family: 'Piazzolla', serif;
             white-space: nowrap;
-            font-weight: bold;
-            font-size: 35px;
-            margin-left: 250px;
+            font-size: 71px;
+            margin-left: 190px;
             text-align: center;
         }
  
@@ -213,11 +212,10 @@ layout: default
         <div class="box-main center">
             <div class="firsthalf"> 
                 <h1 class="text-big" id="web"> AP Physics C Units</h1>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
-                <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Electric Forces</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/physicsflashcards/"><button class="btn btn-sm"> Study Flashcards </button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/kinematics"><button class="btn btn-sm"> Kinematics</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/newtonslaws"><button class="btn btn-sm"> Newton's Laws</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/gravitation"><button class="btn btn-sm"> Gravitation</button> </a>
+                <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Energy</button> </a>
             </div>
             <div class="secondhalf">
                 <img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
@@ -225,11 +223,10 @@ layout: default
         </div>
         <div class="box-main2 right">
             <div class="thirdhalf">
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Kinematics.html"><button class="btn btn-sm"> Kinematics</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Newton's Laws</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Gravitation</button> </a>
-                <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Electric Forces</button> </a>
-                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/physicsflashcards/"><button class="btn btn-sm"> Study Flashcards </button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/electricforces"><button class="btn btn-sm"> Electric Forces</button> </a>
+                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/NewtonsLaws.html"><button class="btn btn-sm"> Gauss's Law</button> </a>
+                <a href="https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Gravitation.html"><button class="btn btn-sm"> Capacitance</button> </a>
+                <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Magentic Fields</button> </a>
             </div>
         </div>
     </section>

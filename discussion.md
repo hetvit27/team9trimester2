@@ -6,15 +6,6 @@
 
 <h3>Post your questions here and have fellow students answer them</h3>
 
-Features:
-- Create, edit, and delete questions
-- Save questions to a database
-- Filter questions by unit
-- Different users may respond to questions
-- Users can post anonymously
-- View all questions in a table
-- Search questions
-
 <!-- Create inputs for search and question -->
 
 <input id="search" placeholder="Search">
@@ -37,14 +28,15 @@ Features:
 				<th>User</th>
                 <th>Unit</th>
 				<th>Question</th>
+				<th>Tags</th>
 				<th>Reply</th>
 		</tr>
 		<tr>
 				<td>physics student</td>
                 <td>rube goldberg</td>
 				<td>How do I convert Potential Energy to Kinetic Energy in my Rube Goldberg Machine?</td>
-				<td>
-                <input id="answer" placeholder="Answer">
+				<td>project, kinetic energy, potential energy</td>
+                <td><input id="answer" placeholder="Answer">
                 <button onclick="reply()">Reply</button>
                 </td>
 		</tr>

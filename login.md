@@ -17,6 +17,29 @@
 </form>
 </div>
 
+<script>
+	// send login request for JWT token
+
+	const url = 'http://localhost:8085'; // https://hetvitrivedi.tk
+	const loginResponse = await fetch(url + '/authenticate', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			email: document.getElementById('email').value,
+			password: document.getElementById('password').value,
+		}),
+	});
+
+	// if login was successful, server will return a JWT token
+	if (loginResponse.ok) {
+		const jwt = loginResponse.headers.get(‘Authorization’).split(‘ ‘)[1];
+	}
+
+	// store JWT in cookie or local storage
+	document.cookie = `jwt=${jwt}`; // or localStorage.setItem('jwt', jwt);
+</script>
 
 <style> 
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
