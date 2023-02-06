@@ -86,8 +86,8 @@ layout: default
             align-items: center;
             color: black;
             width: 50%;
-            margin-left: 650px;
-            margin-top: -360px;
+            margin-left: 660px;
+            margin-top: -375px;
         }
  
         .firsthalf {
