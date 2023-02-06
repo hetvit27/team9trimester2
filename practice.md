@@ -98,7 +98,9 @@ Features:
 	problemData.append(`Tags`, document.getElementById("tags").value);
 
 	// fetch the API
-	fetch("/api/problems/add", {"method": "POST", "body": problemData})
+	fetch("/api/problems/add", {"method": "POST", "body": problemData, "headers": {
+		"Access-Control-Allow-Origin": *,
+	}})
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
