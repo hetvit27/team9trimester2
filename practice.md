@@ -24,7 +24,9 @@ Features:
 
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
-<button onclick="save()">Save</button>
+<input id="topic" placeholder="Topic">
+<input id="tags" placeholder="Tags">
+<button onclick="addProblem()">Save</button>
 
 
 <!-- Create table to display question posts -->
@@ -90,13 +92,13 @@ Features:
 
   function addProblem() {
 	var problemData = new URLSearchParams();
-	problemData.append(`name`, `brian`);
-	problemData.append(`dob`, `07-21-2005`);
-	problemData.append(`email`, `brian@tang.com`);
-	problemData.append(`password`, `password`);
+	problemData.append(`problem`, document.getElementById("question").value);
+	problemData.append(`Unit`, document.getElementById("unit").value);
+	problemData.append(`Topic`, document.getElementById("topic").value);
+	problemData.append(`Tags`, document.getElementById("tags").value);
 
 	// fetch the API
-	fetch("/api/person/post", {"method": "POST", "body": problemData})
+	fetch("/api/problems/add", {"method": "POST", "body": problemData})
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
