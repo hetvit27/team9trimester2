@@ -2,9 +2,9 @@
 <table>
   <thead>
   <tr>
-    <th>Joke</th>
-    <th>HaHa</th>
-    <th>Boohoo</th>
+    <th>Tutor</th>
+    <th>Likes</th>
+    <th>Dislikes</th>
   </tr>
   </thead>
   <tbody id="result">
