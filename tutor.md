@@ -2,50 +2,81 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Find a Tutor
+## Tutor
 
-<h3> Search for a tutor</h3>
+<h3>Find a Tutor Today!</h3>
 
-Features:
-    -  Shows tutor information that is stored in a database from sign up
-    - Submit reviews for tutors that accumulate
-    - See tutors experience
-    - Users can post reviews anonymously
-    - View all tutors in a tale
-    - Search by location
 
 <!-- Create inputs for search and question -->
-
-<input id="Location for Tutor" placeholder="Enter your location">
+<br>
+<input id="search" placeholder="Search">
 <button onclick="search()">Search</button>
+<select id="filter">
+	<option>Filter by...</option>
+	<option>location</option>
+</select>
 <br>
 <br>
-
-
+<br>
 <!-- Create table to display question posts -->
-
-<table id="equationsTable" border="3" style="border-collapse: collapse;">
+<tr>
+<table id="tutorTable" border="1" style="border-collapse: collapse;">
 		<tr>
-				<th>Tutor Name</th>
-				<th>Location</th>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Age</th>
 				<th>Experience</th>
-                <th>Past Reviews</th>
-                <th>Meeting Preference</th>
-                <th> Submit a Review</th>
-                <th> Request this Tutor </th>
-		</tr>
-		<tr>
-				<td>Hetvi Trivedi</td>
-				<td>San Diego</td>
-                <td>Tutored in other STEM subjects. Has taken AP Physics Mechanics and did well. </td>
-                <td> User13904: Great experience! </td>
-                <td> Zoom or in-person </td>
-				<td>
-                <input id="review" placeholder="Review">
-                <button onclick="reply()">Submit</button>
-                </td>
-                <td>
-                <button onclick="request()">Request</button>
-                </td>
+				<th>Location</th>
 		</tr>
 </table>
+
+<script>
+  tutors();
+  function tutors() {
+    const url = "https://hetvitrivedi.tk/api/tutors/";
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        console.log(typeof data);
+        console.log(JSON.stringify(data));
+
+		for (let i = 0; i < data.length; i++) {
+			let tableRow = document.createElement("tr");
+			let idCell = document.createElement("td");
+			idCell.innerText = i; // other fields are data[i].problem, etc.
+			tableRow.appendChild(idCell);
+			let problemCell = document.createElement("td");
+			problemCell.innerText = data[i].problem;
+			tableRow.appendChild(problemCell);
+			let unitCell = document.createElement("td");
+			unitCell.innerText = data[i].unit;
+			tableRow.appendChild(unitCell);
+			let topicCell = document.createElement("td");
+			topicCell.innerText = data[i].topic;
+			tableRow.appendChild(topicCell);
+			let tagsCell = document.createElement("td");
+			tagsCell.innerText = data[i].tags;
+			tableRow.appendChild(tagsCell);
+
+			document.getElementById("tutorsTable").appendChild(tableRow);
+		}
+
+        // document.getElementById("result").innerHTML = JSON.stringify(data);
+
+        // var result = document.getElementById("result");
+        // // for (var i = 0; i < data.length; i++) {
+        // //   result.appendChild(document.createTextNode(data));
+        // // }
+        // // document.getElementById("answer").innerHTML = data.name;
+
+        // for (var prop in data) {
+        //   if (Object.prototype.hasOwnProperty.call(data, prop)) {
+        //     result.appendChild(document.createTextNode(data.prop));
+        //   }
+        // }
+      })
+  }
+
+</script>
