@@ -46,7 +46,9 @@ Features:
   function problems() {
     const url = "https://hetvitrivedi.tk/api/problems/";
 
-    fetch(url)
+    fetch(url, {"headers": {
+		"Access-Control-Allow-Origin": *,
+	}})
       .then(res => res.json())
       .then(data => {
         console.log(data);
