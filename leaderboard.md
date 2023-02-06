@@ -51,7 +51,7 @@
     },
   };
   // prepare fetch PUT options, clones with JS Spread Operator (...)
-  const put_options = {...options, method: 'PUT'}; // clones and replaces method
+  const post_options = {...options, method: 'POST'}; // clones and replaces method
 
   // fetch the API
   fetch(get_url, options)
@@ -111,15 +111,15 @@
   });
 
   // Reaction function to likes or jeers user actions
-  function reaction(type, put_url, elemID) {
+  function reaction(type, post_url, elemID) {
 
     // fetch the API
-    fetch(put_url, put_options)
+    fetch(post_url, post_options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
       if (response.status !== 200) {
-          error("PUT API response failure: " + response.status)
+          error("post API response failure: " + response.status)
           return;  // api failure
       }
       // valid response will have JSON data
@@ -136,7 +136,7 @@
     })
     // catch fetch errors (ie Nginx ACCESS to server blocked)
     .catch(err => {
-      error(err + " " + put_url);
+      error(err + " " + post_url);
     });
     
   }
