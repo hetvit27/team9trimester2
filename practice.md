@@ -47,7 +47,7 @@ Features:
     const url = "https://hetvitrivedi.tk/api/problems/";
 
     fetch(url, {"headers": {
-		"Access-Control-Allow-Origin": *,
+		"Access-Control-Allow-Origin": "*",
 	}})
       .then(res => res.json())
       .then(data => {
@@ -101,7 +101,7 @@ Features:
 
 	// fetch the API
 	fetch("/api/problems/add", {"method": "POST", "body": problemData, "headers": {
-		"Access-Control-Allow-Origin": *,
+		"Access-Control-Allow-Origin": "*",
 	}})
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
