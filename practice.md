@@ -86,6 +86,33 @@ Features:
         //   }
         // }
       })
-      
-}
+  }
+
+  function addProblem() {
+	var problemData = new URLSearchParams();
+	problemData.append(`name`, `brian`);
+	problemData.append(`dob`, `07-21-2005`);
+	problemData.append(`email`, `brian@tang.com`);
+	problemData.append(`password`, `password`);
+
+	// fetch the API
+	fetch("/api/person/post", {"method": "POST", "body": problemData})
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+
 </script>
