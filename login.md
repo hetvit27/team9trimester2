@@ -20,7 +20,7 @@
 <script>
 	// send login request for JWT token
 
-	const url = 'https://hetvitrivedi.tk'
+	const login_url = 'https://hetvitrivedi.tk/authenticate'
 
 	function login_user() {
     // Set body to include login data
