@@ -22,8 +22,8 @@
 <!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
 <script>
 
-  var ip = location.host;
-  console.log(ip);
+  // var ip = location.host;
+  // console.log(ip);
 
   // prepare HTML defined "result" container for new output
   const resultContainer = document.getElementById("result");

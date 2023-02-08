@@ -21,24 +21,40 @@
 	// send login request for JWT token
 
 	const url = 'https://hetvitrivedi.tk'
-	const loginResponse = await fetch(url + '/authenticate', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify({
-			email: document.getElementById('email').value,
-			password: document.getElementById('password').value,
-		}),
-	});
 
-	// if login was successful, server will return a JWT token
-	if (loginResponse.ok) {
-		const jwt = loginResponse.headers.get('Authorization').split(' ')[1];
-	}
+	function login_user() {
+    // Set body to include login data
+    const body = {
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+    };
 
-	// store JWT in cookie or local storage
-	document.cookie = `jwt=${jwt}`; // or localStorage.setItem('jwt', jwt);
+    // Set Headers to support cross origin
+    const requestOptions = {
+        method: 'POST',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'include', // include, *same-origin, omit
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+        },
+    };
+
+    // Fetch JWT
+    fetch(login_url, requestOptions)
+    .then(response => {
+        // trap error response from Web API
+        if (!response.ok) {
+            const errorMsg = 'Login error: ' + response.status;
+            console.log(errorMsg);
+            return;
+        }
+        // Success!!!
+        // Redirect to Database location
+        // window.location.href = "/APCSA/data/database";
+  	  })
+		}
 </script>
 
 <style> 
