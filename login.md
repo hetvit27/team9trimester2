@@ -54,6 +54,9 @@
         // Redirect to Database location
         // window.location.href = "/APCSA/data/database";
   	  })
+			.catch(error => {
+				console.log('Error: ', error);
+			});
 		}
 </script>
 
