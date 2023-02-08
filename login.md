@@ -20,7 +20,7 @@
 <script>
 	// send login request for JWT token
 
-	const url = 'http://localhost:8085'; // https://hetvitrivedi.tk
+	const url = 'https://hetvitrivedi.tk'
 	const loginResponse = await fetch(url + '/authenticate', {
 		method: 'POST',
 		headers: {
@@ -34,7 +34,7 @@
 
 	// if login was successful, server will return a JWT token
 	if (loginResponse.ok) {
-		const jwt = loginResponse.headers.get(‘Authorization’).split(‘ ‘)[1];
+		const jwt = loginResponse.headers.get('Authorization').split(' ')[1];
 	}
 
 	// store JWT in cookie or local storage
