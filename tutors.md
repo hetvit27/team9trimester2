@@ -27,7 +27,7 @@
             // prepare fetch urls
             const url = "https://hetvitrivedi.tk/api/tutors";
             const get_url = url + "/";
-            const clubContainer = document.getElementById("names");
+            const namesContainer = document.getElementById("names");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
