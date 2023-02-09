@@ -2,7 +2,7 @@
 <table>
   <thead>
   <tr>
-    <th>Tutor</th>
+    <th>Tutors</th>
     <th>Likes</th>
     <th>Dislikes</th>
   </tr>
