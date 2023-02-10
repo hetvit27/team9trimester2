@@ -7,7 +7,6 @@
 Don't have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/signup">signup.
 
 <form>
-    Email and Password
     <div class="login-input">
         <label>Email <input type="email" name="email" id="email" /></label>
         <label>Password <input type="password" name="password" id="password" required> </label>     
@@ -21,7 +20,7 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
 <script>
 	// send login request for JWT token
 
-	const login_url = 'https://hetvitrivedi.tk/authenticate'
+	const login_url = 'https://hetvitrivedi.tk/authenticate';
 
 	function login_user() {
     // Set body to include login data
@@ -52,6 +51,7 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
             return;
         }
         // Success!!!
+				console.log('Login successful!');
         // Redirect to Database location
         // window.location.href = "/APCSA/data/database";
   	  })
