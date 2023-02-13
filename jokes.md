@@ -2,11 +2,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-<!-- HTML table fragment for page -->
+## Tutors 
+<h3>Rate your Physics tutors!</h3>
 <table>
   <thead>
   <tr>
-    <th>Tutors</th>
+    <th>Tutor</th>
     <th>Likes</th>
     <th>Dislikes</th>
   </tr>
@@ -16,22 +17,27 @@
   </tbody>
 </table>
 
+</html>
+
 <!-- Script is layed out in a sequence (without a function) and will execute when page is loaded -->
 <script>
+
+  // var ip = location.host;
+  // console.log(ip);
 
   // prepare HTML defined "result" container for new output
   const resultContainer = document.getElementById("result");
 
-  // keys for joke reactions
-  const HAHA = "haha";
-  const BOOHOO = "boohoo";
+  // keys for equation reactions
+  const LIKE = "like";
+  const DISLIKE = "dislike";
 
   // prepare fetch urls
-  // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
+  // const url = "https://flask.nighthawkcodingsociety.com/api/equations";
   const url = "https://hetvitrivedi.tk/api/tutors";
   const get_url = url +"/";
   const like_url = url + "/like/";  // haha reaction
-  const jeer_url = url + "/jeer/";  // boohoo reaction
+  const dislike_url = url + "/dislike/";  // DISLIKE reaction
 
   // prepare fetch GET options
   const options = {
@@ -45,10 +51,7 @@
     },
   };
   // prepare fetch PUT options, clones with JS Spread Operator (...)
-  const post_options = {...options,
-    method: 'POST',
-    mode: 'cors', // no-cors, *cors, same-origin
-  }; // clones and replaces method
+  const post_options = {...options, method: 'POST'}; // clones and replaces method
 
   // fetch the API
   fetch(get_url, options)
@@ -66,36 +69,36 @@
             // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
             
-            // td for joke cell
-            const joke = document.createElement("td");
-              joke.innerHTML = row.id + ". " + row.joke;  // add fetched data to innerHTML
+            // td for equation cell
+            const tutor = document.createElement("td");
+              tutor.innerHTML = row.id + ". " + row.tutor;  // add fetched data to innerHTML
 
-            // td for haha cell with onclick actions
-            const haha = document.createElement("td");
-              const haha_but = document.createElement('button');
-              haha_but.id = HAHA+row.id   // establishes a HAHA JS id for cell
-              haha_but.innerHTML = row.haha;  // add fetched "haha count" to innerHTML
-              haha_but.onclick = function () {
+            // td for like cell with onclick actions
+            const like = document.createElement("td");
+              const like_but = document.createElement('button');
+              like_but.id = LIKE+row.id   // establishes a LIKE JS id for cell
+              like_but.innerHTML = row.like;  // add fetched "like count" to innerHTML
+              like_but.onclick = function () {
                 // onclick function call with "like parameters"
-                reaction(HAHA, like_url+row.id, haha_but.id);  
+                reaction(LIKE, like_url+row.id, like_but.id);  
               };
-              haha.appendChild(haha_but);  // add "haha button" to haha cell
+              like.appendChild(like_but);  // add "like button" to like cell
 
-            // td for boohoo cell with onclick actions
-            const boohoo = document.createElement("td");
-              const boohoo_but = document.createElement('button');
-              boohoo_but.id = BOOHOO+row.id  // establishes a BOOHOO JS id for cell
-              boohoo_but.innerHTML = row.boohoo;  // add fetched "boohoo count" to innerHTML
-              boohoo_but.onclick = function () {
+            // td for DISLIKE cell with onclick actions
+            const dislike = document.createElement("td");
+              const dislike_but = document.createElement('button');
+              dislike_but.id = DISLIKE+row.id  // establishes a DISLIKE JS id for cell
+              dislike_but.innerHTML = row.dislike;  // add fetched "dislike count" to innerHTML
+              dislike_but.onclick = function () {
                 // onclick function call with "jeer parameters"
-                reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
+                reaction(DISLIKE, dislike_url+row.id, dislike_but.id);  
               };
-              boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
+              dislike.appendChild(dislike_but);  // add "dislike button" to dislike cell
              
             // this builds ALL td's (cells) into tr (row) element
-            tr.appendChild(joke);
-            tr.appendChild(haha);
-            tr.appendChild(boohoo);
+            tr.appendChild(tutor);
+            tr.appendChild(like);
+            tr.appendChild(dislike);
 
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
@@ -104,7 +107,7 @@
   })
   // catch fetch errors (ie Nginx ACCESS to server blocked)
   .catch(err => {
-    error(err + ": " + get_url);
+    error(err + " " + get_url);
   });
 
   // Reaction function to likes or jeers user actions
@@ -116,17 +119,17 @@
     .then(response => {
       // check for response errors
       if (response.status !== 200) {
-          error("Post API response failure: " + response.status)
+          error("post API response failure: " + response.status)
           return;  // api failure
       }
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
           // Likes or Jeers updated/incremented
-          if (type === HAHA) // like data element
-            document.getElementById(elemID).innerHTML = data.haha;  // fetched haha data assigned to haha Document Object Model (DOM)
-          else if (type === BOOHOO) // jeer data element
-            document.getElementById(elemID).innerHTML = data.boohoo;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
+          if (type === LIKE) // like data element
+            document.getElementById(elemID).innerHTML = data.like;  // fetched like data assigned to like Document Object Model (DOM)
+          else if (type === DISLIKE) // jeer data element
+            document.getElementById(elemID).innerHTML = data.dislike;  // fetched dislike data assigned to dislike Document Object Model (DOM)
           else
             error("unknown type: " + type);  // should never occur
       })
