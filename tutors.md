@@ -2,21 +2,29 @@
     <head>
         <style>
             .role {
-                color: purple;
+                color: red;
             }
         </style>
     </head>
     <body>
-        <h1 class="text-center m-5 text-success">Tutors List</h1>
+        <h1 class="text-center m-5 text-success">DNHS CLUB LIST</h1>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Area</th>
-                        <th scope="col">Contact</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Club Type(s)</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Club President</th>
+                        <th scope="col">Staff Advisor</th>
+                        <th scope="col">Meeting Time and Location</th>
+                        <th scope="col">Additional Info</th>
+                        <th scope="col">Official Club?</th>
+                        <!-- Links -->
+                        <th scope="col">Meeting Minutes</th>
+                        <th scope="col">Reviews</th>
                         <!-- Update and delete -->
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -28,10 +36,10 @@
         </div>
         <script>
             // prepare fetch urls
-            // const tutor_url = "http://localhost:8085/api/tutor";
-            const tutor_url = "https://hetvitrivedi.tk/api/tutor";
-            const get_url = tutor_url + "/";
-            const tutorContainer = document.getElementById("tutors");
+            // const club_url = "http://localhost:8192/api/club";
+            const club_url = "https://rebeccaaa.tk/api/club";
+            const get_url = club_url + "/";
+            const clubContainer = document.getElementById("clubs");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -59,24 +67,52 @@
                         // columns
                         const tr = document.createElement("tr");
                         const id = document.createElement("td");
-                        const tutorname = document.createElement("td");
-                        const age = document.createElement("td");
-                        const area = document.createElement("td");
-                        const contact = document.createElement("td");
+                        const name = document.createElement("td");
+                        const purpose = document.createElement("td");
+                        const types = document.createElement("td");
+                        const email = document.createElement("td");
+                        const president = document.createElement("td");
+                        const advisor = document.createElement("td");
+                        const meeting = document.createElement("td");
+                        const info = document.createElement("td");
+                        const official = document.createElement("td");
+                        // url containers
+                        const minutes = document.createElement("td");
+                        const reviews = document.createElement("td");
+                        const update = document.createElement("td");
+                        const del = document.createElement("td");
+                        update.setAttribute("class", "role");
+                        del.setAttribute("class", "role");
                         // accessing JSON values
                         id.innerHTML = row.id;
-                        tutorname.innerHTML = row.tutorname;
-                        age.innerHTML = row.age;
-                        area.innerHTML = row.area;
-                        contact.innerHTML = row.contact;
+                        name.innerHTML = row.name;
+                        purpose.innerHTML = row.purpose;
+                        types.innerHTML = row.types;
+                        email.innerHTML = row.email
+                        president.innerHTML = row.president;
+                        advisor.innerHTML = row.advisor;
+                        meeting.innerHTML = row.meeting;
+                        info.innerHTML = row.info;
+                        official.innerHTML = row.official;
+                        update.innerHTML = "Update";
+                        del.innerHTML = "Delete";
                         // add all columns to the row
                         tr.appendChild(id);
-                        tr.appendChild(tutorname);
-                        tr.appendChild(age);
-                        tr.appendChild(area);
-                        tr.appendChild(contact);
+                        tr.appendChild(name);
+                        tr.appendChild(purpose);
+                        tr.appendChild(types);
+                        tr.appendChild(email);
+                        tr.appendChild(president);
+                        tr.appendChild(advisor);
+                        tr.appendChild(meeting);
+                        tr.appendChild(info);
+                        tr.appendChild(official);
+                        tr.appendChild(minutes);
+                        tr.appendChild(reviews);
+                        tr.appendChild(update);
+                        tr.appendChild(del);
                         // add row to table
-                        tutorContainer.appendChild(tr);
+                        clubContainer.appendChild(tr);
                     }    
                 })
             })
@@ -93,7 +129,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                tutorContainer.appendChild(tr);
+                clubContainer.appendChild(tr);
             }
         </script>
     </body>
