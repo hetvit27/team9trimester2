@@ -2,32 +2,36 @@
     <head>
         <style>
             .role {
-                color: red;
+                color: purple;
             }
         </style>
     </head>
     <body>
-        <h1 class="text-center m-5 text-success">Physics Tutors List</h1>
+        <h1 class="text-center m-5 text-success">Tutors List</h1>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">names</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Age</th>
-                        <th scope="col">Experience</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Contact</th>
+                        <!-- Update and delete -->
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider" id="names">
+                <tbody class="table-group-divider" id="clubs">
                 </tbody>
             </table>
         </div>
         <script>
             // prepare fetch urls
-            const url = "https://hetvitrivedi.tk/api/tutors";
-            const get_url = url + "/";
-            const namesContainer = document.getElementById("names");
+            // const tutor_url = "http://localhost:8085/api/tutor";
+            const tutor_url = "https://hetvitrivedi.tk/api/tutor";
+            const get_url = tutor_url + "/";
+            const tutorContainer = document.getElementById("tutors");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -55,23 +59,24 @@
                         // columns
                         const tr = document.createElement("tr");
                         const id = document.createElement("td");
-                        const names = document.createElement("td");
-                        const Age = document.createElement("td");
-                        const Experience = document.createElement("td");
-                        const Location = document.createElement("td");
+                        const tutorname = document.createElement("td");
+                        const age = document.createElement("td");
+                        const area = document.createElement("td");
+                        const contact = document.createElement("td");
+                        // accessing JSON values
                         id.innerHTML = row.id;
-                        names.innerHTML = row.names;
-                        Age.innerHTML = row.Age;
-                        Experience.innerHTML = row.Experience;
-                        Location.innerHTML = row.Location
+                        tutorname.innerHTML = row.tutorname;
+                        age.innerHTML = row.age;
+                        area.innerHTML = row.area;
+                        contact.innerHTML = row.contact;
                         // add all columns to the row
                         tr.appendChild(id);
-                        tr.appendChild(names);
-                        tr.appendChild(Age);
-                        tr.appendChild(Experience);
-                        tr.appendChild(Location);
+                        tr.appendChild(tutorname);
+                        tr.appendChild(age);
+                        tr.appendChild(area);
+                        tr.appendChild(contact);
                         // add row to table
-                        namesContainer.appendChild(tr);
+                        tutorContainer.appendChild(tr);
                     }    
                 })
             })
@@ -88,7 +93,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                namesContainer.appendChild(tr);
+                tutorContainer.appendChild(tr);
             }
         </script>
     </body>
