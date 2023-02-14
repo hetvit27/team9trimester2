@@ -23,6 +23,24 @@ Features:
 	<option>Test tag</option>
 </select>
 
+<!-- Create inputs for CRUD -->
+
+<input id="equation" placeholder="Enter equation">
+<input id="cbunit" placeholder="CB Unit">
+<input id="cbtopic" placeholder="CB Topic">
+<input id="tags" placeholder="Tags">
+<button onclick="">Create</button>
+
+<input id="deleteid" placeholder="Equation ID">
+<button onclick="">Delete</button>
+
+<input id="updateid" placeholder="Equation ID">
+<input id="updateequation" placeholder="Enter equation">
+<input id="updatecbunit" placeholder="CB Unit">
+<input id="updatecbtopic" placeholder="CB Topic">
+<input id="updatetags" placeholder="Tags">
+<button onclick="">Update</button>
+
 <!-- Create table to display equations -->
 
 <table id="equationsTable" border="1" style="border-collapse: collapse;">
@@ -42,192 +60,53 @@ Features:
 		</tr>
 </table>
 
-<!-- Create inputs for CRUD -->
-
-<input id="equation" placeholder="Enter equation">
-<input id="cbunit" placeholder="CB Unit">
-<input id="cbtopic" placeholder="CB Topic">
-<input id="tags" placeholder="Tags">
-<button onclick="">Create</button>
-
-<input id="deleteid" placeholder="Equation ID">
-<button onclick="">Delete</button>
-
-<input id="updateid" placeholder="Equation ID">
-<input id="updateequation" placeholder="Enter equation">
-<input id="updatecbunit" placeholder="CB Unit">
-<input id="updatecbtopic" placeholder="CB Topic">
-<input id="updatetags" placeholder="Tags">
-<button onclick="">Update</button>
-
 <!-- Create script to handle CRUD -->
 
 <script>
-	// Create
-	function create() {
-		// Get inputs
-		var equation = document.getElementById("equation").value;
-		var cbunit = document.getElementById("cbunit").value;
-		var cbtopic = document.getElementById("cbtopic").value;
-		var tags = document.getElementById("tags").value;
-		// Create JSON object
-		var data = {
-			"equation": equation,
-			"cbunit": cbunit,
-			"cbtopic": cbtopic,
-			"tags": tags
-		};
-		// Send POST request
-		fetch("/equations", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(data)
-		})
-		// Check for response errors
-		.then(response => {
-			if (response.status !== 200) {
-				error("POST API response failure: " + response.status);
-				return;  // api failure
-			}
-			// Valid response will have JSON data
-			response.json().then(data => {
-				console.log(data);
-				// Clear previous results
-				document.getElementById("result").innerHTML = "";
-				// Display results
-				var result = document.createElement("p");
-				result.innerHTML = "Equation created: " + data.equation;
-				document.getElementById("result").appendChild(result);
-			})
-			// Catch fetch errors
-			.catch(err => {
-				error(err + " " );
-			});
-		});
-	}
-	// Read
-	function read() {
-		// Send GET request
-		fetch("/equations")
-		// Check for response errors
-		.then(response => {
-			if (response.status !== 200) {
-				error("GET API response failure: " + response.status);
-				return;  // api failure
-			}
-			// Valid response will have JSON data
-			response.json().then(data => {
-				console.log(data);
-				// Clear previous results
-				document.getElementById("result").innerHTML = "";
-				// Display results
-				var result = document.createElement("p");
-				result.innerHTML = "Equations: " + data.equations;
-				document.getElementById("result").appendChild(result);
-			})
-			// Catch fetch errors
-			.catch(err => {
-				error(err + " " );
-			});
-		});
-	}
-	// Update
-	function update() {
-		// Get inputs
-		var id = document.getElementById("updateid").value;
-		var equation = document.getElementById("updateequation").value;
-		var cbunit = document.getElementById("updatecbunit").value;
-		var cbtopic = document.getElementById("updatecbtopic").value;
-		var tags = document.getElementById("updatetags").value;
-		// Create JSON object
-		var data = {
-			"equation": equation,
-			"cbunit": cbunit,
-			"cbtopic": cbtopic,
-			"tags": tags
-		};
-		// Send PUT request
-		fetch("/equations/" + id, {
-			method: "PUT",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(data)
-		})
-		// Check for response errors
-		.then(response => {
-			if (response.status !== 200) {
-				error("PUT API response failure: " + response.status);
-				return;  // api failure
-			}
-			// Valid response will have JSON data
-			response.json().then(data => {
-				console.log(data);
-				// Clear previous results
-				document.getElementById("result").innerHTML = "";
-				// Display results
-				var result = document.createElement("p");
-				result.innerHTML = "Equation updated: " + data.equation;
-				document.getElementById("result").appendChild(result);
-			})
-			// Catch fetch errors
-			.catch(err => {
-				error(err + " " );
-			});
-		});
-	}
-	// Delete
-	function delete() {
-		// Get inputs
-		var id = document.getElementById("deleteid").value;
-		// Send DELETE request
-		fetch("/equations/" + id, {
-			method: "DELETE"
-		})
-		// Check for response errors
-		.then(response => {
-			if (response.status !== 200) {
-				error("DELETE API response failure: " + response.status);
-				return;  // api failure
-			}
-			// Valid response will have JSON data
-			response.json().then(data => {
-				console.log(data);
-				// Clear previous results
-				document.getElementById("result").innerHTML = "";
-				// Display results
-				var result = document.createElement("p");
-				result.innerHTML = "Equation deleted: " + data.equation;
-				document.getElementById("result").appendChild(result);
-			})
-			// Catch fetch errors
-			.catch(err => {
-				error(err + " " );
-			});
-		});
-	}
-	// Error
-	function error(message) {
-		console.log(message);
-		// Clear previous results
-		document.getElementById("result").innerHTML = "";
-		// Display results
-		var result = document.createElement("p");
-		result.innerHTML = "Error: " + message;
-		document.getElementById("result").appendChild(result);
-	}
+	// fetch from database
+	const resultContainer = document.getElementById("equationsTable");
 
-	// Search button
-	function search() {
-		console.log("searching");
-		var $rows = $('#equations tr');
-		$search = $('#search').val().toLowerCase();
-		console.log($search);
-		$rows.hide();
-		$rows.filter(function() {
-			return $(this).text().toLowerCase().indexOf($search) !== -1;
-		}).show();
-	}
+	const equation_url = "https://hetvitrivedi.tk/api/equation";
+	const person_url = "https://hetvitrivedi.tk/api/person";
+	
+	// TODO: get person id from person database
+	const person_id = 22; // tester for now
+
+	const get_url = equation_url + "/" + person_id;
+
+	// prepare fetch GET options
+	const options = {
+    method: 'GET', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  };
+  // prepare fetch PUT options, clones with JS Spread Operator (...)
+  const post_options = {...options, method: 'POST'}; // clones and replaces method
+
+	// fetch equations
+	fetch(get_url, options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+        error('GET API response failure: ' + response.status);
+        return;
+      }
+      // valid response will have JSON data
+      response.json().then(data => {
+        console.log(data);
+				// TODO: display data in table
+			});
+		})
+		// catch fetch errors (ie Nginx ACCESS to server blocked)
+  .catch(err => {
+  	error(err + " " + get_url);
+		console.log(err);
+  });
+
 </script>

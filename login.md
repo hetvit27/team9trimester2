@@ -23,40 +23,44 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
 	const login_url = 'https://hetvitrivedi.tk/authenticate';
 
 	function login_user() {
-    // Set body to include login data
-    const body = {
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-    };
+        // Set body to include login data
+        const body = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+        };
 
-    // Set Headers to support cross origin
-    const requestOptions = {
-        method: 'POST',
-        mode: 'cors', // no-cors, *cors, same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'include', // include, *same-origin, omit
-        body: JSON.stringify(body),
-        headers: {
-            "content-type": "application/json",
-        },
-    };
+        console.log(body);
 
-    // Fetch JWT
-    fetch(login_url, requestOptions)
-    .then(response => {
-        // trap error response from Web API
-        if (!response.ok) {
-            const errorMsg = 'Login error: ' + response.status;
-            console.log(errorMsg);
-            return;
-        }
-        // Success!!!
-				console.log('Login successful!');
-        // Redirect to Database location
-        // window.location.href = "/APCSA/data/database";
-  	  })
-			.catch(error => {
-				console.log('Error: ', error);
-			});
-		}
+        // Set Headers to support cross origin
+        const requestOptions = {
+            method: 'POST',
+            mode: 'cors', // no-cors, *cors, same-origin
+            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'include', // include, *same-origin, omit
+            body: JSON.stringify(body),
+            headers: {
+                "content-type": "application/json",
+            },
+        };
+
+        // Fetch JWT
+        fetch(login_url, requestOptions)
+        .then(response => {
+
+            console.log(response);
+            // trap error response from Web API
+            if (!response.ok) {
+                const errorMsg = 'Login error: ' + response.status;
+                console.log(errorMsg);
+                return;
+            }
+            // Success!!!
+            console.log('Login successful!');
+            // Redirect to Database location
+            // window.location.href = "/APCSA/data/database";
+        })
+        .catch(error => {
+            console.log('Error: ', error);
+        });
+    }
 </script>
