@@ -162,8 +162,17 @@ Features:
 
 		const create_url = equation_url + "/create";
 
-		// send as query parameters
-		fetch(create_url, "?person_id=" + person_id + "&text=" + equation, post_options)
+
+		// This one is a RequestParam in backend
+		const data = {
+			"text": equation,
+			"person_id": person_id
+		};
+
+		fetch(create_url, {
+			...post_options,
+			body: JSON.stringify(data)
+		})
 			.then(response => {
 				if (response.status !== 200) {
 					error('CREATE API response failure: ' + response.status);
