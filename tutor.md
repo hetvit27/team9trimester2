@@ -37,7 +37,7 @@
         <script>
             // prepare fetch urls
             // const club_url = "http://localhost:8192/api/club";
-            const club_url = "https://hetvitrivedi.tk/tutor";
+            const club_url = "https://hetvitrivedi.tk/api/tutor";
             const get_url = club_url + "/";
             const clubContainer = document.getElementById("clubs");
             // prepare fetch GET options
