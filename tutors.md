@@ -75,8 +75,6 @@
                         tr.appendChild(age);
                         tr.appendChild(area);
                         tr.appendChild(contact);
-                        // add row to table
-                        tutorsContainer.appendChild(tr);
                     }    
                 })
             })
