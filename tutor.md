@@ -1,51 +1,136 @@
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-
-## Find a Tutor
-
-<h3> Search for a tutor</h3>
-
-Features:
-    -  Shows tutor information that is stored in a database from sign up
-    - Submit reviews for tutors that accumulate
-    - See tutors experience
-    - Users can post reviews anonymously
-    - View all tutors in a tale
-    - Search by location
-
-<!-- Create inputs for search and question -->
-
-<input id="Location for Tutor" placeholder="Enter your location">
-<button onclick="search()">Search</button>
-<br>
-<br>
-
-
-<!-- Create table to display question posts -->
-
-<table id="equationsTable" border="3" style="border-collapse: collapse;">
-		<tr>
-				<th>Tutor Name</th>
-				<th>Location</th>
-				<th>Experience</th>
-                <th>Past Reviews</th>
-                <th>Meeting Preference</th>
-                <th> Submit a Review</th>
-                <th> Request this Tutor </th>
-		</tr>
-		<tr>
-				<td>Hetvi Trivedi</td>
-				<td>San Diego</td>
-                <td>Tutored in other STEM subjects. Has taken AP Physics Mechanics and did well. </td>
-                <td> User13904: Great experience! </td>
-                <td> Zoom or in-person </td>
-				<td>
-                <input id="review" placeholder="Review">
-                <button onclick="reply()">Submit</button>
-                </td>
-                <td>
-                <button onclick="request()">Request</button>
-                </td>
-		</tr>
-</table>
+<html>
+    <head>
+        <style>
+            .role {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center m-5 text-success">DNHS CLUB LIST</h1>
+        <div class="table-responsive mx-5">
+            <table class="table table-hover table-bordered border-secondary mb-5">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Tutor Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Club President</th>
+                        <th scope="col">Staff Advisor</th>
+                        <th scope="col">Meeting Time and Location</th>
+                        <th scope="col">Additional Info</th>
+                        <th scope="col">Official Club?</th>
+                        <!-- Links -->
+                        <th scope="col">Meeting Minutes</th>
+                        <th scope="col">Reviews</th>
+                        <!-- Update and delete -->
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="clubs">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            // prepare fetch urls
+            // const club_url = "http://localhost:8192/api/club";
+            const club_url = "https://hetvitrivedi.tk/api/tutor";
+            const get_url = club_url + "/";
+            const clubContainer = document.getElementById("clubs");
+            // prepare fetch GET options
+            const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+            // fetch the API
+            fetch(get_url, options)
+                // response is a RESTful "promise" on any successful fetch
+                .then(response => {
+                // check for response errors
+                if (response.status !== 200) {
+                    error('GET API response failure: ' + response.status);
+                    return;
+                }
+                // valid response will have JSON data
+                response.json().then(data => {
+                    for (const row of data) {
+                        console.log(row);
+                        // columns
+                        const tr = document.createElement("tr");
+                        const id = document.createElement("td");
+                        const tutorname = document.createElement("td");
+                        const age = document.createElement("td");
+                        const area = document.createElement("td");
+                        const contact = document.createElement("td");
+                        const president = document.createElement("td");
+                        const advisor = document.createElement("td");
+                        const meeting = document.createElement("td");
+                        const info = document.createElement("td");
+                        const official = document.createElement("td");
+                        // url containers
+                        const minutes = document.createElement("td");
+                        const reviews = document.createElement("td");
+                        const update = document.createElement("td");
+                        const del = document.createElement("td");
+                        update.setAttribute("class", "role");
+                        del.setAttribute("class", "role");
+                        // accessing JSON values
+                        id.innerHTML = row.id;
+                        tutorname.innerHTML = row.tutorname;
+                        age.innerHTML = row.age;
+                        area.innerHTML = row.area;
+                        contact.innerHTML = row.contact
+                        president.innerHTML = row.president;
+                        advisor.innerHTML = row.advisor;
+                        meeting.innerHTML = row.meeting;
+                        info.innerHTML = row.info;
+                        official.innerHTML = row.official;
+                        update.innerHTML = "Update";
+                        del.innerHTML = "Delete";
+                        // add all columns to the row
+                        tr.appendChild(id);
+                        tr.appendChild(tutorname);
+                        tr.appendChild(age);
+                        tr.appendChild(area);
+                        tr.appendChild(contact);
+                        tr.appendChild(president);
+                        tr.appendChild(advisor);
+                        tr.appendChild(meeting);
+                        tr.appendChild(info);
+                        tr.appendChild(official);
+                        tr.appendChild(minutes);
+                        tr.appendChild(reviews);
+                        tr.appendChild(update);
+                        tr.appendChild(del);
+                        // add row to table
+                        clubContainer.appendChild(tr);
+                    }    
+                })
+            })
+            // catch fetch errors (ie Nginx ACCESS to server blocked)
+            .catch(err => {
+                error(err + " " + get_url);
+            });
+            // Something went wrong with actions or responses
+            function error(err) {
+                // log as Error in console
+                console.error(err);
+                // append error to resultContainer
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = err;
+                tr.appendChild(td);
+                clubContainer.appendChild(tr);
+            }
+        </script>
+    </body>
+</html>
