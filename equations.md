@@ -32,7 +32,7 @@ Features:
 <button onclick="">Create</button>
 
 <input id="deleteid" placeholder="Equation ID">
-<button onclick="">Delete</button>
+<button onclick="deleteEquation()">Delete</button>
 
 <input id="updateid" placeholder="Equation ID">
 <input id="updateequation" placeholder="Enter equation">
@@ -122,5 +122,35 @@ Features:
   	error(err + " " + get_url);
 		console.log(err);
   });
+
+	/* Delete equation */
+	function deleteEquation() {
+
+		const id = document.getElementById("deleteid").value;
+		const delete_url = equation_url + "/delete/" + person_id;
+
+		fetch(delete_url + "/" + id, post_options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('DELETE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by removing row with id
+					for (let i = 0; i < resultContainer.rows.length; i++) {
+						if (resultContainer.rows[i].cells[0].innerHTML == id) {
+							resultContainer.deleteRow(i);
+							break;
+						}
+					}
+				});
+			})
+			.catch(err => {
+				error(err + " " + delete_url);
+				console.log(err);
+			});
+	}
+
 
 </script>
