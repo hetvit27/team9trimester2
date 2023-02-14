@@ -2,17 +2,17 @@
     <head>
         <style>
             .role {
-                color: purple;
+                color: red;
             }
         </style>
     </head>
     <body>
-        <h1 class="text-center m-5 text-success">Tutors List</h1>
+        <h1 class="text-center m-5 text-success">Tutors</h1>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Age</th>
                         <th scope="col">Area</th>
@@ -28,16 +28,16 @@
         </div>
         <script>
             // prepare fetch urls
-            // const tutor_url = "http://localhost:8085/api/tutor";
-            const tutor_url = "https://hetvitrivedi.tk/api/tutor";
-            const get_url = tutor_url + "/";
-            const tutorContainer = document.getElementById("tutors");
+            // const club_url = "http://localhost:8192/api/club";
+            const tutors_url = "https://hetvitrivedi.tk/api/tutor";
+            const get_url = tutors_url + "/";
+            const tutorsContainer = document.getElementById("tutors");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
-                // mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                // credentials: 'same-origin', // include, same-origin, omit
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'include', // include, same-origin, omit
                 headers: {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -68,15 +68,13 @@
                         tutorname.innerHTML = row.tutorname;
                         age.innerHTML = row.age;
                         area.innerHTML = row.area;
-                        contact.innerHTML = row.contact;
+                        contact.innerHTML = row.contact
                         // add all columns to the row
                         tr.appendChild(id);
                         tr.appendChild(tutorname);
                         tr.appendChild(age);
                         tr.appendChild(area);
                         tr.appendChild(contact);
-                        // add row to table
-                        tutorContainer.appendChild(tr);
                     }    
                 })
             })
@@ -93,7 +91,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                tutorContainer.appendChild(tr);
+                tutorsContainer.appendChild(tr);
             }
         </script>
     </body>
