@@ -162,16 +162,8 @@ Features:
 
 		const create_url = equation_url + "/create";
 
-		// prepare JSON data
-		const data = {
-			"person_id" : person_id,
-			"text": equation,
-			// "cbunit": cbunit,
-			// "cbtopic": cbtopic,
-			// "tags": tags
-		};
-
-		fetch(create_url, {...post_options, body: JSON.stringify(data)})
+		// send as query parameters
+		fetch(create_url, "?person_id=" + person_id + "&text=" + equation, post_options)
 			.then(response => {
 				if (response.status !== 200) {
 					error('CREATE API response failure: ' + response.status);
