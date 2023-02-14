@@ -47,16 +47,16 @@ Features:
 		<tr>
 				<th>Id</th>
 				<th>Equation</th>
-				<th>CB Unit</th>
-				<th>CB Topic</th>
-				<th>Tags</th>
+				<!-- <th>CB Unit</th> -->
+				<!-- <th>CB Topic</th> -->
+				<!-- <th>Tags</th> -->
 		</tr>
 		<tr>
 				<td>0</td>
 				<td>F=ma</td>
-				<td>1</td>
-				<td>1.1 Newton's Laws</td>
-				<td>physics, newton's laws, force, mass, acceleration</td>
+				<!-- <td>1</td> -->
+				<!-- <td>1.1 Newton's Laws</td> -->
+				<!-- <td>physics, newton's laws, force, mass, acceleration</td> -->
 		</tr>
 </table>
 
@@ -70,7 +70,7 @@ Features:
 	const person_url = "https://hetvitrivedi.tk/api/person";
 	
 	// TODO: get person id from person database
-	const person_id = 22; // tester for now
+	const person_id = 36; // tester for now
 
 	const get_url = equation_url + "/" + person_id;
 
@@ -101,6 +101,20 @@ Features:
       response.json().then(data => {
         console.log(data);
 				// TODO: display data in table
+				// add 'text' to equation table
+				for (let i = 0; i < data.length; i++) {
+					let row = resultContainer.insertRow(i+1);
+					let id = row.insertCell(0);
+					let equation = row.insertCell(1);
+					// let cbunit = row.insertCell(2);
+					// let cbtopic = row.insertCell(3);
+					// let tags = row.insertCell(4);
+					id.innerHTML = data[i].id;
+					equation.innerHTML = data[i].text;
+					// cbunit.innerHTML = data[i].cbunit;
+					// cbtopic.innerHTML = data[i].cbtopic;
+					// tags.innerHTML = data[i].tags;
+				}
 			});
 		})
 		// catch fetch errors (ie Nginx ACCESS to server blocked)
