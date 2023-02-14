@@ -12,19 +12,10 @@
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Tutor Name</th>
                         <th scope="col">Age</th>
                         <th scope="col">Area</th>
                         <th scope="col">Contact</th>
-                        <th scope="col">Club President</th>
-                        <th scope="col">Staff Advisor</th>
-                        <th scope="col">Meeting Time and Location</th>
-                        <th scope="col">Additional Info</th>
-                        <th scope="col">Official Club?</th>
-                        <!-- Links -->
-                        <th scope="col">Meeting Minutes</th>
-                        <th scope="col">Reviews</th>
                         <!-- Update and delete -->
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -66,51 +57,19 @@
                         console.log(row);
                         // columns
                         const tr = document.createElement("tr");
-                        const id = document.createElement("td");
                         const tutorname = document.createElement("td");
                         const age = document.createElement("td");
                         const area = document.createElement("td");
                         const contact = document.createElement("td");
-                        const president = document.createElement("td");
-                        const advisor = document.createElement("td");
-                        const meeting = document.createElement("td");
-                        const info = document.createElement("td");
-                        const official = document.createElement("td");
-                        // url containers
-                        const minutes = document.createElement("td");
-                        const reviews = document.createElement("td");
-                        const update = document.createElement("td");
-                        const del = document.createElement("td");
-                        update.setAttribute("class", "role");
-                        del.setAttribute("class", "role");
-                        // accessing JSON values
-                        id.innerHTML = row.id;
                         tutorname.innerHTML = row.tutorname;
                         age.innerHTML = row.age;
                         area.innerHTML = row.area;
                         contact.innerHTML = row.contact
-                        president.innerHTML = row.president;
-                        advisor.innerHTML = row.advisor;
-                        meeting.innerHTML = row.meeting;
-                        info.innerHTML = row.info;
-                        official.innerHTML = row.official;
-                        update.innerHTML = "Update";
-                        del.innerHTML = "Delete";
                         // add all columns to the row
-                        tr.appendChild(id);
                         tr.appendChild(tutorname);
                         tr.appendChild(age);
                         tr.appendChild(area);
                         tr.appendChild(contact);
-                        tr.appendChild(president);
-                        tr.appendChild(advisor);
-                        tr.appendChild(meeting);
-                        tr.appendChild(info);
-                        tr.appendChild(official);
-                        tr.appendChild(minutes);
-                        tr.appendChild(reviews);
-                        tr.appendChild(update);
-                        tr.appendChild(del);
                         // add row to table
                         clubContainer.appendChild(tr);
                     }    
