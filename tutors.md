@@ -12,7 +12,7 @@
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Age</th>
                         <th scope="col">Area</th>
@@ -29,15 +29,15 @@
         <script>
             // prepare fetch urls
             // const club_url = "http://localhost:8192/api/club";
-            const club_url = "https://hetvitrivedi.tk/api/tutor";
-            const get_url = club_url + "/";
-            const clubContainer = document.getElementById("clubs");
+            const tutors_url = "https://hetvitrivedi.tk/api/tutor";
+            const get_url = tutors_url + "/";
+            const tutorsContainer = document.getElementById("tutors");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
-                // mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                // credentials: 'same-origin', // include, same-origin, omit
+                mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'include', // include, same-origin, omit
                 headers: {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -59,52 +59,24 @@
                         // columns
                         const tr = document.createElement("tr");
                         const id = document.createElement("td");
-                        const name = document.createElement("td");
-                        const purpose = document.createElement("td");
-                        const types = document.createElement("td");
-                        const email = document.createElement("td");
-                        const president = document.createElement("td");
-                        const advisor = document.createElement("td");
-                        const meeting = document.createElement("td");
-                        const info = document.createElement("td");
-                        const official = document.createElement("td");
-                        // url containers
-                        const minutes = document.createElement("td");
-                        const reviews = document.createElement("td");
-                        const update = document.createElement("td");
-                        const del = document.createElement("td");
-                        update.setAttribute("class", "role");
-                        del.setAttribute("class", "role");
+                        const tutorname = document.createElement("td");
+                        const age = document.createElement("td");
+                        const area = document.createElement("td");
+                        const contact = document.createElement("td");
                         // accessing JSON values
                         id.innerHTML = row.id;
-                        name.innerHTML = row.name;
-                        purpose.innerHTML = row.purpose;
-                        types.innerHTML = row.types;
-                        email.innerHTML = row.email
-                        president.innerHTML = row.president;
-                        advisor.innerHTML = row.advisor;
-                        meeting.innerHTML = row.meeting;
-                        info.innerHTML = row.info;
-                        official.innerHTML = row.official;
-                        update.innerHTML = "Update";
-                        del.innerHTML = "Delete";
+                        tutorname.innerHTML = row.tutorname;
+                        age.innerHTML = row.age;
+                        area.innerHTML = row.area;
+                        contact.innerHTML = row.contact
                         // add all columns to the row
                         tr.appendChild(id);
-                        tr.appendChild(name);
-                        tr.appendChild(purpose);
-                        tr.appendChild(types);
-                        tr.appendChild(email);
-                        tr.appendChild(president);
-                        tr.appendChild(advisor);
-                        tr.appendChild(meeting);
-                        tr.appendChild(info);
-                        tr.appendChild(official);
-                        tr.appendChild(minutes);
-                        tr.appendChild(reviews);
-                        tr.appendChild(update);
-                        tr.appendChild(del);
+                        tr.appendChild(tutorname);
+                        tr.appendChild(age);
+                        tr.appendChild(area);
+                        tr.appendChild(contact);
                         // add row to table
-                        clubContainer.appendChild(tr);
+                        tutorsContainer.appendChild(tr);
                     }    
                 })
             })
@@ -121,7 +93,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                clubContainer.appendChild(tr);
+                tutorsContainer.appendChild(tr);
             }
         </script>
     </body>
