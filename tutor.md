@@ -7,7 +7,8 @@
         </style>
     </head>
     <body>
-        <h1 class="text-center m-5 text-success">DNHS CLUB LIST</h1>
+        <h1 class="text-center m-5 text-success">Tutor List</h1>
+        <br>
         <div class="table-responsive mx-5">
             <table class="table table-hover table-bordered border-secondary mb-5">
                 <thead>
