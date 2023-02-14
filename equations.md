@@ -26,19 +26,19 @@ Features:
 <!-- Create inputs for CRUD -->
 
 <input id="equation" placeholder="Enter equation">
-<input id="cbunit" placeholder="CB Unit">
-<input id="cbtopic" placeholder="CB Topic">
-<input id="tags" placeholder="Tags">
-<button onclick="">Create</button>
+<!-- <input id="cbunit" placeholder="CB Unit">
+<input id="cbtopic" placeholder="CB Topic"> -->
+<!-- <input id="tags" placeholder="Tags"> -->
+<button onclick="createEquation()">Create</button>
 
 <input id="deleteid" placeholder="Equation ID">
 <button onclick="deleteEquation()">Delete</button>
 
 <input id="updateid" placeholder="Equation ID">
 <input id="updateequation" placeholder="Enter equation">
-<input id="updatecbunit" placeholder="CB Unit">
+<!-- <input id="updatecbunit" placeholder="CB Unit">
 <input id="updatecbtopic" placeholder="CB Topic">
-<input id="updatetags" placeholder="Tags">
+<input id="updatetags" placeholder="Tags"> -->
 <button onclick="">Update</button>
 
 <!-- Create table to display equations -->
@@ -152,5 +152,51 @@ Features:
 			});
 	}
 
+	/* Create equation */
+	function createEquation() {
+
+		const equation = document.getElementById("equation").value;
+		// const cbunit = document.getElementById("cbunit").value;
+		// const cbtopic = document.getElementById("cbtopic").value;
+		// const tags = document.getElementById("tags").value;
+
+		const create_url = equation_url + "/create";
+
+		// prepare JSON data
+		const data = {
+			"person_id" : person_id,
+			"text": equation,
+			// "cbunit": cbunit,
+			// "cbtopic": cbtopic,
+			// "tags": tags
+		};
+
+		fetch(create_url, {...post_options, body: JSON.stringify(data)})
+			.then(response => {
+				if (response.status !== 200) {
+					error('CREATE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by adding row with id
+					let row = resultContainer.insertRow(resultContainer.rows.length);
+					let id = row.insertCell(0);
+					let equation = row.insertCell(1);
+					// let cbunit = row.insertCell(2);
+					// let cbtopic = row.insertCell(3);
+					// let tags = row.insertCell(4);
+					id.innerHTML = data.id;
+					equation.innerHTML = data.text;
+					// cbunit.innerHTML = data.cbunit;
+					// cbtopic.innerHTML = data.cbtopic;
+					// tags.innerHTML = data.tags;
+				});
+			})
+			.catch(err => {
+				error(err + " " + create_url);
+				console.log(err);
+			});
+	}
 
 </script>
