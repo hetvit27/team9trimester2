@@ -1,94 +1,136 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>F1 Races</title>
-    <meta name="description" content="F1 Races and their Information." />
-    <style>
-      table.center {
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
-  </head>
-    <h1 style="text-align: center; font-size: 50px">
-      F1 Races
-    </h1>
-    <table id= "raceTable" class="races" border="1" style="position: absolute; top: 100%;left: -15%;">
-      <tr>
-        <th>Date (year,month,day)</th>
-        <th>Round</th>
-        <th>Season</th>
-        <th>Race Name</th>
-        <th>Circuit Name</th>
-        <th>Country</th>
-        <th>Locality</th>
-      </tr>
-    </table>
-    <script type="text/javascript">
-      const races = document.querySelector(".races");
-      // https://f1-backend.aadit.dev/api/race/races?year=2021
-      fetch("https://f1-backend.aadit.dev/api/race/races/" + year)
-        .then((data) => data.json())
-        .then((data) => {
-          console.log(data);
-          data.MRData.RaceTable.Races.forEach((data) => {
-            races.innerHTML += `
-        <tr>
-          <td>${data.date}</td>
-            <td>${data.round}</td>
-            <td>${data.season}</td>
-            <td>${data.raceName}</td>
-            <td>${data.Circuit.circuitName}</td>
-            <td>${data.Circuit.Location.country}</td>
-            <td>${data.Circuit.Location.locality}</td>
-        </tr>`;
-          });
-        });
-    </script>
-    <style type="text/css">
-      @import url("https://rsms.me/inter/inter.css");
-      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap");
-      * {
-        font-family: "Inter", sans-serif !important;
-      }
-      .races {
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0;
-        columns: 3;
-        font-size: 20px;
-      }
-      img {
-        width: 800px;
-      }
-      ul {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-      }
-      table {
-        color: black
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        text-align: center;
-      }
-      table.center {
-  margin-left: auto;
-  margin-right: auto;
-      }
-    </style>
-
-  <style>
-  .table {
-  color: red;
-  padding: 16px;
-  font-size: 16px;
-  border: 1px solid black;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  width: 9.5em;
-  height: 15%;
-}
-</style>
+    <head>
+        <style>
+            .role {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center m-5 text-success">DNHS CLUB LIST</h1>
+        <div class="table-responsive mx-5">
+            <table class="table table-hover table-bordered border-secondary mb-5">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Purpose</th>
+                        <th scope="col">Club Type(s)</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Club President</th>
+                        <th scope="col">Staff Advisor</th>
+                        <th scope="col">Meeting Time and Location</th>
+                        <th scope="col">Additional Info</th>
+                        <th scope="col">Official Club?</th>
+                        <!-- Links -->
+                        <th scope="col">Meeting Minutes</th>
+                        <th scope="col">Reviews</th>
+                        <!-- Update and delete -->
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider" id="clubs">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            // prepare fetch urls
+            // const club_url = "http://localhost:8192/api/club";
+            const club_url = "https://rebeccaaa.tk/api/club";
+            const get_url = club_url + "/";
+            const clubContainer = document.getElementById("clubs");
+            // prepare fetch GET options
+            const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+            // fetch the API
+            fetch(get_url, options)
+                // response is a RESTful "promise" on any successful fetch
+                .then(response => {
+                // check for response errors
+                if (response.status !== 200) {
+                    error('GET API response failure: ' + response.status);
+                    return;
+                }
+                // valid response will have JSON data
+                response.json().then(data => {
+                    for (const row of data) {
+                        console.log(row);
+                        // columns
+                        const tr = document.createElement("tr");
+                        const id = document.createElement("td");
+                        const name = document.createElement("td");
+                        const purpose = document.createElement("td");
+                        const types = document.createElement("td");
+                        const email = document.createElement("td");
+                        const president = document.createElement("td");
+                        const advisor = document.createElement("td");
+                        const meeting = document.createElement("td");
+                        const info = document.createElement("td");
+                        const official = document.createElement("td");
+                        // url containers
+                        const minutes = document.createElement("td");
+                        const reviews = document.createElement("td");
+                        const update = document.createElement("td");
+                        const del = document.createElement("td");
+                        update.setAttribute("class", "role");
+                        del.setAttribute("class", "role");
+                        // accessing JSON values
+                        id.innerHTML = row.id;
+                        name.innerHTML = row.name;
+                        purpose.innerHTML = row.purpose;
+                        types.innerHTML = row.types;
+                        email.innerHTML = row.email
+                        president.innerHTML = row.president;
+                        advisor.innerHTML = row.advisor;
+                        meeting.innerHTML = row.meeting;
+                        info.innerHTML = row.info;
+                        official.innerHTML = row.official;
+                        update.innerHTML = "Update";
+                        del.innerHTML = "Delete";
+                        // add all columns to the row
+                        tr.appendChild(id);
+                        tr.appendChild(name);
+                        tr.appendChild(purpose);
+                        tr.appendChild(types);
+                        tr.appendChild(email);
+                        tr.appendChild(president);
+                        tr.appendChild(advisor);
+                        tr.appendChild(meeting);
+                        tr.appendChild(info);
+                        tr.appendChild(official);
+                        tr.appendChild(minutes);
+                        tr.appendChild(reviews);
+                        tr.appendChild(update);
+                        tr.appendChild(del);
+                        // add row to table
+                        clubContainer.appendChild(tr);
+                    }    
+                })
+            })
+            // catch fetch errors (ie Nginx ACCESS to server blocked)
+            .catch(err => {
+                error(err + " " + get_url);
+            });
+            // Something went wrong with actions or responses
+            function error(err) {
+                // log as Error in console
+                console.error(err);
+                // append error to resultContainer
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.innerHTML = err;
+                tr.appendChild(td);
+                clubContainer.appendChild(tr);
+            }
+        </script>
+    </body>
 </html>
