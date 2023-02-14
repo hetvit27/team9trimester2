@@ -13,10 +13,10 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Purpose</th>
-                        <th scope="col">Club Type(s)</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Tutor Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Area</th>
+                        <th scope="col">Contact</th>
                         <th scope="col">Club President</th>
                         <th scope="col">Staff Advisor</th>
                         <th scope="col">Meeting Time and Location</th>
@@ -37,7 +37,7 @@
         <script>
             // prepare fetch urls
             // const club_url = "http://localhost:8192/api/club";
-            const club_url = "https://rebeccaaa.tk/api/club";
+            const club_url = "https://hetvitrivedi.tk/tutor";
             const get_url = club_url + "/";
             const clubContainer = document.getElementById("clubs");
             // prepare fetch GET options
@@ -67,10 +67,10 @@
                         // columns
                         const tr = document.createElement("tr");
                         const id = document.createElement("td");
-                        const name = document.createElement("td");
-                        const purpose = document.createElement("td");
-                        const types = document.createElement("td");
-                        const email = document.createElement("td");
+                        const tutorname = document.createElement("td");
+                        const age = document.createElement("td");
+                        const area = document.createElement("td");
+                        const contact = document.createElement("td");
                         const president = document.createElement("td");
                         const advisor = document.createElement("td");
                         const meeting = document.createElement("td");
@@ -85,10 +85,10 @@
                         del.setAttribute("class", "role");
                         // accessing JSON values
                         id.innerHTML = row.id;
-                        name.innerHTML = row.name;
-                        purpose.innerHTML = row.purpose;
-                        types.innerHTML = row.types;
-                        email.innerHTML = row.email
+                        tutorname.innerHTML = row.tutorname;
+                        age.innerHTML = row.age;
+                        area.innerHTML = row.area;
+                        contact.innerHTML = row.contact
                         president.innerHTML = row.president;
                         advisor.innerHTML = row.advisor;
                         meeting.innerHTML = row.meeting;
@@ -98,10 +98,10 @@
                         del.innerHTML = "Delete";
                         // add all columns to the row
                         tr.appendChild(id);
-                        tr.appendChild(name);
-                        tr.appendChild(purpose);
-                        tr.appendChild(types);
-                        tr.appendChild(email);
+                        tr.appendChild(tutorname);
+                        tr.appendChild(age);
+                        tr.appendChild(area);
+                        tr.appendChild(contact);
                         tr.appendChild(president);
                         tr.appendChild(advisor);
                         tr.appendChild(meeting);
