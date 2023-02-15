@@ -24,14 +24,22 @@
             event.preventDefault();
             const formData = new FormData(formEl);
             const data = Object.fromEntries(formData);
-            fetch('https://hetvitrivedi.tk/api/tutor', {
-               method: 'POST',
-               headers: {
-                    'Content-Type': 'application/json'
-               },
-               body: JSON.stringify(data)
-            }).then(res => res.json())
-                .then(data => console.log(data))
-                .catch(error => console.log(error));
-        });
-    </script>
+            var url = "https://hetvitrivedi.tk/api/tutor";
+            const options = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formEl // body data type must match "Content-Type" header
+            };
+            fetch(url, options).then(response => {
+                response.json().then(data => {
+                    console.log(data);
+                })
+            })
+        .catch(err => {
+            console.log("Error: " + err);
+        })
+  });
+          
