@@ -17,10 +17,11 @@
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
 <button onclick="post()">Post</button>
-
-
+<br>
 <!-- Create table to display question posts -->
 <body>
+<br>
+<br>
 <h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
