@@ -11,11 +11,11 @@
 <button onclick="search()">Search</button>
 <select id="filter">
 	<option>Filter by...</option>
-	<option>unit</option>
+	<option>course</option>
 </select>
 
 <input id="question" placeholder="Question">
-<input id="unit" placeholder="Unit">
+<input id="email" placeholder="Email">
 <button onclick="post()">Post</button>
 <br>
 <!-- Create table to display question posts -->
@@ -28,10 +28,10 @@
         <table class="table table-hover table-bordered border-secondary mb-5">
             <thead>
                 <tr>
-                    <th scope="col">Lesson</th>
-                    <th scope="col">Unit</th>
-                    <th scope="col">Tags</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Grade</th>
                     <!-- Update and delete -->
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -44,7 +44,7 @@
  	<script>
         // prepare fetch urls
         // const club_url = "http://localhost:8192/api/club";
-        const discussions_url = "https://hetvitrivedi.tk/api/discussions";
+        const discussions_url = "https://hetvitrivedi.tk/api/schedule/";
         const get_url = discussions_url + "/";
         const discussionsContainer = document.getElementById("discussions");
         // prepare fetch GET options
@@ -73,17 +73,17 @@
                     console.log(row);
                     // columns
                     const tr = document.createElement("tr");
-                    const lesson = document.createElement("td");
-                    const Unit = document.createElement("td");
+                    const name = document.createElement("td");
+                    const Email = document.createElement("td");
                     const Tags = document.createElement("td");
                     const Email = document.createElement("td");
-                    lesson.innerHTML = row.lesson;
-                    Unit.innerHTML = row.Unit;
+                    name.innerHTML = row.Name;
+                    Email.innerHTML = row.Email;
                     Tags.innerHTML = row.Tags;
                     Email.innerHTML = row.Email;
                     // add all columns to the row
-                    tr.appendChild(lesson);
-                    tr.appendChild(Unit);
+                    tr.appendChild(name);
+                    tr.appendChild(Email);
                     tr.appendChild(Tags);
                     tr.appendChild(Email);
                     // add row to table
