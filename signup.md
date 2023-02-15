@@ -6,7 +6,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
     <div class="signup-input">
         <label>Email <input type="email" name="email" id="email" /></label>
         <label>Password <input type="password" name="password" id="password" required> </label>   
-				<label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
+				<!-- <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label> -->
 				<label>Name <input type="text" name="name" id="name" /></label>
 				<label>DOB <input type="date" name="dob" id="dob" /></label>
     </div>
@@ -23,7 +23,9 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 		const email = document.getElementById("email").value;
 		const password = document.getElementById("password").value;
 		const name = document.getElementById("name").value;
-		const dob = document.getElementById("dob").value;
+		const d = document.getElementById("dob").value;
+		// parse dob to mm-dd-yyyy
+		const dob = d.split("-").reverse().join("-");
 
 	function register_user() {
 				// Set body to include login data
@@ -34,6 +36,14 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 						dob: dob,
 				};
 
+				var formBody = [];
+				for (var property in body) {
+					var encodedKey = encodeURIComponent(property);
+					var encodedValue = encodeURIComponent(details[property]);
+					formBody.push(encodedKey + "=" + encodedValue);
+				}
+				formBody = formBody.join("&");
+
 				// Set Headers to support cross origin
 				const options = {
 					method: 'POST',
@@ -43,7 +53,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 					headers: {
         		'Content-Type': 'application/json'
     			},
-    			body: JSON.stringify(body)
+    			body: formbody 
 				};
 
 				// Fetch JWT
