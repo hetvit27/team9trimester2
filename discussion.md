@@ -22,26 +22,26 @@
 
 
 <!-- Create table to display question posts -->
-
+<body>
 <h1 class="text-center m-5 text-success">Discussion Questions</h1>
-        <br>
-        <div class="table-responsive mx-5">
-            <table class="table table-hover table-bordered border-secondary mb-5">
-                <thead>
-                    <tr>
-                        <th scope="col">Question</th>
-                        <th scope="col">Unit</th>
-                        <th scope="col">Tags</th>
-                        <th scope="col">Email</th>
-                        <!-- Update and delete -->
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider" id="discussions">
-                </tbody>
-            </table>
-        </div>
+     <br>
+    <div class="table-responsive mx-5">
+        <table class="table table-hover table-bordered border-secondary mb-5">
+            <thead>
+                <tr>
+                    <th scope="col">Question</th>
+                    <th scope="col">Unit</th>
+                    <th scope="col">Tags</th>
+                    <th scope="col">Email</th>
+                    <!-- Update and delete -->
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider" id="discussions">
+            </tbody>
+        </table>
+    </div>
 
  <script>
             // prepare fetch urls
@@ -108,4 +108,5 @@
                 tr.appendChild(td);
                 discussionsContainer.appendChild(tr);
             }
-        </script>
+    </script>
+<body>
