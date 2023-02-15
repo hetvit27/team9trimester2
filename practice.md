@@ -43,9 +43,7 @@ Features:
 
 <script>
   problems();
-  function problems() {
-    const url = "https://hetvitrivedi.tk/api/problems/";
-	const options = {
+  const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
                 cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
@@ -55,7 +53,8 @@ Features:
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
             };
-
+  function problems() {
+    const url = "https://hetvitrivedi.tk/api/problems/";
     fetch(url, options)
       .then(res => res.json())
       .then(data => {
@@ -64,40 +63,9 @@ Features:
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i++) {
-			let tableRow = document.createElement("tr");
-			let idCell = document.createElement("td");
-			idCell.innerText = i; // other fields are data[i].problem, etc.
-			tableRow.appendChild(idCell);
-			let problemCell = document.createElement("td");
-			problemCell.innerText = data[i].problem;
-			tableRow.appendChild(problemCell);
-			let unitCell = document.createElement("td");
-			unitCell.innerText = data[i].unit;
-			tableRow.appendChild(unitCell);
-			let topicCell = document.createElement("td");
-			topicCell.innerText = data[i].topic;
-			tableRow.appendChild(topicCell);
-			let tagsCell = document.createElement("td");
-			tagsCell.innerText = data[i].tags;
-			tableRow.appendChild(tagsCell);
-
-			document.getElementById("practiceTable").appendChild(tableRow);
+			addTableRow(data[i].problem, data[i].unit, data[i].topic, data[i].tags);
 		}
-
-        // document.getElementById("result").innerHTML = JSON.stringify(data);
-
-        // var result = document.getElementById("result");
-        // // for (var i = 0; i < data.length; i++) {
-        // //   result.appendChild(document.createTextNode(data));
-        // // }
-        // // document.getElementById("answer").innerHTML = data.name;
-
-        // for (var prop in data) {
-        //   if (Object.prototype.hasOwnProperty.call(data, prop)) {
-        //     result.appendChild(document.createTextNode(data.prop));
-        //   }
-        // }
-      })
+      });
   }
 
   function addProblem() {
@@ -127,6 +95,27 @@ Features:
 	.catch(err => {
 	console.log(err + " ");
 	});
+  }
+
+  function addTableRow(question, unit, topic, tags) {
+	let tableRow = document.createElement("tr");
+	let idCell = document.createElement("td");
+	idCell.innerText = i; // other fields are data[i].problem, etc.
+	tableRow.appendChild(idCell);
+	let problemCell = document.createElement("td");
+	problemCell.innerText = question;
+	tableRow.appendChild(problemCell);
+	let unitCell = document.createElement("td");
+	unitCell.innerText = unit;
+	tableRow.appendChild(unitCell);
+	let topicCell = document.createElement("td");
+	topicCell.innerText = topic;
+	tableRow.appendChild(topicCell);
+	let tagsCell = document.createElement("td");
+	tagsCell.innerText = tags;
+	tableRow.appendChild(tagsCell);
+
+	document.getElementById("practiceTable").appendChild(tableRow);
   }
 
 </script>
