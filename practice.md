@@ -17,10 +17,6 @@ Features:
 
 <input id="search" placeholder="Search">
 <button onclick="search()">Search</button>
-<select id="filter">
-	<option>Filter by...</option>
-	<option>unit</option>
-</select>
 
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
@@ -44,11 +40,18 @@ Features:
 <script>
   problems();
   function problems() {
+  	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
     const url = "https://hetvitrivedi.tk/api/problems/";
-
-    fetch(url, {"headers": {
-		"Access-Control-Allow-Origin": "*",
-	}})
+    fetch(url, options)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -56,43 +59,22 @@ Features:
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i++) {
-			let tableRow = document.createElement("tr");
-			let idCell = document.createElement("td");
-			idCell.innerText = i; // other fields are data[i].problem, etc.
-			tableRow.appendChild(idCell);
-			let problemCell = document.createElement("td");
-			problemCell.innerText = data[i].problem;
-			tableRow.appendChild(problemCell);
-			let unitCell = document.createElement("td");
-			unitCell.innerText = data[i].unit;
-			tableRow.appendChild(unitCell);
-			let topicCell = document.createElement("td");
-			topicCell.innerText = data[i].topic;
-			tableRow.appendChild(topicCell);
-			let tagsCell = document.createElement("td");
-			tagsCell.innerText = data[i].tags;
-			tableRow.appendChild(tagsCell);
-
-			document.getElementById("practiceTable").appendChild(tableRow);
+			addTableRow(data[i].problem, data[i].unit, data[i].topic, data[i].tags);
 		}
-
-        // document.getElementById("result").innerHTML = JSON.stringify(data);
-
-        // var result = document.getElementById("result");
-        // // for (var i = 0; i < data.length; i++) {
-        // //   result.appendChild(document.createTextNode(data));
-        // // }
-        // // document.getElementById("answer").innerHTML = data.name;
-
-        // for (var prop in data) {
-        //   if (Object.prototype.hasOwnProperty.call(data, prop)) {
-        //     result.appendChild(document.createTextNode(data.prop));
-        //   }
-        // }
-      })
+      });
   }
 
   function addProblem() {
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
 	var problemData = new URLSearchParams();
 	problemData.append(`problem`, document.getElementById("question").value);
 	problemData.append(`Unit`, document.getElementById("unit").value);
@@ -100,9 +82,7 @@ Features:
 	problemData.append(`Tags`, document.getElementById("tags").value);
 
 	// fetch the API
-	fetch("/api/problems/add", {"method": "POST", "body": problemData, "headers": {
-		"Access-Control-Allow-Origin": "*",
-	}})
+	fetch("https://hetvitrivedi.tk/api/problems/add", postOptions)
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
@@ -119,6 +99,68 @@ Features:
 	.catch(err => {
 	console.log(err + " ");
 	});
+  }
+
+  function search() {
+	removeTableRows();
+  	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+	var searchData = new URLSearchParams();
+	searchData.append(`term`, document.getElementById("search").value);
+
+	// fetch the API
+	fetch("https://hetvitrivedi.tk/api/problems/search", options)
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+
+  function addTableRow(question, unit, topic, tags) {
+	let tableRow = document.createElement("tr");
+	let idCell = document.createElement("td");
+	tableRow.appendChild(idCell);
+	let problemCell = document.createElement("td");
+	problemCell.innerText = question;
+	tableRow.appendChild(problemCell);
+	let unitCell = document.createElement("td");
+	unitCell.innerText = unit;
+	tableRow.appendChild(unitCell);
+	let topicCell = document.createElement("td");
+	topicCell.innerText = topic;
+	tableRow.appendChild(topicCell);
+	let tagsCell = document.createElement("td");
+	tagsCell.innerText = tags;
+	tableRow.appendChild(tagsCell);
+
+	document.getElementById("practiceTable").appendChild(tableRow);
+  }
+
+  function removeTableRows() {
+	let numRows = document.getElementById("practiceTable").rows.length;
+	for (let i = numRows-1; i > 0; i--) {
+		document.getElementById("practiceTable").removeChild(document.getElementById("practiceTable").rows[i]);
+	}
   }
 
 </script>

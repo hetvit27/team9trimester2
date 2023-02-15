@@ -17,6 +17,12 @@
                         <th scope="col">Age</th>
                         <th scope="col">Area</th>
                         <th scope="col">Contact</th>
+                        <input id="tutorname" placeholder="Enter Tutor Name">
+                        <input id="age" placeholder="Enter Tutor Age">
+                        <input id="area" placeholder="Enter Tutor Location">
+                        <input id="contact" placeholder="Enter Tutor Contact Info">
+                        <button onclick="createTutor()">Submit</button>
+                        <br>
                         <!-- Update and delete -->
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -91,6 +97,43 @@
                 tr.appendChild(td);
                 tutorContainer.appendChild(tr);
             }
+            /* Create new tutor */
+	function createTutor() {
+		const tutorname = document.getElementById("tutorname").value;
+        const age = document.getElementById("age").value;
+        const area = document.getElementById("area").value;
+        const contact = document.getElementById("contact").value;
+        const tutor_encoded = encodeURIComponent(tutorname);
+		const create_url = tutor_url + "/create?person_id=" + person_id + "&text=" + equation_encoded;
+		fetch(create_url, post_options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('CREATE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by adding row with id
+					let row = resultContainer.insertRow(resultContainer.rows.length);
+					let tutorname = row.insertCell(0);
+					let age = row.insertCell(1);
+                    let area = row.insertCell(2);
+                    let contact = row.insertCell(3);
+					// let cbunit = row.insertCell(2);
+					// let cbtopic = row.insertCell(3);
+					// let tags = row.insertCell(4);
+					tutorname.innerHTML = data.tutorname;
+					age.innerHTML = data.age;
+                    area.innerHTML = data.area;
+                    contact.innerHTML = data.contact;
+					// cbunit.innerHTML = data.cbunit;
+					// cbtopic.innerHTML = data.cbtopic;
+					// tags.innerHTML = data.tags;
+				});
+			})
+		// clear input fields
+		document.getElementById("tutorname").value = "";
+	}
         </script>
     </body>
 </html>
