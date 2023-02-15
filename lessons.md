@@ -75,17 +75,17 @@
                     const tr = document.createElement("tr");
                     const name = document.createElement("td");
                     const Email = document.createElement("td");
-                    const Tags = document.createElement("td");
-                    const Email = document.createElement("td");
+                    const Course = document.createElement("td");
+                    const Grade = document.createElement("td");
                     name.innerHTML = row.Name;
                     Email.innerHTML = row.Email;
-                    Tags.innerHTML = row.Tags;
-                    Email.innerHTML = row.Email;
+                    Course.innerHTML = row.Course;
+                    Grade.innerHTML = row.Grade;
                     // add all columns to the row
                     tr.appendChild(name);
                     tr.appendChild(Email);
-                    tr.appendChild(Tags);
-                    tr.appendChild(Email);
+                    tr.appendChild(Course);
+                    tr.appendChild(Grade);
                     // add row to table
                     discussionsContainer.appendChild(tr);
                 }    
