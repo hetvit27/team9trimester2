@@ -106,8 +106,7 @@
         const age_encoded = encodeURIComponent(age);
         const area_encoded = encodeURIComponent(area);
         const contact_encoded = encodeURIComponent(contact);
-        const create_url = tutor_url + "/add" + "/?" +  
-        tutorname_encoded + "&text" + age_encoded + "&text" + area_encoded + "&text" + contact_encoded;
+        const create_url = tutor_url + "/add" + "/" + tutorname_encoded + + age_encoded + area_encoded + contact_encoded;
 		fetch(create_url, post_options)
 			.then(response => {
 				if (response.status !== 200) {
