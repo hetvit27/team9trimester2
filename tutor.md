@@ -48,6 +48,7 @@
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
+                const post_options = {...options, method: 'POST'}; // clones and replaces method
             };
             // fetch the API
             fetch(get_url, options)
