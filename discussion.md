@@ -74,8 +74,8 @@
                     console.log(row);
                     // columns
                     const tr = document.createElement("tr");
-                    const Email = document.createElement("td");
                     const question = document.createElement("td");
+                    const Email = document.createElement("td");
                     const Unit = document.createElement("td");
                     const Tags = document.createElement("td");
                     question.innerHTML = row.question;
