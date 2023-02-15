@@ -60,7 +60,7 @@ Features:
                 },
             };
   function problems() {
-    const url = "https://hetvitrivedi.tk/api/problems/";
+    const url = "https://hetvitrivedi.tk/api/problems";
     fetch(url, options)
       .then(res => res.json())
       .then(data => {
