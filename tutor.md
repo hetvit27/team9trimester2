@@ -98,41 +98,6 @@
                 tr.appendChild(td);
                 tutorContainer.appendChild(tr);
             }
-            /* Create new tutor */
-	function createTutor() {
-		const tutorname = document.getElementById("tutorname").value;
-		// encode URI to handle special characters
-		const tutorname_encoded = encodeURIComponent(tutorname);
-        const age_encoded = encodeURIComponent(age);
-        const area_encoded = encodeURIComponent(area);
-        const contact_encoded = encodeURIComponent(contact);
-        const create_url = tutor_url + "/add" + "/" + tutorname_encoded + + age_encoded + area_encoded + contact_encoded;
-		fetch(create_url, post_options)
-			.then(response => {
-				if (response.status !== 200) {
-					error('CREATE API response failure: ' + response.status);
-					return;
-				}
-				response.json().then(data => {
-					console.log(data);
-					// update table by adding row with id
-					let row = resultContainer.insertRow(resultContainer.rows.length);
-					let tutorname = row.insertCell(0);
-					let age = row.insertCell(1);
-                    let area = row.insertCell(2);
-                    let contact = row.insertCell(3);
-					// let cbunit = row.insertCell(2);
-					// let cbtopic = row.insertCell(3);
-					// let tags = row.insertCell(4);
-					tutorname.innerHTML = data.tutorname;
-					age.innerHTML = data.age;
-                    area.innerHTML = data.area;
-                    contact.innerHTML = data.contact;
-				});
-			})
-		    // clear input fields
-		    document.getElementById("tutorname").value = "";
-	}
         </script>
     </body>
 </html>
