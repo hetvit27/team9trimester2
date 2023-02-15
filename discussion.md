@@ -13,6 +13,8 @@
 <select id="filter">
 	<option>Filter by...</option>
 	<option>unit</option>
+	<option>tags</option>
+	<option>email</option>
 </select>
 
 <input id="question" placeholder="Question">
