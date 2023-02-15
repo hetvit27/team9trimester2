@@ -39,7 +39,8 @@ Features:
 
 <script>
   problems();
-  const options = {
+  function problems() {
+  	const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
                 cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
@@ -49,17 +50,6 @@ Features:
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
             };
-	const postOptions = {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
-                // mode: 'cors', // no-cors, *cors, same-origin
-                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-                // credentials: 'same-origin', // include, same-origin, omit
-                headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-                },
-            };
-  function problems() {
     const url = "https://hetvitrivedi.tk/api/problems";
     fetch(url, options)
       .then(res => res.json())
@@ -75,6 +65,16 @@ Features:
   }
 
   function addProblem() {
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
 	var problemData = new URLSearchParams();
 	problemData.append(`problem`, document.getElementById("question").value);
 	problemData.append(`Unit`, document.getElementById("unit").value);
@@ -102,6 +102,16 @@ Features:
   }
 
   function search() {
+  	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
 	var searchData = new URLSearchParams();
 	searchData.append(`term`, document.getElementById("search").value);
 
