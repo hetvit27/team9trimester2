@@ -17,10 +17,6 @@ Features:
 
 <input id="search" placeholder="Search">
 <button onclick="search()">Search</button>
-<select id="filter">
-	<option>Filter by...</option>
-	<option>unit</option>
-</select>
 
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
@@ -53,6 +49,16 @@ Features:
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
             };
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
   function problems() {
     const url = "https://hetvitrivedi.tk/api/problems/";
     fetch(url, options)
@@ -76,9 +82,31 @@ Features:
 	problemData.append(`Tags`, document.getElementById("tags").value);
 
 	// fetch the API
-	fetch("https://hetvitrivedi.tk/api/problems/add", {"method": "POST", "body": problemData, "headers": {
-		"Access-Control-Allow-Origin": "*",
-	}})
+	fetch("https://hetvitrivedi.tk/api/problems/add", postOptions)
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+
+  function search() {
+	var searchData = new URLSearchParams();
+	searchData.append(`term`, document.getElementById("search").value);
+
+	// fetch the API
+	fetch("https://hetvitrivedi.tk/api/problems/search", options)
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
