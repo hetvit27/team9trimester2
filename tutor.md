@@ -102,6 +102,7 @@
 		const tutorname = document.getElementById("tutorname").value;
 		// encode URI to handle special characters
 		const tutorname_encoded = encodeURIComponent(tutorname);
+        const create_url = equation_url + "&text=" + tutorname_encoded;
 		fetch(create_url, post_options)
 			.then(response => {
 				if (response.status !== 200) {
