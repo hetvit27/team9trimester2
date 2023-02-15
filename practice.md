@@ -50,7 +50,7 @@ Features:
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
             };
-    const url = "https://hetvitrivedi.tk/api/problems";
+    const url = "https://hetvitrivedi.tk/api/problems/";
     fetch(url, options)
       .then(res => res.json())
       .then(data => {
@@ -83,7 +83,7 @@ Features:
 	var url = "https://hetvitrivedi.tk/api/problems/add";
 	url += "?question=" + document.getElementById("question").value;
 	url += "&Unit=" + document.getElementById("unit").value;
-	url += "?Topic=" + document.getElementById("topic").value;
+	url += "&Topic=" + document.getElementById("topic").value;
 	url += "&Tags=" + document.getElementById("tags").value;
 	// fetch the API
 	fetch(url, postOptions)
