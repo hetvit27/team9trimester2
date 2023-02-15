@@ -77,7 +77,7 @@
                     const Email = document.createElement("td");
                     const Course = document.createElement("td");
                     const Grade = document.createElement("td");
-                    name.innerHTML = row.Name;
+                    name.innerHTML = row.name;
                     Email.innerHTML = row.Email;
                     Course.innerHTML = row.Course;
                     Grade.innerHTML = row.Grade;
