@@ -24,7 +24,7 @@
             event.preventDefault();
             const formData = new FormData(formEl);
             const data = Object.fromEntries(formData);
-            fetch('https://hetvitrivedi.tk/api/tutor/', {
+            fetch('https://hetvitrivedi.tk/api/tutor', {
                method: 'POST',
                headers: {
                     'Content-Type': 'application/json'
