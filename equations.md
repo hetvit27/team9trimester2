@@ -6,13 +6,13 @@
 
 <h3>Your saved physics equations</h3>
 
-Features:
+<!-- Features:
 - Create, edit, and delete equations
 - Save equations to a database
 - View equations in a table
 - Add tags for CB unit and topic
 - Search equations
-- Filter by tags
+- Filter by tags -->
 
 <!-- Create inputs for search and filter -->
 
@@ -52,8 +52,8 @@ Features:
 				<!-- <th>Tags</th> -->
 		</tr>
 		<tr>
-				<td>0</td>
-				<td>F=ma</td>
+				<!-- <td>0</td> -->
+				<!-- <td>F=ma</td> -->
 				<!-- <td>1</td> -->
 				<!-- <td>1.1 Newton's Laws</td> -->
 				<!-- <td>physics, newton's laws, force, mass, acceleration</td> -->
@@ -162,42 +162,23 @@ Features:
 
 		const create_url = equation_url + "/create";
 
-
 		// This one is a RequestParam in backend
-		const data = {
-			"text": equation,
-			"person_id": person_id
-		};
+		
+		fetch(create_url + "?person_id=" + person_id + "&text=" + equation, post_options)
+			.then(response => response.text())
+			.then(result => console.log(result))
+			.catch(error => console.log('error', error));
 
-		fetch(create_url, {
-			...post_options,
-			body: JSON.stringify(data)
-		})
-			.then(response => {
-				if (response.status !== 200) {
-					error('CREATE API response failure: ' + response.status);
-					return;
-				}
-				response.json().then(data => {
-					console.log(data);
-					// update table by adding row with id
-					let row = resultContainer.insertRow(resultContainer.rows.length);
-					let id = row.insertCell(0);
-					let equation = row.insertCell(1);
-					// let cbunit = row.insertCell(2);
-					// let cbtopic = row.insertCell(3);
-					// let tags = row.insertCell(4);
-					id.innerHTML = data.id;
-					equation.innerHTML = data.text;
-					// cbunit.innerHTML = data.cbunit;
-					// cbtopic.innerHTML = data.cbtopic;
-					// tags.innerHTML = data.tags;
-				});
-			})
-			.catch(err => {
-				error(err + " " + create_url);
-				console.log(err);
-			});
+		// if successful, add to table
+		let row = resultContainer.insertRow(resultContainer.rows.length);
+		let id = row.insertCell(0);
+		let equation_cell = row.insertCell(1);
+
+		id.innerHTML = resultContainer.rows.length - 1;
+		equation_cell.innerHTML = equation;
+
+		// clear input fields
+		document.getElementById("equation").value = "";
 	}
 
 </script>
