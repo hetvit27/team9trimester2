@@ -102,6 +102,7 @@ Features:
   }
 
   function search() {
+	removeTableRows();
   	const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
@@ -138,7 +139,6 @@ Features:
   function addTableRow(question, unit, topic, tags) {
 	let tableRow = document.createElement("tr");
 	let idCell = document.createElement("td");
-	idCell.innerText = i; // other fields are data[i].problem, etc.
 	tableRow.appendChild(idCell);
 	let problemCell = document.createElement("td");
 	problemCell.innerText = question;
