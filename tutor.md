@@ -100,11 +100,8 @@
             /* Create new tutor */
 	function createTutor() {
 		const tutorname = document.getElementById("tutorname").value;
-        const age = document.getElementById("age").value;
-        const area = document.getElementById("area").value;
-        const contact = document.getElementById("contact").value;
-        const tutor_encoded = encodeURIComponent(tutorname);
-		const create_url = tutor_url + "/create?person_id=" + person_id + "&text=" + equation_encoded;
+		// encode URI to handle special characters
+		const tutorname_encoded = encodeURIComponent(tutorname);
 		fetch(create_url, post_options)
 			.then(response => {
 				if (response.status !== 200) {
@@ -126,13 +123,10 @@
 					age.innerHTML = data.age;
                     area.innerHTML = data.area;
                     contact.innerHTML = data.contact;
-					// cbunit.innerHTML = data.cbunit;
-					// cbtopic.innerHTML = data.cbtopic;
-					// tags.innerHTML = data.tags;
 				});
 			})
-		// clear input fields
-		document.getElementById("tutorname").value = "";
+		    // clear input fields
+		    document.getElementById("tutorname").value = "";
 	}
         </script>
     </body>
