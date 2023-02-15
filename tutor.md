@@ -94,3 +94,40 @@
         </script>
     </body>
 </html>
+<html>
+  <head>
+  <body>
+    <form id="form" method="post">
+    <input type="text" id="name" placeholder="Name"/>
+    <input type="text" id="age" placeholder="age" />
+    <input type="text" id="area" placeholder="area" />
+    <input type="text" id="contact" placeholder="contact" />
+    <input type="submit" value="Add Tutor" />
+  <body>
+  <script>
+  var form= document.getElementbyID('form')
+  form.addEventListener('submit',function(e)){
+    e.preventDefault()
+    var name = document.getElementbyId('name')
+    var age = document.getElementbyId('age') var area = document.getElementbyId('area')
+    var contact = document.getElementbyId('contact')
+    fetch("https://hetvitrivedi.tk/api/tutor",{
+      method: 'POST',
+      body:JSON.stringify()
+        tutorname: name,
+        age: age,
+        area: area,
+        contact: contact,
+      }),
+      headers:{
+        "Content-Type":"application/json; charset=UTF-8"
+      }
+    }
+    .then(function(response)){
+      return response.json()
+    }
+    .then(function(data){
+      console.log(data)
+    })
+
+  }
