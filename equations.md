@@ -156,26 +156,34 @@
 	function createEquation() {
 
 		const equation = document.getElementById("equation").value;
-		// const cbunit = document.getElementById("cbunit").value;
-		// const cbtopic = document.getElementById("cbtopic").value;
-		// const tags = document.getElementById("tags").value;
-
-		const create_url = equation_url + "/create";
+		// encode URI to handle special characters
+		const equation_encoded = encodeURIComponent(equation);
+		const create_url = equation_url + "/create?person_id=" + person_id + "&text=" + equation_encoded;
 
 		// This one is a RequestParam in backend
 		
-		fetch(create_url + "?person_id=" + person_id + "&text=" + equation, post_options)
-			.then(response => response.text())
-			.then(result => console.log(result))
-			.catch(error => console.log('error', error));
-
-		// if successful, add to table
-		let row = resultContainer.insertRow(resultContainer.rows.length);
-		let id = row.insertCell(0);
-		let equation_cell = row.insertCell(1);
-
-		id.innerHTML = resultContainer.rows.length - 1;
-		equation_cell.innerHTML = equation;
+		fetch(create_url, post_options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('CREATE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by adding row with id
+					let row = resultContainer.insertRow(resultContainer.rows.length);
+					let id = row.insertCell(0);
+					let equation = row.insertCell(1);
+					// let cbunit = row.insertCell(2);
+					// let cbtopic = row.insertCell(3);
+					// let tags = row.insertCell(4);
+					id.innerHTML = data.id;
+					equation.innerHTML = data.text;
+					// cbunit.innerHTML = data.cbunit;
+					// cbtopic.innerHTML = data.cbtopic;
+					// tags.innerHTML = data.tags;
+				});
+			})
 
 		// clear input fields
 		document.getElementById("equation").value = "";
