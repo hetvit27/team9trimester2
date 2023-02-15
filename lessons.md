@@ -2,9 +2,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Question Discussion Board
+## Physics Lessons
 
-<h3>Post your questions here and have fellow students answer them</h3>
 
 <!-- Create inputs for search and question -->
 
