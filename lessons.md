@@ -18,7 +18,6 @@
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
 <button onclick="post()">Post</button>
-<input type = "checkbox"> anonymous post
 
 
 <!-- Create table to display question posts -->
@@ -29,7 +28,7 @@
         <table class="table table-hover table-bordered border-secondary mb-5">
             <thead>
                 <tr>
-                    <th scope="col">Question</th>
+                    <th scope="col">Lesson</th>
                     <th scope="col">Unit</th>
                     <th scope="col">Tags</th>
                     <th scope="col">Email</th>
