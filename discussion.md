@@ -17,6 +17,8 @@
 
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
+<input id="tags" placeholder="Tags">
+<input id="email" placeholder="Email">
 <button onclick="post()">Post</button>
 <input type = "checkbox"> anonymous post
 
