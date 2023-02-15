@@ -21,7 +21,7 @@
 
 <!-- Create table to display question posts -->
 <body>
-<h1 class="text-center m-5 text-success">Discussion Questions</h1>
+<h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
         <table class="table table-hover table-bordered border-secondary mb-5">
@@ -81,7 +81,7 @@
                     Tags.innerHTML = row.Tags;
                     Email.innerHTML = row.Email;
                     // add all columns to the row
-                    tr.appendChild(question);
+                    tr.appendChild(lesson);
                     tr.appendChild(Unit);
                     tr.appendChild(Tags);
                     tr.appendChild(Email);
