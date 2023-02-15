@@ -25,9 +25,9 @@
 <h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
-        <table id="tab">
+        <table class="styled-table">
             <thead>
-                <tr id="tab">
+                <tr class="active-row">
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Course</th>
@@ -72,11 +72,11 @@
                 for (const row of data) {
                     console.log(row);
                     // columns
-                    const tr = document.createElement("tr");
-                    const name = document.createElement("td");
-                    const email = document.createElement("td");
-                    const course = document.createElement("td");
-                    const grade = document.createElement("td");
+                    const tr = document.createElement("tr class="styled-table"");
+                    const name = document.createElement("td class="styled-table"");
+                    const email = document.createElement("td class="styled-table"");
+                    const course = document.createElement("td class="styled-table"");
+                    const grade = document.createElement("td class="styled-table"");
                     name.innerHTML = row.name;
                     email.innerHTML = row.email;
                     course.innerHTML = row.course;
@@ -108,3 +108,40 @@
         }
     </script>
 <body>
+
+
+
+<style>
+    .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+</style>
