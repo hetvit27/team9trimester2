@@ -22,16 +22,16 @@
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody class="table-group-divider" id="clubs">
+                <tbody class="table-group-divider" id="tutors">
                 </tbody>
             </table>
         </div>
         <script>
             // prepare fetch urls
             // const club_url = "http://localhost:8192/api/club";
-            const club_url = "https://hetvitrivedi.tk/api/tutor";
-            const get_url = club_url + "/";
-            const clubContainer = document.getElementById("clubs");
+            const tutor_url = "https://hetvitrivedi.tk/api/tutor";
+            const get_url = tutor_url + "/";
+            const tutorContainer = document.getElementById("tutors");
             // prepare fetch GET options
             const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -72,7 +72,7 @@
                         tr.appendChild(area);
                         tr.appendChild(contact);
                         // add row to table
-                        clubContainer.appendChild(tr);
+                        tutorContainer.appendChild(tr);
                     }    
                 })
             })
@@ -89,7 +89,7 @@
                 const td = document.createElement("td");
                 td.innerHTML = err;
                 tr.appendChild(td);
-                clubContainer.appendChild(tr);
+                tutorContainer.appendChild(tr);
             }
         </script>
     </body>

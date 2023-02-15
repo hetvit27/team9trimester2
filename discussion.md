@@ -33,9 +33,6 @@
                     <th scope="col">Email</th>
                     <th scope="col">Unit</th>
                     <th scope="col">Tags</th>
-                    <!-- Update and delete -->
-                    <th scope="col"></th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody class="table-group-divider" id="discussions">
@@ -75,18 +72,18 @@
                     // columns
                     const tr = document.createElement("tr");
                     const question = document.createElement("td");
-                    const Email = document.createElement("td");
-                    const Unit = document.createElement("td");
-                    const Tags = document.createElement("td");
+                    const email = document.createElement("td");
+                    const unit = document.createElement("td");
+                    const tags = document.createElement("td");
                     question.innerHTML = row.question;
                     Unit.innerHTML = row.Unit;
                     Tags.innerHTML = row.Tags;
                     Email.innerHTML = row.Email;
                     // add all columns to the row
                     tr.appendChild(question);
-                    tr.appendChild(Email);
-                    tr.appendChild(Unit);
-                    tr.appendChild(Tags);
+                    tr.appendChild(email);
+                    tr.appendChild(unit);
+                    tr.appendChild(tags);
                     // add row to table
                     discussionsContainer.appendChild(tr);
                 }    
