@@ -30,9 +30,9 @@
             <thead>
                 <tr>
                     <th scope="col">Question</th>
+                    <th scope="col">Email</th>
                     <th scope="col">Unit</th>
                     <th scope="col">Tags</th>
-                    <th scope="col">Email</th>
                     <!-- Update and delete -->
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -74,19 +74,19 @@
                     console.log(row);
                     // columns
                     const tr = document.createElement("tr");
+                    const Email = document.createElement("td");
                     const question = document.createElement("td");
                     const Unit = document.createElement("td");
                     const Tags = document.createElement("td");
-                    const Email = document.createElement("td");
                     question.innerHTML = row.question;
                     Unit.innerHTML = row.Unit;
                     Tags.innerHTML = row.Tags;
                     Email.innerHTML = row.Email;
                     // add all columns to the row
                     tr.appendChild(question);
+                    tr.appendChild(Email);
                     tr.appendChild(Unit);
                     tr.appendChild(Tags);
-                    tr.appendChild(Email);
                     // add row to table
                     discussionsContainer.appendChild(tr);
                 }    
