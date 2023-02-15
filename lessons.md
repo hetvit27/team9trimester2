@@ -44,7 +44,7 @@
  	<script>
         // prepare fetch urls
         // const club_url = "http://localhost:8192/api/club";
-        const discussions_url = "https://hetvitrivedi.tk/api/schedule";
+        const discussions_url = "https://hetvitrivedi.tk/api/schedule/";
         const get_url = discussions_url + "/";
         const discussionsContainer = document.getElementById("discussions");
         // prepare fetch GET options
