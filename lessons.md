@@ -25,7 +25,7 @@
 <h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
-        <table >
+        <table id="tab">
             <thead>
                 <tr id="tab">
                     <th scope="col">Name</th>
