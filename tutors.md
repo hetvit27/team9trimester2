@@ -23,16 +23,19 @@
         formEl.addEventListener('submit' , () => {
             event.preventDefault();
             const formData = new FormData(formEl);
-            const data = Object.fromEntries(formData);
             var url = "https://hetvitrivedi.tk/api/tutor";
             const options = {
-                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                method: 'POST',
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'include',
                 headers: {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: formEl // body data type must match "Content-Type" header
+                body: class // body data type must match "Content-Type" header
             };
+            const post_options = {...options, method: 'POST'}; // clones and replaces method
             fetch(url, options).then(response => {
                 response.json().then(data => {
                     console.log(data);
@@ -41,5 +44,5 @@
         .catch(err => {
             console.log("Error: " + err);
         })
-  });
+    });
           
