@@ -74,16 +74,16 @@
                     // columns
                     const tr = document.createElement("tr");
                     const name = document.createElement("td");
-                    const Email = document.createElement("td");
+                    const email = document.createElement("td");
                     const Course = document.createElement("td");
                     const Grade = document.createElement("td");
                     name.innerHTML = row.name;
-                    Email.innerHTML = row.Email;
+                    email.innerHTML = row.email;
                     Course.innerHTML = row.Course;
                     Grade.innerHTML = row.Grade;
                     // add all columns to the row
                     tr.appendChild(name);
-                    tr.appendChild(Email);
+                    tr.appendChild(email);
                     tr.appendChild(Course);
                     tr.appendChild(Grade);
                     // add row to table
