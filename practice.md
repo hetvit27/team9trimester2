@@ -82,9 +82,9 @@ Features:
 	// problemData.append(`Tags`, document.getElementById("tags").value);
 	var url = "https://hetvitrivedi.tk/api/problems/add";
 	url += "?question=" + document.getElementById("question").value;
-	url += "&Unit=" + document.getElementById("unit").value";
+	url += "&Unit=" + document.getElementById("unit").value;
 	url += "?Topic=" + document.getElementById("topic").value;
-	url += "&Tags=" + document.getElementById("tags").value";
+	url += "&Tags=" + document.getElementById("tags").value;
 	// fetch the API
 	fetch(url, postOptions)
 	// response is a RESTful "promise" on any successful fetch
