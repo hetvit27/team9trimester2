@@ -45,10 +45,18 @@ Features:
   problems();
   function problems() {
     const url = "https://hetvitrivedi.tk/api/problems/";
+	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
 
-    fetch(url, {"headers": {
-		"Access-Control-Allow-Origin": "*",
-	}})
+    fetch(url, options)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -100,7 +108,7 @@ Features:
 	problemData.append(`Tags`, document.getElementById("tags").value);
 
 	// fetch the API
-	fetch("/api/problems/add", {"method": "POST", "body": problemData, "headers": {
+	fetch("https://hetvitrivedi.tk/api/problems/add", {"method": "POST", "body": problemData, "headers": {
 		"Access-Control-Allow-Origin": "*",
 	}})
 	// response is a RESTful "promise" on any successful fetch
