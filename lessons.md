@@ -25,9 +25,9 @@
 <h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
-        <table id="tab">
+        <table >
             <thead>
-                <tr id="tab">
+                <tr class="active-row">
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Course</th>
@@ -72,9 +72,9 @@
                 for (const row of data) {
                     console.log(row);
                     // columns
-                    const tr = document.createElement("tr");
-                    const name = document.createElement("td");
-                    const email = document.createElement("td");
+                    const tr = document.createElement("tr ");
+                    const name = document.createElement("td ");
+                    const email = document.createElement("td ");
                     const course = document.createElement("td");
                     const grade = document.createElement("td");
                     name.innerHTML = row.name;
@@ -108,3 +108,6 @@
         }
     </script>
 <body>
+
+
+
