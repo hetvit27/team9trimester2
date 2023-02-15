@@ -118,4 +118,11 @@ Features:
 	document.getElementById("practiceTable").appendChild(tableRow);
   }
 
+  function removeTableRows() {
+	let numRows = document.getElementById("practiceTable").rows.length;
+	for (let i = numRows-1; i > 0; i--) {
+		document.getElementById("practiceTable").removeChild(document.getElementById("practiceTable").rows[i]);
+	}
+  }
+
 </script>
