@@ -72,11 +72,11 @@
                     console.log(row);
                     // columns
                     const tr = document.createElement("tr");
-                    const question = document.createElement("td");
+                    const lesson = document.createElement("td");
                     const Unit = document.createElement("td");
                     const Tags = document.createElement("td");
                     const Email = document.createElement("td");
-                    question.innerHTML = row.question;
+                    lesson.innerHTML = row.lesson;
                     Unit.innerHTML = row.Unit;
                     Tags.innerHTML = row.Tags;
                     Email.innerHTML = row.Email;
