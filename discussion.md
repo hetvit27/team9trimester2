@@ -76,9 +76,9 @@
                     const unit = document.createElement("td");
                     const tags = document.createElement("td");
                     question.innerHTML = row.question;
-                    Unit.innerHTML = row.Unit;
-                    Tags.innerHTML = row.Tags;
-                    Email.innerHTML = row.Email;
+                    unit.innerHTML = row.unit;
+                    tags.innerHTML = row.tags;
+                    email.innerHTML = row.email;
                     // add all columns to the row
                     tr.appendChild(question);
                     tr.appendChild(email);

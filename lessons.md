@@ -25,9 +25,9 @@
 <h1 class="text-center m-5 text-success">Lesson List</h1>
      <br>
     <div class="table-responsive mx-5">
-        <table class="table table-hover table-bordered border-secondary mb-5">
+        <table id="tab">
             <thead>
-                <tr>
+                <tr id="tab">
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Course</th>
@@ -75,17 +75,17 @@
                     const tr = document.createElement("tr");
                     const name = document.createElement("td");
                     const email = document.createElement("td");
-                    const Course = document.createElement("td");
-                    const Grade = document.createElement("td");
+                    const course = document.createElement("td");
+                    const grade = document.createElement("td");
                     name.innerHTML = row.name;
                     email.innerHTML = row.email;
-                    Course.innerHTML = row.Course;
-                    Grade.innerHTML = row.Grade;
+                    course.innerHTML = row.course;
+                    grade.innerHTML = row.grade;
                     // add all columns to the row
                     tr.appendChild(name);
                     tr.appendChild(email);
-                    tr.appendChild(Course);
-                    tr.appendChild(Grade);
+                    tr.appendChild(course);
+                    tr.appendChild(grade);
                     // add row to table
                     discussionsContainer.appendChild(tr);
                 }    
