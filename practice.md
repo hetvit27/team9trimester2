@@ -75,14 +75,18 @@ Features:
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
             };
-	var problemData = new URLSearchParams();
-	problemData.append(`problem`, document.getElementById("question").value);
-	problemData.append(`Unit`, document.getElementById("unit").value);
-	problemData.append(`Topic`, document.getElementById("topic").value);
-	problemData.append(`Tags`, document.getElementById("tags").value);
-
+	// var problemData = new URLSearchParams();
+	// problemData.append(`problem`, document.getElementById("question").value);
+	// problemData.append(`Unit`, document.getElementById("unit").value);
+	// problemData.append(`Topic`, document.getElementById("topic").value);
+	// problemData.append(`Tags`, document.getElementById("tags").value);
+	var url = "https://hetvitrivedi.tk/api/problems/add";
+	url += "?question=" + document.getElementById("question").value;
+	url += "&Unit=" + document.getElementById("unit").value";
+	url += "?Topic=" + document.getElementById("topic").value;
+	url += "&Tags=" + document.getElementById("tags").value";
 	// fetch the API
-	fetch("https://hetvitrivedi.tk/api/problems/add", postOptions)
+	fetch(url, postOptions)
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
@@ -115,9 +119,10 @@ Features:
             };
 	var searchData = new URLSearchParams();
 	searchData.append(`term`, document.getElementById("search").value);
-
+	var url = "https://hetvitrivedi.tk/api/problems/search";
+	url += "?term=" + document.getElementById("search").value;
 	// fetch the API
-	fetch("https://hetvitrivedi.tk/api/problems/search", options)
+	fetch(url, options)
 	// response is a RESTful "promise" on any successful fetch
 	.then(response => {
 	// check for response errors
