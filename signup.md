@@ -8,7 +8,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
         <label>Password <input type="password" name="password" id="password" required> </label>   
 				<!-- <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label> -->
 				<label>Name <input type="text" name="name" id="name" /></label>
-				<label>DOB <input type="date" name="dob" id="dob" /></label>
+				<label>DOB <input type="text" name="dob" id="dob" /></label>
     </div>
 
   <div class="button">
@@ -23,9 +23,9 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 		const email = document.getElementById("email").value;
 		const password = document.getElementById("password").value;
 		const name = document.getElementById("name").value;
-		const d = document.getElementById("dob").value;
+		const dob = document.getElementById("dob").value;
 		// parse dob to mm-dd-yyyy
-		const dob = d.split("-").reverse().join("-");
+		// const dob = d.split("-").reverse().join("-");
 
 	function register_user() {
 				// Set body to include login data
