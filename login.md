@@ -21,12 +21,14 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
 	// send login request for JWT token
 
 	const login_url = 'https://hetvitrivedi.tk/authenticate';
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
 	function login_user() {
         // Set body to include login data
         const body = {
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value,
+            email: email,
+            password: password,
         };
 
         console.log(body);

@@ -1,5 +1,61 @@
+## Register 
 
+Have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login">login.
 
+<form>
+    <div class="signup-input">
+        <label>Email <input type="email" name="email" id="email" /></label>
+        <label>Password <input type="password" name="password" id="password" required> </label>   
+				<label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label>
+				<label>Name <input type="text" name="name" id="name" /></label>
+				<label>DOB <input type="date" name="dob" id="dob" /></label>
+    </div>
+
+  <div class="button">
+    <input type="submit" name="Register" value="Register" onclick="register_user()">
+  </div>
+</form>
+
+<script>
+	// send login request for JWT token
+
+	const register_url = 'https://hetvitrivedi.tk/register';
+		const email = document.getElementById("email").value;
+		const password = document.getElementById("password").value;
+		const name = document.getElementById("name").value;
+		const dob = document.getElementById("dob").value;
+
+	function register_user() {
+				// Set body to include login data
+				const body = {
+						email: email,
+						password: password,
+						name: name,
+						dob: dob,
+				};
+
+				// Set Headers to support cross origin
+				const options = {
+					method: 'POST',
+					mode: 'cors', // no-cors, *cors, same-origin
+					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+					credentials: 'include',
+					headers: {
+        		'Content-Type': 'application/json'
+    			},
+    			body: JSON.stringify(body)
+				};
+
+				// Fetch JWT
+
+				fetch(register_url, options)
+				.then(response => console.log(response.text()))
+    		.then(result => console.log(result))
+    		.catch(error => console.log('error', error));
+	}
+</script>
+
+<!-- 
 <div class="sign_up">
 <h1>Sign Up Form<span>Already have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login" class="blacktext">login</a>.</span></h1>
 <form>
@@ -31,9 +87,9 @@
      </span> 
     </div>
 </form>
-</div>
+</div> -->
 
-
+<!-- 
 <style> 
     <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 <style type="text/css">
@@ -156,4 +212,4 @@
 	margin-top: 10px;
 	text-align: right;
 }
-</style>
+</style> -->
