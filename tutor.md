@@ -111,23 +111,24 @@
     var name = document.getElementbyId('name')
     var age = document.getElementbyId('age') var area = document.getElementbyId('area')
     var contact = document.getElementbyId('contact')
-    fetch("https://hetvitrivedi.tk/api/tutor",{
-      method: 'POST',
-      body:JSON.stringify()
-        tutorname: name,
-        age: age,
-        area: area,
-        contact: contact,
-      }),
-      headers:{
-        "Content-Type":"application/json; charset=UTF-8"
-      }
-    }
-    .then(function(response)){
-      return response.json()
-    }
-    .then(function(data){
-      console.log(data)
-    })
+    var url = "https://hetvitrivedi.tk/api/tutor";
+    const options = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: flashcardsJson // body data type must match "Content-Type" header
+        };
+        fetch(url, options).then(response => {
+            response.json().then(data => {
+                console.log(data);
+                window.location = `/flashcard.html?id=` + data.id;
+            })
+        })
+        .catch(err => {
+            console.log("Error: " + err);
+        })
+  }
 
   }
