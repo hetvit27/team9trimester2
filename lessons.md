@@ -27,7 +27,7 @@
     <div class="table-responsive mx-5">
         <table >
             <thead>
-                <tr class="active-row">
+                <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Course</th>
@@ -44,7 +44,7 @@
  	<script>
         // prepare fetch urls
         // const club_url = "http://localhost:8192/api/club";
-        const discussions_url = "https://hetvitrivedi.tk/api/schedule/";
+        const discussions_url = "https://hetvitrivedi.tk/api/schedule";
         const get_url = discussions_url + "/";
         const discussionsContainer = document.getElementById("discussions");
         // prepare fetch GET options
@@ -72,9 +72,9 @@
                 for (const row of data) {
                     console.log(row);
                     // columns
-                    const tr = document.createElement("tr ");
-                    const name = document.createElement("td ");
-                    const email = document.createElement("td ");
+                    const tr = document.createElement("tr");
+                    const name = document.createElement("td");
+                    const email = document.createElement("td");
                     const course = document.createElement("td");
                     const grade = document.createElement("td");
                     name.innerHTML = row.name;
