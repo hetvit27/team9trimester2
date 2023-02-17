@@ -32,16 +32,20 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 						'dob': dob,
 				};
 
-				var formBody = [];
-				for (var property in body) {
-					var encodedKey = encodeURIComponent(property);
-					var encodedValue = encodeURIComponent(body[property]);
-					formBody.push(encodedKey + "=" + encodedValue);
+				// encode body using encodeURIComponent
+
+				for (var key in body) {
+					if (body.hasOwnProperty(key)) {
+						body[key] = encodeURIComponent(body[key]);
+					}
 				}
-				formBody = formBody.join("&");
 
-				console.log(formBody);
+				// create form body
 
+				const formbody = JSON.stringify(body);
+
+				console.log(formbody)
+				
 				// Set Headers to support cross origin
 				const options = {
 					method: 'POST',
