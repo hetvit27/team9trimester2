@@ -28,6 +28,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 		// const dob = d.split("-").reverse().join("-");
 
 	function register_user() {
+		console.log("Button clicked");
 				// Set body to include login data
 				const body = {
 						email: email,
@@ -43,6 +44,8 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 					formBody.push(encodedKey + "=" + encodedValue);
 				}
 				formBody = formBody.join("&");
+
+				console.log(formBody);
 
 				// Set Headers to support cross origin
 				const options = {
