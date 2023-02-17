@@ -60,7 +60,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 					headers: {
         		'Content-Type': 'application/json'
     			},
-    			body: body
+    			body: JSON.stringify(body);
 				};
 
 				// Fetch JWT
