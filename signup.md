@@ -31,9 +31,6 @@ function register_user() {
 			'dob': dob,
 	};
 
-	console.log(email);
-	console.log(body);
-
 	// // encode body using encodeURIComponent
 
 	// for (var key in body) {
@@ -44,9 +41,9 @@ function register_user() {
 
 	// // create form body
 
-	// const formbody = JSON.stringify(body);
+	const formbody = JSON.stringify(body);
+	console.log(formbody)
 
-	// console.log(formbody)
 	const register_url = 'https://hetvitrivedi.tk/register';
 	
 	// Set Headers to support cross origin
@@ -58,7 +55,7 @@ function register_user() {
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		body: JSON.stringify(body);
+		body: formbody
 	};
 
 	// Fetch JWT
