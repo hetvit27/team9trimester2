@@ -12,84 +12,81 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 </div>
 
 <script>
-	// send login request for JWT token
 
+function register_user() {
+	
+	const email = document.getElementById("email").value;
+	const password = document.getElementById("password").value;
+	const name = document.getElementById("name").value;
+	const dob = document.getElementById("dob").value;
+	// parse dob to mm-dd-yyyy
+	// const dob = d.split("-").reverse().join("-");
+
+	console.log("Button clicked");
+		// Set body to include login data
+	const body = {
+			'email': email,
+			'password': password,
+			'name': name,
+			'dob': dob,
+	};
+
+	console.log(email);
+	console.log(body);
+
+	// // encode body using encodeURIComponent
+
+	// for (var key in body) {
+	// 	if (body.hasOwnProperty(key)) {
+		// 		body[key] = encodeURIComponent(body[key]);
+	// 	}
+	// }
+
+	// // create form body
+
+	// const formbody = JSON.stringify(body);
+
+	// console.log(formbody)
 	const register_url = 'https://hetvitrivedi.tk/register';
+	
+	// Set Headers to support cross origin
+	const options = {
+		method: 'POST',
+		mode: 'cors', // no-cors, *cors, same-origin
+		cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+		credentials: 'include',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(body);
+	};
 
-	function register_user() {
+	// Fetch JWT
 
-		const email = document.getElementById("email").value;
-		const password = document.getElementById("password").value;
-		const name = document.getElementById("name").value;
-		const dob = document.getElementById("dob").value;
-		// parse dob to mm-dd-yyyy
-		// const dob = d.split("-").reverse().join("-");
+	// if successful, redirect to home page
+	// if unsuccessful, display error message on page
+	// fetch(register_url, options)
+	// 	.then(response => response.json())
+	// 	.then(data => {
+	// 		console.log(data);
+	// 		if (data.status == 200) {
+	// 			window.location.href = "https://hetvit27.github.io/team9trimester2/";
+	// 		} else {
+	// 			// create document element and append error message to page
+	// 			const error = document.createElement("p");
+	// 			error.innerHTML = data.message;
+	// 		}
+	// 	})
+	// 	.catch(error => {
+	// 		console.log(error);
+	// 	});
 
-		console.log("Button clicked");
-				// Set body to include login data
-				const body = {
-						'email': email,
-						'password': password,
-						'name': name,
-						'dob': dob,
-				};
+	fetch(register_url, options)
+	.then(response => console.log(response.text()))
+	.then(result => console.log(result))
+	.catch(error => console.log('error', error));
 
-				console.log(email);
-				console.log(body);
-
-				// // encode body using encodeURIComponent
-
-				// for (var key in body) {
-				// 	if (body.hasOwnProperty(key)) {
-				// 		body[key] = encodeURIComponent(body[key]);
-				// 	}
-				// }
-
-				// // create form body
-
-				// const formbody = JSON.stringify(body);
-
-				// console.log(formbody)
-				
-				// Set Headers to support cross origin
-				const options = {
-					method: 'POST',
-					mode: 'cors', // no-cors, *cors, same-origin
-					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-					credentials: 'include',
-					headers: {
-        		'Content-Type': 'application/json'
-    			},
-    			body: JSON.stringify(body);
-				};
-
-				// Fetch JWT
-
-				// if successful, redirect to home page
-				// if unsuccessful, display error message on page
-				fetch(register_url, options)
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-						if (data.status == 200) {
-							window.location.href = "https://hetvit27.github.io/team9trimester2/home";
-						} else {
-							// create document element and append error message to page
-							const error = document.createElement("p");
-							error.innerHTML = data.message;
-						}
-					})
-					.catch(error => {
-						console.log(error);
-					});
-
-				
-				// fetch(register_url, options)
-				// .then(response => console.log(response.text()))
-    		// .then(result => console.log(result))
-    		// .catch(error => console.log('error', error));
-
-	}
+}
 </script>
 
 <!-- 
