@@ -17,7 +17,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 	const register_url = 'https://hetvitrivedi.tk/register';
 
 	function register_user() {
-		
+
 		const email = document.getElementById("email").value;
 		const password = document.getElementById("password").value;
 		const name = document.getElementById("name").value;
@@ -34,19 +34,22 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 						'dob': dob,
 				};
 
-				// encode body using encodeURIComponent
+				console.log(email);
+				console.log(body);
 
-				for (var key in body) {
-					if (body.hasOwnProperty(key)) {
-						body[key] = encodeURIComponent(body[key]);
-					}
-				}
+				// // encode body using encodeURIComponent
 
-				// create form body
+				// for (var key in body) {
+				// 	if (body.hasOwnProperty(key)) {
+				// 		body[key] = encodeURIComponent(body[key]);
+				// 	}
+				// }
 
-				const formbody = JSON.stringify(body);
+				// // create form body
 
-				console.log(formbody)
+				// const formbody = JSON.stringify(body);
+
+				// console.log(formbody)
 				
 				// Set Headers to support cross origin
 				const options = {
@@ -57,7 +60,7 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 					headers: {
         		'Content-Type': 'application/json'
     			},
-    			body: formbody 
+    			body: body
 				};
 
 				// Fetch JWT
