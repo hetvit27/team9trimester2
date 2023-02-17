@@ -15,6 +15,9 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 	// send login request for JWT token
 
 	const register_url = 'https://hetvitrivedi.tk/register';
+
+	function register_user() {
+		
 		const email = document.getElementById("email").value;
 		const password = document.getElementById("password").value;
 		const name = document.getElementById("name").value;
@@ -22,7 +25,6 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 		// parse dob to mm-dd-yyyy
 		// const dob = d.split("-").reverse().join("-");
 
-	function register_user() {
 		console.log("Button clicked");
 				// Set body to include login data
 				const body = {
