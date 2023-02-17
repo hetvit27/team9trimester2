@@ -2,19 +2,14 @@
 
 Have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/login">login.
 
-<form>
-    <div class="signup-input">
-        <label>Email <input type="email" name="email" id="email" /></label>
-        <label>Password <input type="password" name="password" id="password" required> </label>   
-				<!-- <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label> -->
-				<label>Name <input type="text" name="name" id="name" /></label>
-				<label>DOB <input type="text" name="dob" id="dob" /></label>
-    </div>
-
-  <div class="button">
-    <input type="submit" name="Register" value="Register" onclick="register_user()">
-  </div>
-</form>
+<div class="signup-input">
+		<label>Email <input type="email" name="email" id="email" /></label>
+		<label>Password <input type="password" name="password" id="password" required> </label>   
+		<!-- <label>Confirm Password <input type="password" name="confirmpassword" id="confirmpassword" required> </label> -->
+		<label>Name <input type="text" name="name" id="name" /></label>
+		<label>DOB <input type="text" name="dob" id="dob" /></label>
+		<button onclick="register_user()">Register</button>
+</div>
 
 <script>
 	// send login request for JWT token
