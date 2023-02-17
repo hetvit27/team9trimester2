@@ -26,10 +26,10 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 		console.log("Button clicked");
 				// Set body to include login data
 				const body = {
-						email: email,
-						password: password,
-						name: name,
-						dob: dob,
+						'email': email,
+						'password': password,
+						'name': name,
+						'dob': dob,
 				};
 
 				var formBody = [];
@@ -56,10 +56,30 @@ Have an account? Click here to <a href="https://hetvit27.github.io/team9trimeste
 
 				// Fetch JWT
 
+				// if successful, redirect to home page
+				// if unsuccessful, display error message on page
 				fetch(register_url, options)
-				.then(response => console.log(response.text()))
-    		.then(result => console.log(result))
-    		.catch(error => console.log('error', error));
+					.then(response => response.json())
+					.then(data => {
+						console.log(data);
+						if (data.status == 200) {
+							window.location.href = "https://hetvit27.github.io/team9trimester2/home";
+						} else {
+							// create document element and append error message to page
+							const error = document.createElement("p");
+							error.innerHTML = data.message;
+						}
+					})
+					.catch(error => {
+						console.log(error);
+					});
+
+				
+				// fetch(register_url, options)
+				// .then(response => console.log(response.text()))
+    		// .then(result => console.log(result))
+    		// .catch(error => console.log('error', error));
+
 	}
 </script>
 
