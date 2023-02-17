@@ -83,6 +83,12 @@ function register_user() {
 	.then(result => console.log(result))
 	.catch(error => console.log('error', error));
 
+	// clear form
+	document.getElementById("email").value = "";
+	document.getElementById("password").value = "";
+	document.getElementById("name").value = "";
+	document.getElementById("dob").value = "";
+
 }
 </script>
 

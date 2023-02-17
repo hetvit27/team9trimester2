@@ -1,34 +1,25 @@
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-
 ## Login
 
 Don't have an account? Click here to <a href="https://hetvit27.github.io/team9trimester2/signup">signup.
 
-<form>
-    <div class="login-input">
-        <label>Email <input type="email" name="email" id="email" /></label>
-        <label>Password <input type="password" name="password" id="password" required> </label>     
-    </div>
+<div class="login-input">
+    <label>Email <input type="email" name="email" id="email" /></label>
+    <label>Password <input type="password" name="password" id="password" required> </label>     
+    <button onclick="login_user()">Login</button>
+</div>
 
-  <div class="button">
-    <input type="submit" name="Login" value="Login" onclick="login_user()">
-  </div>
-</form>
 
 <script>
 	// send login request for JWT token
 
-	const login_url = 'https://hetvitrivedi.tk/authenticate';
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
 	function login_user() {
+        const login_url = 'https://hetvitrivedi.tk/authenticate';
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
         // Set body to include login data
         const body = {
-            email: email,
-            password: password,
+            'email': email,
+            'password': password,
         };
 
         console.log(body);
@@ -58,8 +49,8 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
             }
             // Success!!!
             console.log('Login successful!');
-            // Redirect to Database location
-            // window.location.href = "/APCSA/data/database";
+            // Redirect to home page
+            window.location.href = "https://hetvit27.github.io/team9trimester2/";
         })
         .catch(error => {
             console.log('Error: ', error);
