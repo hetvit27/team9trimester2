@@ -73,7 +73,7 @@
 	// problemData.append(`Topic`, document.getElementById("topic").value);
 	// problemData.append(`Tags`, document.getElementById("tags").value);
 	var url = "https://hetvitrivedi.tk/api/tutor/add";
-	url += "?tutorname=" + document.getElementById("name").value;
+	url += "?name=" + document.getElementById("tutorname").value;
 	url += "&Age=" + document.getElementById("age").value;
 	url += "&Area=" + document.getElementById("area").value;
 	url += "&Contact=" + document.getElementById("contact").value;
