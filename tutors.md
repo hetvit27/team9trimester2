@@ -107,10 +107,10 @@
 	ageCell.innerText = age;
 	tableRow.appendChild(ageCell);
 	let areaCell = document.createElement("td");
-	areaCell.innerText = topic;
+	areaCell.innerText = area;
 	tableRow.appendChild(areaCell);
 	let contactCell = document.createElement("td");
-	contactCell.innerText = tags;
+	contactCell.innerText = contact;
 	tableRow.appendChild(contactCell);
 
 	document.getElementById("tutorTable").appendChild(tableRow);
