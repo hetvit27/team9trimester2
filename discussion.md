@@ -62,4 +62,71 @@
       });
   }
 
+  function addDiscussion() {
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+	// var problemData = new URLSearchParams();
+	// problemData.append(`problem`, document.getElementById("question").value);
+	// problemData.append(`Unit`, document.getElementById("unit").value);
+	// problemData.append(`Topic`, document.getElementById("topic").value);
+	// problemData.append(`Tags`, document.getElementById("tags").value);
+	var url = "https://hetvitrivedi.tk/api/discussions/add";
+	url += "?question=" + document.getElementById("question").value;
+	url += "&Unit=" + document.getElementById("Unit").value;
+	url += "&Tags=" + document.getElementById("Tags").value;
+	url += "&Email=" + document.getElementById("Email").value;
+	// fetch the API
+	fetch(url, postOptions)
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+  function addTableRow(question, Unit, Tags, Email) {
+	let tableRow = document.createElement("tr");
+	let idCell = document.createElement("td");
+	tableRow.appendChild(idCell);
+	let questionCell = document.createElement("td");
+	questionCell.innerText = question;
+	tableRow.appendChild(questionCell);
+	let UnitCell = document.createElement("td");
+	UnitCell.innerText = Unit;
+	tableRow.appendChild(UnitCell);
+	let TagsCell = document.createElement("td");
+	TagsCell.innerText = Tags;
+	tableRow.appendChild(TagsCell);
+	let EmailCell = document.createElement("td");
+	contactCell.innerText = Email;
+	tableRow.appendChild(EmailCell);
+
+	document.getElementById("discussionTable").appendChild(tableRow);
+  }
+
+  function removeTableRows() {
+	let numRows = document.getElementById("discussionTable").rows.length;
+	for (let i = numRows-1; i > 0; i--) {
+		document.getElementById("discussionTable").removeChild(document.getElementById("discussionTable").rows[i]);
+	}
+  }
+
 </script>
