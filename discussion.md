@@ -21,14 +21,13 @@
 <input id="unit" placeholder="Unit">
 <input id="tags" placeholder="Tags">
 <input id="email" placeholder="Email">
-<button onclick="post()">Post</button>
+<button onclick="addDisc()">Post</button>
 <input type = "checkbox"> anonymous post
 
 
 <!-- Create table to display question posts -->
 <table id="discussionTable" border="1" style="border-collapse: collapse;">
-		<tr>
-				<th>Id</th>
+		<tr>x
 				<th>Question</th>
 				<th>Unit</th>
 				<th>Tags</th>
