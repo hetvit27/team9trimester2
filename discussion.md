@@ -36,8 +36,8 @@
 </table>
 
 <script>
-  Disc();
-  function Disc() {
+  Discussion();
+  function Discussion() {
   	const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
