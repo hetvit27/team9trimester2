@@ -26,87 +26,108 @@
 
 
 <!-- Create table to display question posts -->
-<body>
-<h1 class="text-center m-5 text-success">Discussion Questions</h1>
-     <br>
-    <div class="table-responsive mx-5">
-        <table class="table table-hover table-bordered border-secondary mb-5">
-            <thead>
-                <tr>
-                    <th scope="col">Question</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Unit</th>
-                    <th scope="col">Tags</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider" id="discussions">
-            </tbody>
-        </table>
-    </div>
- 	<script>
-        // prepare fetch urls
-        // const club_url = "http://localhost:8192/api/club";
-        const discussions_url = "https://hetvitrivedi.tk/api/discussions";
-        const get_url = discussions_url + "/";
-        const discussionsContainer = document.getElementById("discussions");
-        // prepare fetch GET options
-        const options = {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
-            // mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-            // credentials: 'same-origin', // include, same-origin, omit
-            headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        };
-        // fetch the API
-        fetch(get_url, options)
-            // response is a RESTful "promise" on any successful fetch
-            .then(response => {
-            // check for response errors
-            if (response.status !== 200) {
-                error('GET API response failure: ' + response.status);
-                return;
-            }
-            // valid response will have JSON data
-            response.json().then(data => {
-                for (const row of data) {
-                    console.log(row);
-                    // columns
-                    const tr = document.createElement("tr");
-                    const question = document.createElement("td");
-                    const email = document.createElement("td");
-                    const unit = document.createElement("td");
-                    const tags = document.createElement("td");
-                    question.innerHTML = row.question;
-                    unit.innerHTML = row.unit;
-                    tags.innerHTML = row.tags;
-                    email.innerHTML = row.email;
-                    // add all columns to the row
-                    tr.appendChild(question);
-                    tr.appendChild(email);
-                    tr.appendChild(unit);
-                    tr.appendChild(tags);
-                    // add row to table
-                    discussionsContainer.appendChild(tr);
-                }    
-            })
-        })
-        // catch fetch errors (ie Nginx ACCESS to server blocked)
-        .catch(err => {
-            error(err + " " + get_url);
-        });
-        // Something went wrong with actions or responses
-        function error(err) {
-            // log as Error in console
-            console.error(err);
-            // append error to resultContainer
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = err;
-            tr.appendChild(td);
-            discussionsContainer.appendChild(tr);
-        }
-    </script>
-<body>
+<table id="discussionTable" border="1" style="border-collapse: collapse;">
+		<tr>
+				<th>Id</th>
+				<th>Question</th>
+				<th>Unit</th>
+				<th>Tags</th>
+				<th>Email</th>
+		</tr>
+</table>
+
+<script>
+  Disc();
+  function Disc() {
+  	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+    const url = "https://hetvitrivedi.tk/api/discussions/";
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        console.log(typeof data);
+        console.log(JSON.stringify(data));
+
+		for (let i = 0; i < data.length; i++) {
+			addTableRow(data[i].question, data[i].unit, data[i].tags, data[i].email);
+		}
+      });
+  }
+
+  function addDisc() {
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+	// var problemData = new URLSearchParams();
+	// problemData.append(`problem`, document.getElementById("question").value);
+	// problemData.append(`Unit`, document.getElementById("unit").value);
+	// problemData.append(`Topic`, document.getElementById("topic").value);
+	// problemData.append(`Tags`, document.getElementById("tags").value);
+	var url = "https://hetvitrivedi.tk/api/didcussions/add";
+	url += "?question=" + document.getElementById("question").value;
+	url += "&Unit=" + document.getElementById("Unit").value;
+	url += "&Tags=" + document.getElementById("Tags").value;
+	url += "&Email=" + document.getElementById("Email").value;
+	// fetch the API
+	fetch(url, postOptions)
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+  function addTableRow(question, Unit, Tags, Email) {
+	let tableRow = document.createElement("tr");
+	let idCell = document.createElement("td");
+	tableRow.appendChild(idCell);
+	let questionCell = document.createElement("td");
+	questionCell.innerText = question;
+	tableRow.appendChild(questionCell);
+	let UnitCell = document.createElement("td");
+	UnitCell.innerText = Unit;
+	tableRow.appendChild(UnitCell);
+	let TagsCell = document.createElement("td");
+	TagsCell.innerText = Tags;
+	tableRow.appendChild(TagsCell);
+	let EmailCell = document.createElement("td");
+	contactCell.innerText = Email;
+	tableRow.appendChild(EmailCell);
+
+	document.getElementById("discussionTable").appendChild(tableRow);
+  }
+
+  function removeTableRows() {
+	let numRows = document.getElementById("discussionTable").rows.length;
+	for (let i = numRows-1; i > 0; i--) {
+		document.getElementById("discussionTable").removeChild(document.getElementById("discussionTable").rows[i]);
+	}
+  }
+
+</script>
