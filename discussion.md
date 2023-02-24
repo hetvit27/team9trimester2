@@ -58,7 +58,7 @@
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i++) {
-			addTableRow(data[i].question, data[i].unit, data[i].tags, data[i].email);
+			addTableRow(data[i].question, data[i].Unit, data[i].Tags, data[i].Email);
 		}
       });
   }
