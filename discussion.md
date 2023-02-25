@@ -116,7 +116,7 @@
 	TagsCell.innerText = Tags;
 	tableRow.appendChild(TagsCell);
 	let EmailCell = document.createElement("td");
-	contactCell.innerText = Email;
+	EmailCell.innerText = Email;
 	tableRow.appendChild(EmailCell);
 
 	document.getElementById("discussionTable").appendChild(tableRow);
