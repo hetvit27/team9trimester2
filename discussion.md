@@ -28,6 +28,7 @@
 <!-- Create table to display question posts -->
 <table id="discussionTable" border="1" style="border-collapse: collapse;">
 		<tr>
+				<th>Id</th>
 				<th>Question</th>
 				<th>Unit</th>
 				<th>Tags</th>
@@ -62,7 +63,7 @@
       });
   }
 
-  function addDiscussion() {
+  function addDisc() {
 	const postOptions = {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
