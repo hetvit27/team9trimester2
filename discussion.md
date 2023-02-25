@@ -57,7 +57,7 @@
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i++) {
-			addTableRow(data[i].question, data[i].Unit, data[i].Tags, data[i].Email);
+			addTableRow(data[i].question, data[i].unit, data[i].tags, data[i].email);
 		}
       });
   }
@@ -102,22 +102,22 @@
 	console.log(err + " ");
 	});
   }
-  function addTableRow(question, Unit, Tags, Email) {
+  function addTableRow(question, unit, tags, email) {
 	let tableRow = document.createElement("tr");
 	let idCell = document.createElement("td");
 	tableRow.appendChild(idCell);
 	let questionCell = document.createElement("td");
 	questionCell.innerText = question;
 	tableRow.appendChild(questionCell);
-	let UnitCell = document.createElement("td");
-	UnitCell.innerText = Unit;
-	tableRow.appendChild(UnitCell);
-	let TagsCell = document.createElement("td");
-	TagsCell.innerText = Tags;
-	tableRow.appendChild(TagsCell);
-	let EmailCell = document.createElement("td");
-	EmailCell.innerText = Email;
-	tableRow.appendChild(EmailCell);
+	let unitCell = document.createElement("td");
+	unitCell.innerText = unit;
+	tableRow.appendChild(unitCell);
+	let tagsCell = document.createElement("td");
+	tagsCell.innerText = tags;
+	tableRow.appendChild(tagsCell);
+	let emailCell = document.createElement("td");
+	emailCell.innerText = email;
+	tableRow.appendChild(emailCell);
 
 	document.getElementById("discussionTable").appendChild(tableRow);
   }
