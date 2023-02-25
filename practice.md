@@ -97,6 +97,7 @@ Features:
 	// valid response will have JSON data
 	response.json().then(data => {
 		console.log(data);
+		addTableRow(data.problem, data.unit, data.topic, data.tags);
 	})
 	})
 	// catch fetch errors (ie Nginx ACCESS to server blocked)
@@ -133,6 +134,9 @@ Features:
 	// valid response will have JSON data
 	response.json().then(data => {
 		console.log(data);
+		for(let i=0; i<data.length; i++){
+			addTableRow(data[i].problem, data[i].unit, data[i].topic, data[i].tags);
+		}
 	})
 	})
 	// catch fetch errors (ie Nginx ACCESS to server blocked)
