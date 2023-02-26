@@ -2,7 +2,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Physics Lessons
+## Physics Class Schedules
 
 
 <!-- Create inputs for search and question -->
@@ -14,8 +14,10 @@
 	<option>course</option>
 </select>
 
-<input id="question" placeholder="Question">
+<input id="name" placeholder="Name">
 <input id="email" placeholder="Email">
+<input id="course" placeholder="Course">
+<input id="grade" placeholder="Grade">
 <button onclick="post()">Post</button>
 <br>
 <!-- Create table to display question posts -->
