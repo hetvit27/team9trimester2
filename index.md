@@ -215,7 +215,7 @@ layout: default
                 <a href="https://hetvit27.github.io/team9trimester2/kinematics"><button class="btn btn-sm"> Kinematics</button> </a>
                 <a href="https://hetvit27.github.io/team9trimester2/newtonslaws"><button class="btn btn-sm"> Newton's Laws</button> </a>
                 <a href="https://hetvit27.github.io/team9trimester2/gravitation"><button class="btn btn-sm"> Gravitation</button> </a>
-                <a href=" https://bgt072105.github.io/CSA-tri1-teamrepo/jupyter/2022/11/02/Electricforces.html"><button class="btn btn-sm"> Energy</button> </a>
+                <a href="https://hetvit27.github.io/team9trimester2/energy"><button class="btn btn-sm"> Energy</button> </a>
             </div>
             <div class="secondhalf">
                 <img title="Homepage Image" alt="Alt text" src="website.png" width="100" class="center">
