@@ -65,6 +65,12 @@ Features:
   }
 
   function addProblem() {
+	var problemData = {};
+	problemData.problem = document.getElementById("question").value;
+	problemData.Unit = document.getElementById("Unit").value;
+	problemData.Topic = document.getElementById("Topic").value;
+	problemData.Tags = document.getElementById("Tags").value;
+
 	const postOptions = {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
@@ -74,17 +80,9 @@ Features:
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
+				body: JSON.stringify(problemData);
             };
-	// var problemData = new URLSearchParams();
-	// problemData.append(`problem`, document.getElementById("question").value);
-	// problemData.append(`Unit`, document.getElementById("unit").value);
-	// problemData.append(`Topic`, document.getElementById("topic").value);
-	// problemData.append(`Tags`, document.getElementById("tags").value);
 	var url = "https://hetvitrivedi.tk/api/problems/add";
-	url += "?question=" + document.getElementById("question").value;
-	url += "&Unit=" + document.getElementById("unit").value;
-	url += "&Topic=" + document.getElementById("topic").value;
-	url += "&Tags=" + document.getElementById("tags").value;
 	// fetch the API
 	fetch(url, postOptions)
 	// response is a RESTful "promise" on any successful fetch
