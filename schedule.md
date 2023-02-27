@@ -10,7 +10,7 @@
 
 <input id="classname" placeholder="Class Name">
 <input id="period" placeholder="Period">
-<button onclick="post()">Post</button>
+<button onclick="addClass()">Post</button>
 <br>
 <!-- Create table to display question posts -->
 <body>
