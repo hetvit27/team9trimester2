@@ -67,7 +67,7 @@ Features:
   function addProblem() {
 	var problemData = {};
 	problemData.problem = document.getElementById("question").value;
-	problemData.Unit = document.getElementById("Unit").value;
+	problemData.Unit = document.getElementById("unit").value;
 	problemData.Topic = document.getElementById("Topic").value;
 	problemData.Tags = document.getElementById("Tags").value;
 
