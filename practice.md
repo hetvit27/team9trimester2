@@ -80,7 +80,7 @@ Features:
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
-				body: JSON.stringify(problemData);
+				body: JSON.stringify(problemData)
             };
 	var url = "https://hetvitrivedi.tk/api/problems/add";
 	// fetch the API
