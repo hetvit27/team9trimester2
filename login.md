@@ -50,10 +50,21 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
             // Success!!!
             console.log('Login successful!');
             // Redirect to home page
-            window.location.href = "https://hetvit27.github.io/team9trimester2/";
-        })
-        .catch(error => {
-            console.log('Error: ', error);
-        });
+            // window.location.href = "https://hetvit27.github.io/team9trimester2/";
+            var requestOptions = {
+                method: 'GET',
+                redirect: 'follow'
+            };
+
+            fetch("https://hetvitrivedi.tk/api/person/getPersonName?email=" + email, requestOptions)
+                .then(response => response.text())
+                .then(text => {
+                console.log(text);
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("username", text);
+                window.location.href = "{{site.baseurl}}/";
+                })
+                .catch(error => console.log('error', error));
+                })
     }
 </script>
