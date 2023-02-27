@@ -115,11 +115,9 @@ Features:
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
                 },
+				body: JSON.stringify({"term": document.getElementById("search").value})
             };
-	var searchData = new URLSearchParams();
-	searchData.append(`term`, document.getElementById("search").value);
 	var url = "https://hetvitrivedi.tk/api/problems/search";
-	url += "?term=" + document.getElementById("search").value;
 	// fetch the API
 	fetch(url, options)
 	// response is a RESTful "promise" on any successful fetch
