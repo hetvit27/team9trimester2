@@ -57,15 +57,16 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
             };
 
             fetch("https://hetvitrivedi.tk/api/person/getPersonNameAndId?email=" + email, requestOptions)
-                .then(response => response.json()) {
-                    console.log(response);
-                    sessionStorage.setItem("email", email);
-                    sessionStorage.setItem("name", response.name);
-                    sessionStorage.setItem("id", response.id);
-                    window.location.href = "https://hetvit27.github.io/team9trimester2/";
-                    // window.location.href = "{{site.baseurl}}/";
-                })
-                .catch(error => console.log('error', error));
-                })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("name", response.name);
+                sessionStorage.setItem("id", response.id);
+                window.location.href = "https://hetvit27.github.io/team9trimester2/";
+                // window.location.href = "{{site.baseurl}}/";
+            })
+            .catch(error => console.log('error', error));
+        })
     }
 </script>
