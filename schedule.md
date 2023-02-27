@@ -8,7 +8,6 @@
 <!-- Create inputs for search and question -->
 
 
-<input id="id" placeholder="Id">
 <input id="classname" placeholder="Class Name">
 <input id="period" placeholder="Period">
 <button onclick="post()">Post</button>
