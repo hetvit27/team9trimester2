@@ -81,9 +81,9 @@
 	// problemData.append(`Tags`, document.getElementById("tags").value);
 	var url = "https://hetvitrivedi.tk/api/discussions/add";
 	url += "?question=" + document.getElementById("question").value;
-	url += "&Unit=" + document.getElementById("unit").value;
-	url += "&Tags=" + document.getElementById("tags").value;
-	url += "&Email=" + document.getElementById("email").value;
+	url += "&unit=" + document.getElementById("unit").value;
+	url += "&tags=" + document.getElementById("tags").value;
+	url += "&email=" + document.getElementById("email").value;
 	// fetch the API
 	fetch(url, postOptions)
 	// response is a RESTful "promise" on any successful fetch
