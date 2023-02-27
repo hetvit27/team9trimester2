@@ -16,6 +16,7 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
         const login_url = 'https://hetvitrivedi.tk/authenticate';
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
+
         // Set body to include login data
         const body = {
             'email': email,

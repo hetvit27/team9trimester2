@@ -22,6 +22,30 @@ function register_user() {
 	// parse dob to mm-dd-yyyy
 	// const dob = d.split("-").reverse().join("-");
 
+	// validate inputs
+	if (email == "" || password == "" || name == "" || dob == "") {
+		alert("Please fill in all fields");
+		return;
+	}
+	else if (password.length < 8) {
+		alert("Password must be at least 8 characters");
+		return;
+	}
+	// make sure email and dob in right format
+	else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+		alert("Please enter a valid email");
+		return;
+	}
+	else if (dob.indexOf("-") == -1) {
+		alert("Please enter a valid date of birth");
+		return;
+	}
+	// check dob is a valid date
+	else if (isNaN(Date.parse(dob))) {
+		alert("Please enter a valid date of birth");
+		return;
+	}
+
 	console.log("Button clicked");
 		// Set body to include login data
 	const body = {
