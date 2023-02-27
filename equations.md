@@ -17,7 +17,7 @@
 <!-- Create inputs for search and filter -->
 
 <input id="search" placeholder="Search">
-<button onclick="search()">Search</button>
+<button onclick="searchEquation()">Search</button>
 <select id="filter">
 	<option>Filter by...</option>
 	<option>Test tag</option>
@@ -39,7 +39,7 @@
 <!-- <input id="updatecbunit" placeholder="CB Unit">
 <input id="updatecbtopic" placeholder="CB Topic">
 <input id="updatetags" placeholder="Tags"> -->
-<button onclick="">Update</button>
+<button onclick="updateEquation()">Update</button>
 
 <!-- Create table to display equations -->
 
@@ -191,6 +191,81 @@
 
 		// clear input fields
 		document.getElementById("equation").value = "";
+	}
+
+	/* Update equation */
+	function updateEquation() {
+
+		const id = document.getElementById("updateid").value;
+		const equation = document.getElementById("updateequation").value;
+		// encode URI to handle special characters
+		const equation_encoded = encodeURIComponent(equation);
+		const update_url = equation_url + "/update/" + person_id;
+
+		fetch(update_url + "/" + id + "?text=" + equation_encoded, post_options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('UPDATE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by updating row with id
+					for (let i = 0; i < resultContainer.rows.length; i++) {
+						if (resultContainer.rows[i].cells[0].innerHTML == id) {
+							resultContainer.rows[i].cells[1].innerHTML = equation;
+							break;
+						}
+					}
+				});
+			})
+			.catch(err => {
+				error(err + " " + update_url);
+				console.log(err);
+			});
+	}
+
+	/* Search equation */
+
+	function searchEquation() {
+
+		const search = document.getElementById("search").value;
+		// encode URI to handle special characters
+		const search_encoded = encodeURIComponent(search);
+		const search_url = equation_url + "/search/" + person_id + "?text=" + search_encoded;
+
+		fetch(search_url, options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('SEARCH API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by removing all rows
+					for (let i = resultContainer.rows.length - 1; i > 0; i--) {
+						resultContainer.deleteRow(i);
+					}
+					// add 'text' to equation table
+					for (let i = 0; i < data.length; i++) {
+						let row = resultContainer.insertRow(i+1);
+						let id = row.insertCell(0);
+						let equation = row.insertCell(1);
+						// let cbunit = row.insertCell(2);
+						// let cbtopic = row.insertCell(3);
+						// let tags = row.insertCell(4);
+						id.innerHTML = data[i].id;
+						equation.innerHTML = data[i].text;
+						// cbunit.innerHTML = data[i].cbunit;
+						// cbtopic.innerHTML = data[i].cbtopic;
+						// tags.innerHTML = data[i].tags;
+					}
+				});
+			})
+			.catch(err => {
+				error(err + " " + search_url);
+				console.log(err);
+			});
 	}
 
 </script>
