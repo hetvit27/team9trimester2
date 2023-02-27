@@ -46,7 +46,7 @@
         // const club_url = "http://localhost:8192/api/club";
         const classes_url = "https://hetvitrivedi.tk/api/classes";
         const get_url = classes_url + "/";
-        const discussionsContainer = document.getElementById("classes");
+        const classesContainer = document.getElementById("classes");
         // prepare fetch GET options
         const options = {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -101,7 +101,7 @@
             const td = document.createElement("td");
             td.innerHTML = err;
             tr.appendChild(td);
-            discussionsContainer.appendChild(tr);
+            classesContainer.appendChild(tr);
         }
     </script>
 <body>
