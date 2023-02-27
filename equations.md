@@ -70,7 +70,11 @@
 	const person_url = "https://hetvitrivedi.tk/api/person";
 	
 	// TODO: get person id from person database
-	const person_id = 36; // tester for now
+	if (sessionStorage.getItem("id") == null) {
+		const person_id = 36; // tester for now
+	} else {
+		const person_id = sessionStorage.getItem("id");
+	}
 
 	const get_url = equation_url + "/" + person_id;
 
