@@ -69,4 +69,12 @@ Don't have an account? Click here to <a href="https://hetvit27.github.io/team9tr
             .catch(error => console.log('error', error));
         })
     }
+    
+    function logout() {
+        document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        sessionStorage.setItem("username", null);
+        sessionStorage.setItem("email", null);
+        sessionStorage.setItem("token", null);
+        window.location.reload();
+    }
 </script>
