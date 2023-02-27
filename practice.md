@@ -68,8 +68,8 @@ Features:
 	var problemData = {};
 	problemData.problem = document.getElementById("question").value;
 	problemData.Unit = document.getElementById("unit").value;
-	problemData.Topic = document.getElementById("Topic").value;
-	problemData.Tags = document.getElementById("Tags").value;
+	problemData.Topic = document.getElementById("topic").value;
+	problemData.Tags = document.getElementById("tags").value;
 
 	const postOptions = {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
