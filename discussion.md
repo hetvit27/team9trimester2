@@ -23,8 +23,12 @@
 <input id="email" placeholder="Email">
 <button onclick="addDisc()">Post</button>
 <input type = "checkbox"> anonymous post
+
+
 <input id="id" placeholder="ID">
 <button onclick="delete()">Delete</button>
+
+
 <input id="id" placeholder="ID">
 <input id="question" placeholder="Question">
 <input id="unit" placeholder="Unit">
