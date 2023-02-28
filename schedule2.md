@@ -4,7 +4,7 @@
 
 ## Schedule Test
 
-<h3>Your classmates</h3>
+<h3>See how many people are in your period and your class! </h3>
 
 <!-- Features:
 - Create, edit, and delete equations
@@ -28,6 +28,13 @@
 <input id="deleteid" placeholder="Student ID">
 <button onclick="deleteClass()">Delete</button>
 
+<input id="updateid" placeholder="Person ID">
+<input id="updateclassname" placeholder="Enter class name">
+<input id="updateperiod" placeholder="Enter new period number">
+<!-- <input id="updatecbunit" placeholder="CB Unit">
+<input id="updatecbtopic" placeholder="CB Topic">
+<input id="updatetags" placeholder="Tags"> -->
+<button onclick="updateClass()">Update</button>
 <!-- Create table to display equations -->
 
 <table id="scheduleTable" border="1" style="border-collapse: collapse;">
@@ -191,5 +198,40 @@
         document.getElementById("period").value = "";
 
 	}
+    	/* Update equation */
+	function updateClass() {
 
+		const id = document.getElementById("updateid").value;
+		const classname = document.getElementById("updateclassname").value;
+        const period = document.getElementById("updateperiod").value;
+
+		// encode URI to handle special characters
+		const classname_encoded = encodeURIComponent(classname);
+        const period_encoded = encodeURIComponent(period);
+		const update_url = schedule_url + "/update/" + person_id;
+
+		fetch(update_url + "/" + id + "?classname=" + classname_encoded + "?period=" + period_encoded, post_options)
+			.then(response => {
+				if (response.status !== 200) {
+					error('UPDATE API response failure: ' + response.status);
+					return;
+				}
+				response.json().then(data => {
+					console.log(data);
+					// update table by updating row with id
+					for (let i = 0; i < resultContainer.rows.length; i++) {
+						if (resultContainer.rows[i].cells[0].innerHTML == id) {
+							resultContainer.rows[i].cells[1].innerHTML = classname;
+                            resultContainer.rows[i].cells[2].innerHTML = period;
+
+							break;
+						}
+					}
+				});
+			})
+			.catch(err => {
+				error(err + " " + update_url);
+				console.log(err);
+			});
+	}
 </script>
