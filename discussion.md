@@ -23,7 +23,11 @@
 <input id="email" placeholder="Email">
 <button onclick="addDisc()">Post</button>
 <input type = "checkbox"> anonymous post
-
+<input id="id" placeholder="ID">
+<button onclick="delete()">Delete</button>
+<input id="id" placeholder="ID">
+<input id="update" placeholder="Update">
+<button onclick="update()">Update</button>
 
 <!-- Create table to display question posts -->
 <table id="discussionTable" border="1" style="border-collapse: collapse;">
