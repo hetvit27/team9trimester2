@@ -185,7 +185,7 @@
 			})
 
 		// clear input fields
-		document.getElementById("tutorname").value = "";
+		document.getElementById("classname").value = "";
         document.getElementById("period").value = "";
 
 	}
