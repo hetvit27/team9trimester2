@@ -150,6 +150,8 @@
 	function createClass() {
 
 		const classname = document.getElementById("classname").value;
+        const period = document.getElementById("period").value;
+
 		// encode URI to handle special characters
 		const classname_encoded = encodeURIComponent(classname);
         const period_encoded = encodeURIComponent(period);
