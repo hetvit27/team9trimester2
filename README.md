@@ -14,4 +14,14 @@ Features:
 - Equation leaderboard to like and dislike any equations you find during your study
 - Secure signup and login system that allows for secure information 
 
+### Frontpage
+
+![Frontpage](frontpage.png)
+
+### Login page
+![Login Page](loginpage.png)
+
+### Sample feature
+![Equations](feature1.png)
+
 
