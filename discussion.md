@@ -26,7 +26,10 @@
 <input id="id" placeholder="ID">
 <button onclick="delete()">Delete</button>
 <input id="id" placeholder="ID">
-<input id="update" placeholder="Update">
+<input id="question" placeholder="Question">
+<input id="unit" placeholder="Unit">
+<input id="tags" placeholder="Tags">
+<input id="email" placeholder="Email">
 <button onclick="update()">Update</button>
 
 <!-- Create table to display question posts -->
