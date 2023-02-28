@@ -186,6 +186,8 @@
 
 		// clear input fields
 		document.getElementById("tutorname").value = "";
+        document.getElementById("period").value = "";
+
 	}
 
 </script>
