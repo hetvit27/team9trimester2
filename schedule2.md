@@ -153,7 +153,7 @@
 		// encode URI to handle special characters
 		const classname_encoded = encodeURIComponent(classname);
         const period_encoded = encodeURIComponent(period);
-		const create_url = schedule_url + "/create?person_id=" + person_id + "&classname=" + classname_encoded + "&period=" + period_encoded;
+		const create_url = schedule_url + "/add?person_id=" + person_id + "&classname=" + classname_encoded + "&period=" + period_encoded;
 
 		// This one is a RequestParam in backend
 		
