@@ -10,9 +10,9 @@
 
 
 <input id="name" placeholder="Name">
-<input id="Grade" placeholder="Grade">
-<input id="Course" placeholder="Course">
-<input id="Email" placeholder="Email">
+<input id="course" placeholder="course">
+<input id="grade" placeholder="grade">
+<input id="email" placeholder="email">
 <button onclick="addStudent()">Post</button>
 
 
@@ -53,7 +53,7 @@
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i++) {
-			addTableRow(data[i].name, data[i].Grade, data[i].Course, data[i].Email);
+			addTableRow(data[i].name, data[i].course, data[i].grade, data[i].email);
 		}
       });
   }
@@ -76,9 +76,9 @@
 	// problemData.append(`Tags`, document.getElementById("tags").value);
 	var url = "https://hetvitrivedi.tk/api/schedule/add";
 	url += "?name=" + document.getElementById("name").value;
-	url += "&Grade=" + document.getElementById("Grade").value;
-	url += "&Course=" + document.getElementById("Course").value;
-	url += "&Email=" + document.getElementById("Email").value;
+	url += "&Grade=" + document.getElementById("grade").value;
+	url += "&Course=" + document.getElementById("course").value;
+	url += "&Email=" + document.getElementById("email").value;
 	// fetch the API
 	fetch(url, postOptions)
 	// response is a RESTful "promise" on any successful fetch
@@ -98,16 +98,16 @@
 	console.log(err + " ");
 	});
   }
-  function addTableRow(name, Grade, Course, Email) {
+  function addTableRow(name, grade, Course, Email) {
 	let tableRow = document.createElement("tr");
 	let idCell = document.createElement("td");
 	tableRow.appendChild(idCell);
 	let nameCell = document.createElement("td");
 	nameCell.innerText = name;
 	tableRow.appendChild(nameCell);
-	let GradeCell = document.createElement("td");
-	GradeCell.innerText = Grade;
-	tableRow.appendChild(GradeCell);
+	let gradeCell = document.createElement("td");
+	gradeCell.innerText = grade;
+	tableRow.appendChild(gradeCell);
 	let CourseCell = document.createElement("td");
 	CourseCell.innerText = Course;
 	tableRow.appendChild(CourseCell);
