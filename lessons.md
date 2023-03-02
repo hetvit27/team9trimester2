@@ -10,8 +10,8 @@
 <br>
 <br>
 <input id="name" placeholder="Enter Name">
-<input id="Course" placeholder="Course">
 <input id="Grade" placeholder="Grade">
+<input id="Course" placeholder="Course">
 <input id="Email" placeholder="Email">
 <button onclick="addStudent()">Save</button>
 <br>
@@ -23,8 +23,8 @@
 		<tr>
 				<th>Id</th>
 				<th>Name</th>
-				<th>Course</th>
 				<th>Grade</th>
+				<th>Course</th>
 				<th>Email</th>
 		</tr>
 </table>
@@ -51,7 +51,7 @@
         console.log(JSON.stringify(data));
 
 		for (let i = 0; i < data.length; i+								+) {
-			addTableRow(data[i].name, data[i].Course, data[i].Grade, data[i].Email);
+			addTableRow(data[i].name, data[i].Grade, data[i].Course, data[i].Email);
 		}
       });
   }
