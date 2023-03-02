@@ -50,7 +50,7 @@
         console.log(typeof data);
         console.log(JSON.stringify(data));
 
-		for (let i = 0; i < data.length; i++) {
+		for (let i = 0; i < data.length; i+								+) {
 			addTableRow(data[i].tutorname, data[i].age, data[i].area, data[i].contact);
 		}
       });

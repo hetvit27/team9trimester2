@@ -2,114 +2,125 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Physics Class Schedules
+## Tutors
 
-
-<!-- Create inputs for search and question -->
 
 <input id="search" placeholder="Search">
 <button onclick="search()">Search</button>
-<select id="filter">
-	<option>Filter by...</option>
-	<option>course</option>
-</select>
-
+<br>
+<br>
 <input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-<input id="course" placeholder="Course">
-<input id="grade" placeholder="Grade">
-<button onclick="post()">Post</button>
+<input id="Course" placeholder="Course">
+<input id="Grade" placeholder="Grade">
+<input id="Email" placeholder="Email">
+<button onclick="addStudent()">Save</button>
 <br>
+<br>
+
 <!-- Create table to display question posts -->
-<body>
-<br>
-<br>
-<h1 class="text-center m-5 text-success">Student List</h1>
-     <br>
-    <div class="table-responsive mx-5">
-        <table >
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Course</th>
-                    <th scope="col">Grade</th>
-                    <!-- Update and delete -->
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider" id="discussions">
-            </tbody>
-        </table>
-    </div>
- 	<script>
-        // prepare fetch urls
-        // const club_url = "http://localhost:8192/api/club";
-        const discussions_url = "https://hetvitrivedi.tk/api/schedule";
-        const get_url = discussions_url + "/";
-        const discussionsContainer = document.getElementById("discussions");
-        // prepare fetch GET options
-        const options = {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
-            // mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-            // credentials: 'same-origin', // include, same-origin, omit
-            headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        };
-        // fetch the API
-        fetch(get_url, options)
-            // response is a RESTful "promise" on any successful fetch
-            .then(response => {
-            // check for response errors
-            if (response.status !== 200) {
-                error('GET API response failure: ' + response.status);
-                return;
-            }
-            // valid response will have JSON data
-            response.json().then(data => {
-                for (const row of data) {
-                    console.log(row);
-                    // columns
-                    const tr = document.createElement("tr");
-                    const name = document.createElement("td");
-                    const email = document.createElement("td");
-                    const course = document.createElement("td");
-                    const grade = document.createElement("td");
-                    name.innerHTML = row.name;
-                    email.innerHTML = row.email;
-                    course.innerHTML = row.course;
-                    grade.innerHTML = row.grade;
-                    // add all columns to the row
-                    tr.appendChild(name);
-                    tr.appendChild(email);
-                    tr.appendChild(course);
-                    tr.appendChild(grade);
-                    // add row to table
-                    discussionsContainer.appendChild(tr);
-                }    
-            })
-        })
-        // catch fetch errors (ie Nginx ACCESS to server blocked)
-        .catch(err => {
-            error(err + " " + get_url);
-        });
-        // Something went wrong with actions or responses
-        function error(err) {
-            // log as Error in console
-            console.error(err);
-            // append error to resultContainer
-            const tr = document.createElement("tr");
-            const td = document.createElement("td");
-            td.innerHTML = err;
-            tr.appendChild(td);
-            discussionsContainer.appendChild(tr);
-        }
-    </script>
-<body>
 
+<table id="lessonsTable" border="1" style="border-collapse: collapse;">
+		<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Course</th>
+				<th>Grade</th>
+				<th>Email</th>
+		</tr>
+</table>
 
+<script>
+  Student();
+  function Student() {
+  	const options = {
+                method: 'GET', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+    const url = "https://hetvitrivedi.tk/api/schedule/";
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        console.log(typeof data);
+        console.log(JSON.stringify(data));
 
+		for (let i = 0; i < data.length; i+								+) {
+			addTableRow(data[i].name, data[i].Course, data[i].Grade, data[i].Email);
+		}
+      });
+  }
+
+  function addStudent() {
+	const postOptions = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                // mode: 'cors', // no-cors, *cors, same-origin
+                cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+                // credentials: 'same-origin', // include, same-origin, omit
+                headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+            };
+	// var problemData = new URLSearchParams();
+	// problemData.append(`problem`, document.getElementById("question").value);
+	// problemData.append(`Unit`, document.getElementById("unit").value);
+	// problemData.append(`Topic`, document.getElementById("topic").value);
+	// problemData.append(`Tags`, document.getElementById("tags").value);
+	var url = "https://hetvitrivedi.tk/api/schedule/add";
+	url += "?name=" + document.getElementById("name").value;
+	url += "&Grade=" + document.getElementById("Grade").value;
+	url += "&Course=" + document.getElementById("Course").value;
+	url += "&Email=" + document.getElementById("Email").value;
+	// fetch the API
+	fetch(url, postOptions)
+	// response is a RESTful "promise" on any successful fetch
+	.then(response => {
+	// check for response errors
+	if (response.status !== 200) {
+		error("PUT API response failure: " + response.status)
+		return;  // api failure
+	}
+	// valid response will have JSON data
+	response.json().then(data => {
+		console.log(data);
+	})
+	})
+	// catch fetch errors (ie Nginx ACCESS to server blocked)
+	.catch(err => {
+	console.log(err + " ");
+	});
+  }
+  function addTableRow(name, Grade, Course, Email) {
+	let tableRow = document.createElement("tr");
+	let idCell = document.createElement("td");
+	tableRow.appendChild(idCell);
+	let nameCell = document.createElement("td");
+	nameCell.innerText = name;
+	tableRow.appendChild(nameCell);
+	let GradeCell = document.createElement("td");
+	GradeCell.innerText = Grade;
+	tableRow.appendChild(GradeCell);
+	let CourseCell = document.createElement("td");
+	CourseCell.innerText = Course;
+	tableRow.appendChild(CourseCell);
+	let EmailCell = document.createElement("td");
+	EmailCell.innerText = Email;
+	tableRow.appendChild(EmailCell);
+
+	document.getElementById("tutorTable").appendChild(tableRow);
+  }
+
+  function removeTableRows() {
+	let numRows = document.getElementById("lessonsTable").rows.length;
+	for (let i = numRows-1; i > 0; i--) {
+		document.getElementById("lessonsTable").removeChild(document.getElementById("lessonsTable").rows[i]);
+	}
+  }
+
+</script>
