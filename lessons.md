@@ -2,24 +2,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
-## Tutors
+## Lessons List
+
+<h3>Students and the Lessons they are presenting</h3>
+
+<!-- Create inputs for search and question -->
 
 
-<input id="search" placeholder="Search">
-<button onclick="search()">Search</button>
-<br>
-<br>
-<input id="name" placeholder="Enter Name">
+<input id="name" placeholder="Name">
 <input id="Grade" placeholder="Grade">
 <input id="Course" placeholder="Course">
 <input id="Email" placeholder="Email">
-<button onclick="addStudent()">Save</button>
-<br>
-<br>
+<button onclick="addStudent()">Post</button>
+
+
+<input id="id" placeholder="ID">
+<button onclick="delete()">Delete</button>
+
 
 <!-- Create table to display question posts -->
-
-<table id="lessonsTable" border="1" style="border-collapse: collapse;">
+<table id="lessonTable" border="1" style="border-collapse: collapse;">
 		<tr>
 				<th>Id</th>
 				<th>Name</th>
@@ -30,8 +32,8 @@
 </table>
 
 <script>
-  Student();
-  function Student() {
+  Lessons();
+  function Lessons() {
   	const options = {
                 method: 'GET', // *GET, POST, PUT, DELETE, etc.
                 // mode: 'cors', // no-cors, *cors, same-origin
@@ -50,7 +52,7 @@
         console.log(typeof data);
         console.log(JSON.stringify(data));
 
-		for (let i = 0; i < data.length; i+								+) {
+		for (let i = 0; i < data.length; i++) {
 			addTableRow(data[i].name, data[i].Grade, data[i].Course, data[i].Email);
 		}
       });
@@ -113,13 +115,13 @@
 	EmailCell.innerText = Email;
 	tableRow.appendChild(EmailCell);
 
-	document.getElementById("tutorTable").appendChild(tableRow);
+	document.getElementById("lessonTable").appendChild(tableRow);
   }
 
   function removeTableRows() {
-	let numRows = document.getElementById("lessonsTable").rows.length;
+	let numRows = document.getElementById("lessonTable").rows.length;
 	for (let i = numRows-1; i > 0; i--) {
-		document.getElementById("lessonsTable").removeChild(document.getElementById("lessonsTable").rows[i]);
+		document.getElementById("lessonTable").removeChild(document.getElementById("lessonTable").rows[i]);
 	}
   }
 
