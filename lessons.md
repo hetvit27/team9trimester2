@@ -9,7 +9,7 @@
 <button onclick="search()">Search</button>
 <br>
 <br>
-<input id="name" placeholder="Name">
+<input id="name" placeholder="Enter Name">
 <input id="Course" placeholder="Course">
 <input id="Grade" placeholder="Grade">
 <input id="Email" placeholder="Email">
